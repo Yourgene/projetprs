@@ -55,7 +55,7 @@ int main (int argc, char *argv[]) {
 				perror( "recvfrom() error \n" );
 				return -1;
 			}
-			printf("syn-ack : %s\n",bufferrec);
+			//printf("syn-ack : %s\n",bufferrec);
 			close(descenv);
 			int descenv2= socket(AF_INET, SOCK_DGRAM, 0);
 			if (descenv2 < 0) {
@@ -76,14 +76,14 @@ int main (int argc, char *argv[]) {
 				if(sendto(descenv2, &bufferack, sizeof(bufferack), 0, (struct sockaddr *)&adresseenv2, taille) == -1){
 					perror("error send ack\n");
 				}
-				printf("INFO : ACK sent \n");
+				//printf("INFO : ACK sent \n");
 				strcpy(bufferutile, argv[1]);
 				sendto(descenv2, &bufferutile, sizeof(bufferutile), 0, (struct sockaddr *)&adresseenv2, taille);
-				printf("INFO : message utile sent \n");
+				//printf("INFO : message utile sent \n");
 				receptionfile(descenv2, adresseenv2);
 				strcpy(bufferutile, "FIN");
 				sendto(descenv2, &bufferutile, sizeof(bufferutile), 0, (struct sockaddr *)&adresseenv2, taille);
-				printf("INFO : message utile sent \n");
+				//printf("INFO : message utile sent \n");
 				
 			}else{
 				printf("INFO : message SYN invalide \n");
@@ -129,7 +129,7 @@ int receptionfile(int desccli, struct sockaddr_in client){
 		char str[5];
 		char buffersyn[RCVSIZE];
 
-		f = fopen("res.pdf","w+");
+		f = fopen("res.jpg","w+");
 		if (f != NULL){
 			// On peut lire et écrire dans le fichier
 		}else{

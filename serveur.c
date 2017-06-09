@@ -56,7 +56,7 @@ int main (int argc, char *argv[]) {
 				perror( "recvfrom() error \n" );
 				return -1;
 			}
-			printf("INFO : SYN : %s\n",buffer);
+			//printf("INFO : SYN : %s\n",buffer);
 			if(strcmp("SYN",buffer)==0){
 				port++;
 				 pid_t pid;
@@ -92,7 +92,7 @@ int main (int argc, char *argv[]) {
 					strcpy(buffersyn, "SYN-ACK|");
 					sprintf(str, "%d", port);
 					strcat(buffersyn, str);
-					printf("buffersynack : %s \n", buffersyn);
+					//printf("buffersynack : %s \n", buffersyn);
 					sendto(descserv, &buffersyn, sizeof(buffersyn), 0, (struct sockaddr *)&serveur, taille);
 					printf("INFO : SYN-ACK sent \n");
 					read = recvfrom(desccli, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
@@ -107,7 +107,7 @@ int main (int argc, char *argv[]) {
 			
 					if(strcmp("ACK",buffer)==0){
 						read = recvfrom(desccli, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
-						printf("ACK received : %s \n",buffer);
+						//printf("ACK received : %s \n",buffer);
 						if( read <= 0 )
 						{
 							perror( "recvfrom() error \n" );
@@ -172,7 +172,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    		}
 		rewind(f);
 
-		printf("taille du fichier : %d\n",taillef);
+		//printf("taille du fichier : %d\n",taillef);
 		sprintf(tab, "%d", taillef);
 	//	printf("tab taille : %s\n",tab);
 		if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
@@ -182,7 +182,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		if(taillef%1000!=0){
 			nbseg = (taillef/1000);
 			lastseg = taillef%1000;
-			printf("lastseg : %d\n",lastseg);
+			//printf("lastseg : %d\n",lastseg);
 		}else{
 			nbseg = (taillef/1000) + 1;
 		}
@@ -197,7 +197,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				tab[i]=fgetc(f);
 			}
 			
-			printf("tab : %s\n",tab);
+			//printf("tab : %s\n",tab);
 			if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 				perror("sendto file error\n");
 			}
@@ -239,7 +239,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 				perror("sendto file error\n");
 			}
-			printf("segment lastseg n° %d sent\n",seg);
+			//printf("segment lastseg n° %d sent\n",seg);
 			//acquittement des segments reçus
 			if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
 			{
@@ -250,15 +250,16 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			sprintf(ackseg, "%d", seg);
 			strcat(bufferack, ackseg);
 			if(strcmp(bufferack,bufferrec)==0){
-				printf("Segment %d ACK\n",seg);
+				printf("Segment (lastseg) %d ACK\n",seg);
 			}else{
-				printf("Segment %d NACK\n",seg);
+				printf("Segment (lastseg) %d NACK\n",seg);
 				printf("bufferack : %s\n buferrec : %s\n",bufferack,bufferrec);
 
 			}
 			//fin ack
 		}
 		fclose(f);
+		printf("INFO : fichier %s envoye\n", nomf);
 			//printf("%d %d %d %d %d\n",descenv2,sizeof(tab),ntohs(adresseenv2.sin_port),ntohl(adresseenv2.sin_addr.s_addr),taille);
 		return 0;
 	}
