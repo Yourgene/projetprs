@@ -57,7 +57,7 @@ int main (int argc, char *argv[]) {
 				return -1;
 			}
 			//printf("syn-ack : %s\n",bufferrec);
-			close(descenv);
+			
 			int descenv2= socket(AF_INET, SOCK_DGRAM, 0);
 			if (descenv2 < 0) {
 				perror("cannot create socket envoi\n");
@@ -74,9 +74,10 @@ int main (int argc, char *argv[]) {
 			taille = sizeof(adresseenv2);
 			if(strcmp("SYN-ACK",syn)==0){
 				char bufferack[]="ACK";
-				if(sendto(descenv2, &bufferack, sizeof(bufferack), 0, (struct sockaddr *)&adresseenv2, taille) == -1){
+				if(sendto(descenv, &bufferack, sizeof(bufferack), 0, (struct sockaddr *)&adresseenv, taille) == -1){
 					perror("error send ack\n");
 				}
+				close(descenv);
 				//printf("INFO : ACK sent \n");
 				strcpy(bufferutile, argv[3]);
 				sendto(descenv2, &bufferutile, sizeof(bufferutile), 0, (struct sockaddr *)&adresseenv2, taille);

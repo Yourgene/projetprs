@@ -14,12 +14,14 @@
 
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
+int extractack(char * t);
 
 int main (int argc, char *argv[]) {
 	if(argc!=2){
 		printf("ERROR : necessite un argument : appel sous la forme './serveur numport'\n");
 		exit(-1);
 	}
+	printf("INFO : serveur lance sur l' adresse 192.168.5.298\n");
 	struct sockaddr_in serveur;
 	int port = atoi(argv[1]);
 	int portserv=port;
@@ -62,6 +64,7 @@ int main (int argc, char *argv[]) {
 			}
 			//printf("INFO : SYN : %s\n",buffer);
 			if(strcmp("SYN",buffer)==0){
+				printf("INFO : SYN Received\n");
 				port++;
 				 pid_t pid;
 				do {
@@ -84,7 +87,7 @@ int main (int argc, char *argv[]) {
 					setsockopt(desccli, SOL_SOCKET, SO_REUSEADDR, &valid, sizeof(int));
 					client.sin_family= AF_INET;
 					client.sin_port= htons(port);
-					inet_aton("127.0.0.1",&client.sin_addr);
+					inet_aton("192.168.5.298",&client.sin_addr);
 					if (bind(desccli, (struct sockaddr*) &client, sizeof(client)) == -1) {
 						perror("blind descserv2 fail\n");
 						close(desccli);
@@ -99,17 +102,18 @@ int main (int argc, char *argv[]) {
 					//printf("buffersynack : %s \n", buffersyn);
 					sendto(descserv, &buffersyn, sizeof(buffersyn), 0, (struct sockaddr *)&serveur, taille);
 					printf("INFO : SYN-ACK sent \n");
-					read = recvfrom(desccli, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
+					read = recvfrom(descserv, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &serveur, &taille);
      
 					if( read <= 0 )
 					{
 						perror( "recvfrom() error \n" );
 						return -1;
 					}
-					printf("ACK : %s\n",buffer);
+					//printf("ACK : %s\n",buffer);
 			
 			
 					if(strcmp("ACK",buffer)==0){
+						printf("INFO : ACK Received\n");
 						read = recvfrom(desccli, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
 						//printf("ACK received : %s \n",buffer);
 						if( read <= 0 )
@@ -117,17 +121,20 @@ int main (int argc, char *argv[]) {
 							perror( "recvfrom() error \n" );
 							return -1;
 						}
+						printf("INFO : debut envoi fichier %s\n",buffer);
 						envoifile(buffer,desccli, client);
+						}else{
+							printf("ERROR : ACK invalide : %s\n",buffer);
 						}
 						close(desccli);
 				}else{
-
+					sleep(1);//NE PAS SUPPRIMER
 				/* Si on est dans le père */
 
 				}
 				
 			}else{
-				printf("INFO : message SYN invalide \n");
+				printf("ERROR : message SYN invalide : %s\n", buffer);
 			}
 	}
 
@@ -144,11 +151,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		char tab[1006];
 		char c;
 		int nbseg, seg=0;
-		char bufferack[RCVSIZE];
 		int taillef=0;
 		int lastseg=0;
 		//variable ack
-		char ackseg[5];
+		int numsegrecu;
 		char bufferrec[RCVSIZE];
 		//ouverture fichier
 		FILE* f = NULL;
@@ -156,7 +162,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		if (f != NULL){
         	// On peut lire et écrire dans le fichier
     	}else{
-        	printf("Impossible d'ouvrir le fichier test.pdf");
+        	printf("Impossible d'ouvrir le fichier %s\n",nomf);
     	}
 		//envoi d'un message prevenant de l'envoi d'un fichier
 		/*char txt[]="file";
@@ -179,9 +185,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//printf("taille du fichier : %d\n",taillef);
 		sprintf(tab, "%d", taillef);
 	//	printf("tab taille : %s\n",tab);
-		if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+		/*if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){ //sert a envoyer la taille du fichier, non utiliser par les clients du projet
 			perror("sendto file error\n");
-		}
+		}*/
 		//calcul du nombre de segments requis
 		if(taillef%1000!=0){
 			nbseg = (taillef/1000);
@@ -213,14 +219,12 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				perror( "recvfrom() error \n" );
 				return -1;
 			}
-			strcpy(bufferack, "ACK");
-			sprintf(ackseg, "%d", seg);
-			strcat(bufferack, ackseg);
-			if(strcmp(bufferack,bufferrec)==0){
+			numsegrecu=extractack(bufferrec);
+			if(seg==numsegrecu){
 				printf("Segment %d ACK\n",seg);
 			}else{
 				printf("Segment %d NACK\n",seg);
-				printf("bufferack : %s\n buferrec : %s\n",bufferack,bufferrec);
+				printf("seg : %d\n numsegrecu : %d\n",seg,numsegrecu);
 
 			}
 			//fin ack
@@ -250,14 +254,12 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				perror( "recvfrom() error \n" );
 				return -1;
 			}
-			strcpy(bufferack, "ACK");
-			sprintf(ackseg, "%d", seg);
-			strcat(bufferack, ackseg);
-			if(strcmp(bufferack,bufferrec)==0){
+			numsegrecu=extractack(bufferrec);
+			if(seg==numsegrecu){
 				printf("Segment (lastseg) %d ACK\n",seg);
 			}else{
 				printf("Segment (lastseg) %d NACK\n",seg);
-				printf("bufferack : %s\n buferrec : %s\n",bufferack,bufferrec);
+				printf("seg : %d\n numsegrecu : %d\n",seg,numsegrecu);
 
 			}
 			//fin ack
@@ -273,3 +275,27 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			//printf("%d %d %d %d %d\n",descenv2,sizeof(tab),ntohs(adresseenv2.sin_port),ntohl(adresseenv2.sin_addr.s_addr),taille);
 		return 0;
 	}
+
+int extractack(char * t){
+	int i,j=0;
+	char tack[4];
+	char tnumseg[6];
+	for (i=0;i<3;i++){
+		tack[i]=t[i];
+	}
+	for (i=3;i<9;i++){
+		tnumseg[j]=t[i];
+		j++;
+	}
+	//printf("DEBUG : fct ackrecu %s\n",tack);
+	//printf("DEBUG : fct numsegrecu %s\n",tnumseg);
+	int numseg=atoi(tnumseg);
+	//printf("DEBUG : fct numsegrecu converti %d\n",numseg);
+	//printf("DEBUG : res strcmp %d\n",strncmp("ACK",tack,3));
+	if(strncmp("ACK",tack,3)==0){
+		return (numseg);
+	}else{
+		printf("ERROR : ACK : |%s|\n",tack);
+		return (-1);
+	}
+}
