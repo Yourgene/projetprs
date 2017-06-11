@@ -17,14 +17,15 @@ int receptionfile(int desccli, struct sockaddr_in client);
 int main (int argc, char *argv[]) {
 	
 	struct sockaddr_in adresseenv2, adresseenv;
-	/*if(argc!=3){
-		printf("erreur : deux arguments : le port et l'@ip du serveur'\n");
+	if(argc!=4){
+		printf("erreur : trois arguments : utilisation : './clientudp @ipserv numportserv filetosend\n");
 		exit(-1);
 	}
-	printf("info : argv[0] %s\n",argv[0]);
-	printf("info : port %d\n",atoi(argv[1]));
-	printf("info : addr %s\n",argv[2]);*/
-	int port= 8080;
+	printf("info : fichier a envoyer %s\n",argv[3]);
+	printf("info : port %d\n",atoi(argv[2]));
+	printf("info : addr %s\n",argv[1]);
+	int port= atoi(argv[2]);
+
 	int valid= 1;
 	char bufferutile[RCVSIZE];
 	char bufferrec[RCVSIZE];
@@ -43,7 +44,7 @@ int main (int argc, char *argv[]) {
 
 	adresseenv.sin_family= AF_INET;
 	adresseenv.sin_port= htons(port);
-	inet_aton("127.0.0.1", &adresseenv.sin_addr);
+	inet_aton(argv[1], &adresseenv.sin_addr);
 	
 	char buffer[]="SYN";
 	sendto(descenv, &buffer, sizeof(buffer), 0, (struct sockaddr *)&adresseenv, taille);
@@ -77,12 +78,12 @@ int main (int argc, char *argv[]) {
 					perror("error send ack\n");
 				}
 				//printf("INFO : ACK sent \n");
-				strcpy(bufferutile, argv[1]);
+				strcpy(bufferutile, argv[3]);
 				sendto(descenv2, &bufferutile, sizeof(bufferutile), 0, (struct sockaddr *)&adresseenv2, taille);
 				//printf("INFO : message utile sent \n");
 				receptionfile(descenv2, adresseenv2);
-				strcpy(bufferutile, "FIN");
-				sendto(descenv2, &bufferutile, sizeof(bufferutile), 0, (struct sockaddr *)&adresseenv2, taille);
+				/*strcpy(bufferutile, "FIN");
+				sendto(descenv2, &bufferutile, sizeof(bufferutile), 0, (struct sockaddr *)&adresseenv2, taille);*/
 				//printf("INFO : message utile sent \n");
 				
 			}else{
@@ -95,9 +96,9 @@ int main (int argc, char *argv[]) {
 
 int extract_port(char * t, int taille){
 		int i, j=0, k;
-		k=12;
+		k=11;
 		for (i=0;i<taille;i++){
-			if( (i>=8) && (i<k) ) {
+			if( (i>=7) && (i<k) ) {
 				portenv[j]=t[i];
 				j++;
 			}
@@ -122,7 +123,7 @@ int receptionfile(int desccli, struct sockaddr_in client){
 		int i;
 		int read;
 		int nbseg, seg;
-		char buffer2[1005];
+		char buffer2[1006];
 		char buffseg[10];
 		int lastseg=0;
 		//variable ack
@@ -161,17 +162,17 @@ int receptionfile(int desccli, struct sockaddr_in client){
 				perror( "recvfrom() error \n" );
 				return -1;
 			}
-			for(i=0;i<5;i++){
+			for(i=0;i<6;i++){
 				buffseg[i]=buffer2[i];
 			}
 			seg=atoi(buffseg);
-			for(i=5;i<1005;i++){
+			for(i=6;i<1006;i++){
 				fputc(buffer2[i],f);
 			}
 			//printf("segment n° %d received\n",seg);
 
 			//acquittement des segments reçus
-			strcpy(buffersyn, "ACK_");
+			strcpy(buffersyn, "ACK");
 			sprintf(str, "%d", seg);
 			strcat(buffersyn, str);
 			sendto(desccli, &buffersyn, sizeof(buffersyn), 0, (struct sockaddr *)&client, taillecli);
@@ -186,7 +187,7 @@ int receptionfile(int desccli, struct sockaddr_in client){
 				perror( "recvfrom() error \n" );
 				return -1;
 			}
-			for(i=0;i<5;i++){
+			for(i=0;i<6;i++){
 				buffseg[i]=buffer2[i];
 			}
 			seg=atoi(buffseg);
@@ -198,11 +199,20 @@ int receptionfile(int desccli, struct sockaddr_in client){
 			while(i<lastseg+4);
 			printf("segment lastseg n° %d received\n",seg);
 			//acquittement des segments reçus
-			strcpy(buffersyn, "ACK_");
+			strcpy(buffersyn, "ACK");
 			sprintf(str, "%d", seg);
 			strcat(buffersyn, str);
 			sendto(desccli, &buffersyn, sizeof(buffersyn), 0, (struct sockaddr *)&client, taillecli);
 			//fin ack
+		}
+		read = recvfrom(desccli, &buffer2, sizeof(buffer2), 0,  (struct sockaddr *) &client, &taillecli);
+		if( read <= 0 )
+		{
+			perror( "recvfrom() error \n" );
+			return -1;
+		}
+		if(strcmp("FIN",buffer2)==0){
+			printf("INFO : message recu !\n");
 		}
 		fclose(f);
 		return 0;
