@@ -9,6 +9,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <errno.h>
+#include <poll.h>
 
 #define RCVSIZE 1024
 
@@ -164,6 +165,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
     	}else{
         	printf("Impossible d'ouvrir le fichier %s\n",nomf);
     	}
+		//init pour poll()
+		int rv;
+		struct pollfd ufds[1];
+		ufds[0].fd = descenv2;
+		ufds[0].events = POLLIN;
 		//envoi d'un message prevenant de l'envoi d'un fichier
 		/*char txt[]="file";
 		//printf("envoi taille fichier\n");
@@ -214,19 +220,29 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			//	printf("segment n° %d sent\n",seg);
 			
 			//acquittement des segments reçus
-			if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
-			{
-				perror( "recvfrom() error \n" );
-				return -1;
-			}
-			numsegrecu=extractack(bufferrec);
-			if(seg==numsegrecu){
-				printf("Segment %d ACK\n",seg);
-			}else{
-				printf("Segment %d NACK\n",seg);
-				printf("seg : %d\n numsegrecu : %d\n",seg,numsegrecu);
+			 // wait for events on the sockets, 1ms timeout
+   			rv = poll(ufds, 1, 1);
 
-			}
+    		if (rv > 0) {
+   		    	 if (ufds[0].revents & POLLIN) {
+   	    		     if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
+						{
+							perror( "recvfrom() error \n" );
+							return -1;
+						}
+						numsegrecu=extractack(bufferrec);
+						if(seg==numsegrecu){
+							printf("Segment %d ACK\n",seg);
+						}else{
+							printf("Segment %d NACK\n",seg);
+							printf("seg : %d\n numsegrecu : %d\n",seg,numsegrecu);
+							
+
+						}
+						seg = numsegrecu;
+    	    	}
+    		}
+			
 			//fin ack
 			seg++;
 		}

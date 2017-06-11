@@ -11,7 +11,7 @@ output_file= "output.txt"
 name= server_name.split("-")
 suffix= name[0][-2:]
 
-client_name= "client"+suffix
+client_name= "client1"
 
 output= open(output_file, "a")
 

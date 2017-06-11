@@ -1,0 +1,4999 @@
+INFO : serveur lance sur l' adresse 192.168.5.298
+INFO : SYN Received
+INFO : SYN-ACK sent 
+INFO : ACK Received
+INFO : debut envoi fichier sample4_l.jpg
+Segment 5 NACK
+seg : 5
+ numsegrecu : 1
+Segment 4 NACK
+seg : 4
+ numsegrecu : 3
+Segment 4 NACK
+seg : 4
+ numsegrecu : 2
+Segment 8 NACK
+seg : 8
+ numsegrecu : 5
+Segment 6 NACK
+seg : 6
+ numsegrecu : 5
+Segment 6 NACK
+seg : 6
+ numsegrecu : 5
+Segment 6 NACK
+seg : 6
+ numsegrecu : 4
+Segment 5 ACK
+Segment 6 NACK
+seg : 6
+ numsegrecu : 5
+Segment 9 NACK
+seg : 9
+ numsegrecu : 6
+Segment 10 NACK
+seg : 10
+ numsegrecu : 7
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 9 NACK
+seg : 9
+ numsegrecu : 8
+Segment 10 NACK
+seg : 10
+ numsegrecu : 9
+Segment 10 NACK
+seg : 10
+ numsegrecu : 8
+Segment 9 ACK
+Segment 10 NACK
+seg : 10
+ numsegrecu : 9
+Segment 11 NACK
+seg : 11
+ numsegrecu : 9
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 13 NACK
+seg : 13
+ numsegrecu : 10
+Segment 11 NACK
+seg : 11
+ numsegrecu : 10
+Segment 11 ACK
+Segment 13 NACK
+seg : 13
+ numsegrecu : 11
+Segment 12 NACK
+seg : 12
+ numsegrecu : 11
+Segment 13 NACK
+seg : 13
+ numsegrecu : 11
+Segment 12 NACK
+seg : 12
+ numsegrecu : 11
+Segment 12 NACK
+seg : 12
+ numsegrecu : 11
+Segment 12 NACK
+seg : 12
+ numsegrecu : 11
+Segment 12 NACK
+seg : 12
+ numsegrecu : 11
+Segment 13 NACK
+seg : 13
+ numsegrecu : 12
+Segment 13 NACK
+seg : 13
+ numsegrecu : 11
+Segment 12 NACK
+seg : 12
+ numsegrecu : 11
+Segment 13 ACK
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 15 NACK
+seg : 15
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 14 NACK
+seg : 14
+ numsegrecu : 13
+Segment 15 NACK
+seg : 15
+ numsegrecu : 13
+Segment 14 ACK
+Segment 15 NACK
+seg : 15
+ numsegrecu : 13
+Segment 14 ACK
+Segment 15 ACK
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 17 NACK
+seg : 17
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 17 NACK
+seg : 17
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 16 NACK
+seg : 16
+ numsegrecu : 15
+Segment 17 NACK
+seg : 17
+ numsegrecu : 16
+Segment 17 ACK
+Segment 18 NACK
+seg : 18
+ numsegrecu : 16
+Segment 17 ACK
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 19 NACK
+seg : 19
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 19 NACK
+seg : 19
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 NACK
+seg : 18
+ numsegrecu : 17
+Segment 18 ACK
+Segment 19 NACK
+seg : 19
+ numsegrecu : 18
+Segment 21 NACK
+seg : 21
+ numsegrecu : 18
+Segment 19 NACK
+seg : 19
+ numsegrecu : 18
+Segment 19 NACK
+seg : 19
+ numsegrecu : 18
+Segment 19 NACK
+seg : 19
+ numsegrecu : 18
+Segment 19 NACK
+seg : 19
+ numsegrecu : 18
+Segment 20 NACK
+seg : 20
+ numsegrecu : 19
+Segment 20 NACK
+seg : 20
+ numsegrecu : 18
+Segment 21 NACK
+seg : 21
+ numsegrecu : 19
+Segment 20 NACK
+seg : 20
+ numsegrecu : 19
+Segment 20 NACK
+seg : 20
+ numsegrecu : 19
+Segment 20 NACK
+seg : 20
+ numsegrecu : 19
+Segment 20 NACK
+seg : 20
+ numsegrecu : 19
+Segment 21 ACK
+Segment 22 NACK
+seg : 22
+ numsegrecu : 20
+Segment 21 ACK
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 23 NACK
+seg : 23
+ numsegrecu : 21
+Segment 23 NACK
+seg : 23
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 NACK
+seg : 22
+ numsegrecu : 21
+Segment 22 ACK
+Segment 23 NACK
+seg : 23
+ numsegrecu : 22
+Segment 23 ACK
+Segment 24 NACK
+seg : 24
+ numsegrecu : 22
+Segment 25 NACK
+seg : 25
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 26 NACK
+seg : 26
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 24 NACK
+seg : 24
+ numsegrecu : 23
+Segment 25 NACK
+seg : 25
+ numsegrecu : 23
+Segment 25 NACK
+seg : 25
+ numsegrecu : 24
+Segment 25 ACK
+Segment 26 NACK
+seg : 26
+ numsegrecu : 25
+Segment 26 NACK
+seg : 26
+ numsegrecu : 25
+Segment 27 NACK
+seg : 27
+ numsegrecu : 25
+Segment 26 NACK
+seg : 26
+ numsegrecu : 25
+Segment 26 ACK
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 28 NACK
+seg : 28
+ numsegrecu : 26
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 27 ACK
+Segment 28 NACK
+seg : 28
+ numsegrecu : 26
+Segment 27 NACK
+seg : 27
+ numsegrecu : 26
+Segment 28 NACK
+seg : 28
+ numsegrecu : 26
+Segment 27 ACK
+Segment 28 NACK
+seg : 28
+ numsegrecu : 27
+Segment 28 NACK
+seg : 28
+ numsegrecu : 27
+Segment 28 NACK
+seg : 28
+ numsegrecu : 27
+Segment 28 NACK
+seg : 28
+ numsegrecu : 27
+Segment 31 NACK
+seg : 31
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 30 NACK
+seg : 30
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 29 NACK
+seg : 29
+ numsegrecu : 28
+Segment 30 ACK
+Segment 35 NACK
+seg : 35
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 30
+Segment 31 ACK
+Segment 32 NACK
+seg : 32
+ numsegrecu : 30
+Segment 31 NACK
+seg : 31
+ numsegrecu : 32
+Segment 33 ACK
+Segment 34 ACK
+Segment 37 NACK
+seg : 37
+ numsegrecu : 35
+Segment 37 NACK
+seg : 37
+ numsegrecu : 35
+Segment 36 NACK
+seg : 36
+ numsegrecu : 35
+Segment 36 NACK
+seg : 36
+ numsegrecu : 35
+Segment 36 NACK
+seg : 36
+ numsegrecu : 35
+Segment 36 NACK
+seg : 36
+ numsegrecu : 35
+Segment 37 NACK
+seg : 37
+ numsegrecu : 35
+Segment 36 NACK
+seg : 36
+ numsegrecu : 35
+Segment 36 NACK
+seg : 36
+ numsegrecu : 35
+Segment 36 ACK
+Segment 38 NACK
+seg : 38
+ numsegrecu : 35
+Segment 37 ACK
+Segment 39 NACK
+seg : 39
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 39 NACK
+seg : 39
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 38 NACK
+seg : 38
+ numsegrecu : 37
+Segment 39 NACK
+seg : 39
+ numsegrecu : 38
+Segment 40 NACK
+seg : 40
+ numsegrecu : 38
+Segment 39 ACK
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 41 NACK
+seg : 41
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 41 NACK
+seg : 41
+ numsegrecu : 39
+Segment 40 NACK
+seg : 40
+ numsegrecu : 39
+Segment 41 NACK
+seg : 41
+ numsegrecu : 39
+Segment 40 ACK
+Segment 41 NACK
+seg : 41
+ numsegrecu : 40
+Segment 42 NACK
+seg : 42
+ numsegrecu : 40
+Segment 41 NACK
+seg : 41
+ numsegrecu : 40
+Segment 42 NACK
+seg : 42
+ numsegrecu : 40
+Segment 41 ACK
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 43 NACK
+seg : 43
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 43 NACK
+seg : 43
+ numsegrecu : 41
+Segment 42 NACK
+seg : 42
+ numsegrecu : 41
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 NACK
+seg : 43
+ numsegrecu : 42
+Segment 43 ACK
+Segment 45 NACK
+seg : 45
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 42
+Segment 43 ACK
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 45 NACK
+seg : 45
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 45 NACK
+seg : 45
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 44 NACK
+seg : 44
+ numsegrecu : 43
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 47 NACK
+seg : 47
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 46 NACK
+seg : 46
+ numsegrecu : 45
+Segment 47 NACK
+seg : 47
+ numsegrecu : 46
+Segment 47 NACK
+seg : 47
+ numsegrecu : 46
+Segment 47 NACK
+seg : 47
+ numsegrecu : 46
+Segment 47 NACK
+seg : 47
+ numsegrecu : 46
+Segment 47 NACK
+seg : 47
+ numsegrecu : 46
+Segment 47 ACK
+Segment 48 NACK
+seg : 48
+ numsegrecu : 46
+Segment 47 ACK
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 49 NACK
+seg : 49
+ numsegrecu : 47
+Segment 49 NACK
+seg : 49
+ numsegrecu : 47
+Segment 48 NACK
+seg : 48
+ numsegrecu : 47
+Segment 48 ACK
+Segment 49 NACK
+seg : 49
+ numsegrecu : 48
+Segment 49 NACK
+seg : 49
+ numsegrecu : 48
+Segment 49 NACK
+seg : 49
+ numsegrecu : 48
+Segment 50 NACK
+seg : 50
+ numsegrecu : 48
+Segment 49 NACK
+seg : 49
+ numsegrecu : 48
+Segment 49 ACK
+Segment 50 NACK
+seg : 50
+ numsegrecu : 49
+Segment 50 NACK
+seg : 50
+ numsegrecu : 48
+Segment 51 NACK
+seg : 51
+ numsegrecu : 49
+Segment 50 NACK
+seg : 50
+ numsegrecu : 49
+Segment 50 NACK
+seg : 50
+ numsegrecu : 49
+Segment 50 NACK
+seg : 50
+ numsegrecu : 49
+Segment 50 NACK
+seg : 50
+ numsegrecu : 49
+Segment 50 NACK
+seg : 50
+ numsegrecu : 49
+Segment 50 ACK
+Segment 51 NACK
+seg : 51
+ numsegrecu : 50
+Segment 52 NACK
+seg : 52
+ numsegrecu : 50
+Segment 52 NACK
+seg : 52
+ numsegrecu : 50
+Segment 52 NACK
+seg : 52
+ numsegrecu : 50
+Segment 52 NACK
+seg : 52
+ numsegrecu : 50
+Segment 52 NACK
+seg : 52
+ numsegrecu : 51
+Segment 52 NACK
+seg : 52
+ numsegrecu : 51
+Segment 52 NACK
+seg : 52
+ numsegrecu : 51
+Segment 52 NACK
+seg : 52
+ numsegrecu : 51
+Segment 52 ACK
+Segment 53 NACK
+seg : 53
+ numsegrecu : 51
+Segment 52 NACK
+seg : 52
+ numsegrecu : 51
+Segment 53 NACK
+seg : 53
+ numsegrecu : 52
+Segment 54 NACK
+seg : 54
+ numsegrecu : 52
+Segment 53 NACK
+seg : 53
+ numsegrecu : 52
+Segment 53 NACK
+seg : 53
+ numsegrecu : 52
+Segment 53 NACK
+seg : 53
+ numsegrecu : 52
+Segment 54 NACK
+seg : 54
+ numsegrecu : 53
+Segment 56 NACK
+seg : 56
+ numsegrecu : 52
+Segment 53 NACK
+seg : 53
+ numsegrecu : 54
+Segment 55 NACK
+seg : 55
+ numsegrecu : 54
+Segment 55 NACK
+seg : 55
+ numsegrecu : 53
+Segment 54 NACK
+seg : 54
+ numsegrecu : 53
+Segment 54 ACK
+Segment 56 NACK
+seg : 56
+ numsegrecu : 54
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 57 NACK
+seg : 57
+ numsegrecu : 55
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 58 NACK
+seg : 58
+ numsegrecu : 56
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 57 NACK
+seg : 57
+ numsegrecu : 56
+Segment 59 NACK
+seg : 59
+ numsegrecu : 56
+Segment 57 ACK
+Segment 58 NACK
+seg : 58
+ numsegrecu : 57
+Segment 58 NACK
+seg : 58
+ numsegrecu : 57
+Segment 58 NACK
+seg : 58
+ numsegrecu : 57
+Segment 58 NACK
+seg : 58
+ numsegrecu : 57
+Segment 58 NACK
+seg : 58
+ numsegrecu : 57
+Segment 60 NACK
+seg : 60
+ numsegrecu : 58
+Segment 59 NACK
+seg : 59
+ numsegrecu : 58
+Segment 60 NACK
+seg : 60
+ numsegrecu : 58
+Segment 59 NACK
+seg : 59
+ numsegrecu : 58
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 60 NACK
+seg : 60
+ numsegrecu : 59
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 62 NACK
+seg : 62
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 61 NACK
+seg : 61
+ numsegrecu : 60
+Segment 63 NACK
+seg : 63
+ numsegrecu : 61
+Segment 62 ACK
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 61
+Segment 62 ACK
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 NACK
+seg : 63
+ numsegrecu : 62
+Segment 63 ACK
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 71 NACK
+seg : 71
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 63
+Segment 64 NACK
+seg : 64
+ numsegrecu : 63
+Segment 64 ACK
+Segment 65 NACK
+seg : 65
+ numsegrecu : 64
+Segment 65 NACK
+seg : 65
+ numsegrecu : 63
+Segment 65 NACK
+seg : 65
+ numsegrecu : 68
+Segment 70 NACK
+seg : 70
+ numsegrecu : 71
+Segment 72 NACK
+seg : 72
+ numsegrecu : 70
+Segment 71 ACK
+Segment 72 NACK
+seg : 72
+ numsegrecu : 71
+Segment 73 NACK
+seg : 73
+ numsegrecu : 71
+Segment 72 NACK
+seg : 72
+ numsegrecu : 71
+Segment 73 NACK
+seg : 73
+ numsegrecu : 71
+Segment 72 NACK
+seg : 72
+ numsegrecu : 71
+Segment 72 NACK
+seg : 72
+ numsegrecu : 71
+Segment 72 NACK
+seg : 72
+ numsegrecu : 71
+Segment 72 NACK
+seg : 72
+ numsegrecu : 71
+Segment 73 NACK
+seg : 73
+ numsegrecu : 72
+Segment 73 NACK
+seg : 73
+ numsegrecu : 71
+Segment 72 ACK
+Segment 73 NACK
+seg : 73
+ numsegrecu : 72
+Segment 73 ACK
+Segment 74 NACK
+seg : 74
+ numsegrecu : 72
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 NACK
+seg : 74
+ numsegrecu : 73
+Segment 74 ACK
+Segment 76 NACK
+seg : 76
+ numsegrecu : 74
+Segment 77 NACK
+seg : 77
+ numsegrecu : 74
+Segment 75 NACK
+seg : 75
+ numsegrecu : 74
+Segment 75 NACK
+seg : 75
+ numsegrecu : 74
+Segment 75 NACK
+seg : 75
+ numsegrecu : 74
+Segment 76 NACK
+seg : 76
+ numsegrecu : 74
+Segment 76 NACK
+seg : 76
+ numsegrecu : 75
+Segment 76 NACK
+seg : 76
+ numsegrecu : 74
+Segment 76 ACK
+Segment 77 NACK
+seg : 77
+ numsegrecu : 76
+Segment 77 ACK
+Segment 79 NACK
+seg : 79
+ numsegrecu : 77
+Segment 79 NACK
+seg : 79
+ numsegrecu : 77
+Segment 79 NACK
+seg : 79
+ numsegrecu : 77
+Segment 78 NACK
+seg : 78
+ numsegrecu : 77
+Segment 79 NACK
+seg : 79
+ numsegrecu : 77
+Segment 78 NACK
+seg : 78
+ numsegrecu : 79
+Segment 80 NACK
+seg : 80
+ numsegrecu : 78
+Segment 79 NACK
+seg : 79
+ numsegrecu : 77
+Segment 80 NACK
+seg : 80
+ numsegrecu : 79
+Segment 80 NACK
+seg : 80
+ numsegrecu : 79
+Segment 81 NACK
+seg : 81
+ numsegrecu : 79
+Segment 80 NACK
+seg : 80
+ numsegrecu : 79
+Segment 80 NACK
+seg : 80
+ numsegrecu : 79
+Segment 80 ACK
+Segment 82 NACK
+seg : 82
+ numsegrecu : 80
+Segment 82 NACK
+seg : 82
+ numsegrecu : 80
+Segment 82 ACK
+Segment 83 NACK
+seg : 83
+ numsegrecu : 81
+Segment 82 NACK
+seg : 82
+ numsegrecu : 81
+Segment 82 NACK
+seg : 82
+ numsegrecu : 81
+Segment 82 NACK
+seg : 82
+ numsegrecu : 81
+Segment 82 ACK
+Segment 83 NACK
+seg : 83
+ numsegrecu : 82
+Segment 83 NACK
+seg : 83
+ numsegrecu : 82
+Segment 83 ACK
+Segment 89 NACK
+seg : 89
+ numsegrecu : 83
+Segment 84 NACK
+seg : 84
+ numsegrecu : 83
+Segment 84 NACK
+seg : 84
+ numsegrecu : 83
+Segment 84 NACK
+seg : 84
+ numsegrecu : 83
+Segment 87 NACK
+seg : 87
+ numsegrecu : 86
+Segment 88 ACK
+Segment 91 NACK
+seg : 91
+ numsegrecu : 89
+Segment 90 NACK
+seg : 90
+ numsegrecu : 89
+Segment 90 NACK
+seg : 90
+ numsegrecu : 89
+Segment 90 NACK
+seg : 90
+ numsegrecu : 89
+Segment 90 NACK
+seg : 90
+ numsegrecu : 89
+Segment 91 NACK
+seg : 91
+ numsegrecu : 89
+Segment 90 NACK
+seg : 90
+ numsegrecu : 89
+Segment 90 NACK
+seg : 90
+ numsegrecu : 89
+Segment 91 NACK
+seg : 91
+ numsegrecu : 90
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 92 NACK
+seg : 92
+ numsegrecu : 91
+Segment 94 NACK
+seg : 94
+ numsegrecu : 91
+Segment 92 ACK
+Segment 97 NACK
+seg : 97
+ numsegrecu : 93
+Segment 94 NACK
+seg : 94
+ numsegrecu : 92
+Segment 93 NACK
+seg : 93
+ numsegrecu : 92
+Segment 93 NACK
+seg : 93
+ numsegrecu : 94
+Segment 95 NACK
+seg : 95
+ numsegrecu : 94
+Segment 95 NACK
+seg : 95
+ numsegrecu : 94
+Segment 96 NACK
+seg : 96
+ numsegrecu : 95
+Segment 97 NACK
+seg : 97
+ numsegrecu : 96
+Segment 98 NACK
+seg : 98
+ numsegrecu : 97
+Segment 98 NACK
+seg : 98
+ numsegrecu : 97
+Segment 98 NACK
+seg : 98
+ numsegrecu : 97
+Segment 98 NACK
+seg : 98
+ numsegrecu : 97
+Segment 99 NACK
+seg : 99
+ numsegrecu : 97
+Segment 99 NACK
+seg : 99
+ numsegrecu : 97
+Segment 99 NACK
+seg : 99
+ numsegrecu : 98
+Segment 99 NACK
+seg : 99
+ numsegrecu : 97
+Segment 99 NACK
+seg : 99
+ numsegrecu : 98
+Segment 99 NACK
+seg : 99
+ numsegrecu : 98
+Segment 99 NACK
+seg : 99
+ numsegrecu : 98
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 101 NACK
+seg : 101
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 100 NACK
+seg : 100
+ numsegrecu : 99
+Segment 101 NACK
+seg : 101
+ numsegrecu : 100
+Segment 101 NACK
+seg : 101
+ numsegrecu : 100
+Segment 101 NACK
+seg : 101
+ numsegrecu : 100
+Segment 103 NACK
+seg : 103
+ numsegrecu : 100
+Segment 101 ACK
+Segment 102 NACK
+seg : 102
+ numsegrecu : 101
+Segment 103 NACK
+seg : 103
+ numsegrecu : 101
+Segment 102 NACK
+seg : 102
+ numsegrecu : 101
+Segment 103 NACK
+seg : 103
+ numsegrecu : 101
+Segment 102 NACK
+seg : 102
+ numsegrecu : 101
+Segment 103 NACK
+seg : 103
+ numsegrecu : 101
+Segment 102 ACK
+Segment 103 ACK
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 106 NACK
+seg : 106
+ numsegrecu : 103
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 104 NACK
+seg : 104
+ numsegrecu : 103
+Segment 104 ACK
+Segment 105 NACK
+seg : 105
+ numsegrecu : 103
+Segment 104 ACK
+Segment 106 NACK
+seg : 106
+ numsegrecu : 105
+Segment 106 ACK
+Segment 109 NACK
+seg : 109
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 108 NACK
+seg : 108
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 107 NACK
+seg : 107
+ numsegrecu : 106
+Segment 109 NACK
+seg : 109
+ numsegrecu : 106
+Segment 108 NACK
+seg : 108
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 111 NACK
+seg : 111
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 108
+Segment 109 ACK
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 111 NACK
+seg : 111
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 111 NACK
+seg : 111
+ numsegrecu : 110
+Segment 111 NACK
+seg : 111
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 111
+Segment 113 NACK
+seg : 113
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 110
+Segment 111 NACK
+seg : 111
+ numsegrecu : 109
+Segment 110 NACK
+seg : 110
+ numsegrecu : 111
+Segment 112 NACK
+seg : 112
+ numsegrecu : 111
+Segment 113 NACK
+seg : 113
+ numsegrecu : 112
+Segment 113 NACK
+seg : 113
+ numsegrecu : 112
+Segment 113 NACK
+seg : 113
+ numsegrecu : 111
+Segment 112 ACK
+Segment 113 NACK
+seg : 113
+ numsegrecu : 111
+Segment 113 ACK
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 115 NACK
+seg : 115
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 115 NACK
+seg : 115
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 NACK
+seg : 114
+ numsegrecu : 113
+Segment 114 ACK
+Segment 115 NACK
+seg : 115
+ numsegrecu : 114
+Segment 115 ACK
+Segment 117 NACK
+seg : 117
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 117 NACK
+seg : 117
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 116 NACK
+seg : 116
+ numsegrecu : 115
+Segment 117 NACK
+seg : 117
+ numsegrecu : 116
+Segment 117 ACK
+Segment 118 NACK
+seg : 118
+ numsegrecu : 117
+Segment 118 NACK
+seg : 118
+ numsegrecu : 117
+Segment 119 NACK
+seg : 119
+ numsegrecu : 117
+Segment 118 NACK
+seg : 118
+ numsegrecu : 117
+Segment 119 NACK
+seg : 119
+ numsegrecu : 117
+Segment 118 NACK
+seg : 118
+ numsegrecu : 117
+Segment 118 NACK
+seg : 118
+ numsegrecu : 117
+Segment 118 NACK
+seg : 118
+ numsegrecu : 117
+Segment 119 NACK
+seg : 119
+ numsegrecu : 117
+Segment 118 ACK
+Segment 119 NACK
+seg : 119
+ numsegrecu : 117
+Segment 118 ACK
+Segment 119 NACK
+seg : 119
+ numsegrecu : 118
+Segment 119 ACK
+Segment 121 NACK
+seg : 121
+ numsegrecu : 119
+Segment 120 NACK
+seg : 120
+ numsegrecu : 119
+Segment 120 NACK
+seg : 120
+ numsegrecu : 119
+Segment 120 NACK
+seg : 120
+ numsegrecu : 119
+Segment 120 NACK
+seg : 120
+ numsegrecu : 119
+Segment 120 NACK
+seg : 120
+ numsegrecu : 119
+Segment 121 NACK
+seg : 121
+ numsegrecu : 119
+Segment 121 NACK
+seg : 121
+ numsegrecu : 119
+Segment 120 ACK
+Segment 121 NACK
+seg : 121
+ numsegrecu : 119
+Segment 121 ACK
+Segment 123 NACK
+seg : 123
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 123 NACK
+seg : 123
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 121
+Segment 122 ACK
+Segment 123 NACK
+seg : 123
+ numsegrecu : 121
+Segment 122 NACK
+seg : 122
+ numsegrecu : 123
+Segment 125 NACK
+seg : 125
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 125 NACK
+seg : 125
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 124 NACK
+seg : 124
+ numsegrecu : 123
+Segment 125 ACK
+Segment 126 NACK
+seg : 126
+ numsegrecu : 125
+Segment 128 NACK
+seg : 128
+ numsegrecu : 125
+Segment 126 NACK
+seg : 126
+ numsegrecu : 125
+Segment 126 NACK
+seg : 126
+ numsegrecu : 125
+Segment 126 NACK
+seg : 126
+ numsegrecu : 125
+Segment 126 NACK
+seg : 126
+ numsegrecu : 125
+Segment 126 NACK
+seg : 126
+ numsegrecu : 125
+Segment 128 NACK
+seg : 128
+ numsegrecu : 126
+Segment 127 ACK
+Segment 130 NACK
+seg : 130
+ numsegrecu : 127
+Segment 129 NACK
+seg : 129
+ numsegrecu : 127
+Segment 128 NACK
+seg : 128
+ numsegrecu : 127
+Segment 128 NACK
+seg : 128
+ numsegrecu : 127
+Segment 129 NACK
+seg : 129
+ numsegrecu : 127
+Segment 128 NACK
+seg : 128
+ numsegrecu : 127
+Segment 129 ACK
+Segment 130 NACK
+seg : 130
+ numsegrecu : 128
+Segment 129 NACK
+seg : 129
+ numsegrecu : 128
+Segment 129 NACK
+seg : 129
+ numsegrecu : 130
+Segment 132 NACK
+seg : 132
+ numsegrecu : 130
+Segment 132 NACK
+seg : 132
+ numsegrecu : 130
+Segment 131 NACK
+seg : 131
+ numsegrecu : 130
+Segment 131 NACK
+seg : 131
+ numsegrecu : 130
+Segment 133 NACK
+seg : 133
+ numsegrecu : 130
+Segment 131 NACK
+seg : 131
+ numsegrecu : 130
+Segment 131 NACK
+seg : 131
+ numsegrecu : 130
+Segment 131 NACK
+seg : 131
+ numsegrecu : 130
+Segment 131 NACK
+seg : 131
+ numsegrecu : 132
+Segment 133 NACK
+seg : 133
+ numsegrecu : 132
+Segment 134 NACK
+seg : 134
+ numsegrecu : 132
+Segment 133 NACK
+seg : 133
+ numsegrecu : 132
+Segment 134 NACK
+seg : 134
+ numsegrecu : 133
+Segment 134 NACK
+seg : 134
+ numsegrecu : 132
+Segment 133 NACK
+seg : 133
+ numsegrecu : 132
+Segment 133 ACK
+Segment 134 NACK
+seg : 134
+ numsegrecu : 133
+Segment 134 NACK
+seg : 134
+ numsegrecu : 133
+Segment 134 NACK
+seg : 134
+ numsegrecu : 133
+Segment 134 NACK
+seg : 134
+ numsegrecu : 133
+Segment 134 NACK
+seg : 134
+ numsegrecu : 133
+Segment 134 ACK
+Segment 135 NACK
+seg : 135
+ numsegrecu : 134
+Segment 135 NACK
+seg : 135
+ numsegrecu : 134
+Segment 135 NACK
+seg : 135
+ numsegrecu : 134
+Segment 135 NACK
+seg : 135
+ numsegrecu : 134
+Segment 135 NACK
+seg : 135
+ numsegrecu : 134
+Segment 136 NACK
+seg : 136
+ numsegrecu : 134
+Segment 135 NACK
+seg : 135
+ numsegrecu : 134
+Segment 136 NACK
+seg : 136
+ numsegrecu : 134
+Segment 136 NACK
+seg : 136
+ numsegrecu : 134
+Segment 135 ACK
+Segment 136 NACK
+seg : 136
+ numsegrecu : 135
+Segment 136 NACK
+seg : 136
+ numsegrecu : 135
+Segment 136 ACK
+Segment 137 NACK
+seg : 137
+ numsegrecu : 135
+Segment 137 NACK
+seg : 137
+ numsegrecu : 136
+Segment 137 NACK
+seg : 137
+ numsegrecu : 136
+Segment 137 NACK
+seg : 137
+ numsegrecu : 136
+Segment 137 NACK
+seg : 137
+ numsegrecu : 136
+Segment 137 NACK
+seg : 137
+ numsegrecu : 136
+Segment 139 NACK
+seg : 139
+ numsegrecu : 136
+Segment 137 ACK
+Segment 139 NACK
+seg : 139
+ numsegrecu : 137
+Segment 138 NACK
+seg : 138
+ numsegrecu : 137
+Segment 138 NACK
+seg : 138
+ numsegrecu : 137
+Segment 138 NACK
+seg : 138
+ numsegrecu : 137
+Segment 139 NACK
+seg : 139
+ numsegrecu : 137
+Segment 138 ACK
+Segment 139 NACK
+seg : 139
+ numsegrecu : 137
+Segment 140 NACK
+seg : 140
+ numsegrecu : 139
+Segment 140 NACK
+seg : 140
+ numsegrecu : 139
+Segment 141 NACK
+seg : 141
+ numsegrecu : 139
+Segment 141 NACK
+seg : 141
+ numsegrecu : 139
+Segment 140 NACK
+seg : 140
+ numsegrecu : 139
+Segment 140 ACK
+Segment 141 NACK
+seg : 141
+ numsegrecu : 139
+Segment 140 ACK
+Segment 142 NACK
+seg : 142
+ numsegrecu : 141
+Segment 142 NACK
+seg : 142
+ numsegrecu : 141
+Segment 142 NACK
+seg : 142
+ numsegrecu : 141
+Segment 142 NACK
+seg : 142
+ numsegrecu : 141
+Segment 144 NACK
+seg : 144
+ numsegrecu : 141
+Segment 142 NACK
+seg : 142
+ numsegrecu : 141
+Segment 146 NACK
+seg : 146
+ numsegrecu : 143
+Segment 144 NACK
+seg : 144
+ numsegrecu : 142
+Segment 144 ACK
+Segment 146 NACK
+seg : 146
+ numsegrecu : 144
+Segment 145 NACK
+seg : 145
+ numsegrecu : 144
+Segment 145 NACK
+seg : 145
+ numsegrecu : 144
+Segment 145 NACK
+seg : 145
+ numsegrecu : 146
+Segment 148 NACK
+seg : 148
+ numsegrecu : 146
+Segment 147 NACK
+seg : 147
+ numsegrecu : 146
+Segment 149 NACK
+seg : 149
+ numsegrecu : 146
+Segment 151 NACK
+seg : 151
+ numsegrecu : 149
+Segment 150 NACK
+seg : 150
+ numsegrecu : 146
+Segment 147 NACK
+seg : 147
+ numsegrecu : 149
+Segment 150 NACK
+seg : 150
+ numsegrecu : 148
+Segment 149 NACK
+seg : 149
+ numsegrecu : 148
+Segment 149 NACK
+seg : 149
+ numsegrecu : 148
+Segment 151 ACK
+Segment 154 NACK
+seg : 154
+ numsegrecu : 151
+Segment 152 NACK
+seg : 152
+ numsegrecu : 151
+Segment 152 NACK
+seg : 152
+ numsegrecu : 151
+Segment 153 NACK
+seg : 153
+ numsegrecu : 151
+Segment 152 NACK
+seg : 152
+ numsegrecu : 151
+Segment 153 ACK
+Segment 154 NACK
+seg : 154
+ numsegrecu : 152
+Segment 154 ACK
+Segment 156 NACK
+seg : 156
+ numsegrecu : 154
+Segment 155 NACK
+seg : 155
+ numsegrecu : 154
+Segment 155 NACK
+seg : 155
+ numsegrecu : 154
+Segment 157 NACK
+seg : 157
+ numsegrecu : 154
+Segment 155 NACK
+seg : 155
+ numsegrecu : 154
+Segment 155 NACK
+seg : 155
+ numsegrecu : 154
+Segment 156 NACK
+seg : 156
+ numsegrecu : 154
+Segment 155 NACK
+seg : 155
+ numsegrecu : 154
+Segment 156 ACK
+Segment 157 NACK
+seg : 157
+ numsegrecu : 156
+Segment 157 NACK
+seg : 157
+ numsegrecu : 156
+Segment 157 NACK
+seg : 157
+ numsegrecu : 156
+Segment 157 ACK
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 159 NACK
+seg : 159
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 160 NACK
+seg : 160
+ numsegrecu : 157
+Segment 158 NACK
+seg : 158
+ numsegrecu : 157
+Segment 158 ACK
+Segment 160 NACK
+seg : 160
+ numsegrecu : 158
+Segment 160 NACK
+seg : 160
+ numsegrecu : 158
+Segment 159 NACK
+seg : 159
+ numsegrecu : 158
+Segment 159 ACK
+Segment 160 NACK
+seg : 160
+ numsegrecu : 159
+Segment 160 NACK
+seg : 160
+ numsegrecu : 159
+Segment 160 NACK
+seg : 160
+ numsegrecu : 159
+Segment 160 NACK
+seg : 160
+ numsegrecu : 159
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 161 ACK
+Segment 162 NACK
+seg : 162
+ numsegrecu : 160
+Segment 161 NACK
+seg : 161
+ numsegrecu : 160
+Segment 162 NACK
+seg : 162
+ numsegrecu : 161
+Segment 163 NACK
+seg : 163
+ numsegrecu : 161
+Segment 163 NACK
+seg : 163
+ numsegrecu : 161
+Segment 162 NACK
+seg : 162
+ numsegrecu : 161
+Segment 162 NACK
+seg : 162
+ numsegrecu : 161
+Segment 162 NACK
+seg : 162
+ numsegrecu : 161
+Segment 162 NACK
+seg : 162
+ numsegrecu : 161
+Segment 162 ACK
+Segment 163 NACK
+seg : 163
+ numsegrecu : 162
+Segment 163 NACK
+seg : 163
+ numsegrecu : 161
+Segment 162 ACK
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 162
+Segment 163 NACK
+seg : 163
+ numsegrecu : 162
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 NACK
+seg : 164
+ numsegrecu : 163
+Segment 164 ACK
+Segment 166 NACK
+seg : 166
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 166 NACK
+seg : 166
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 164
+Segment 166 ACK
+Segment 167 NACK
+seg : 167
+ numsegrecu : 164
+Segment 165 NACK
+seg : 165
+ numsegrecu : 166
+Segment 167 NACK
+seg : 167
+ numsegrecu : 166
+Segment 167 NACK
+seg : 167
+ numsegrecu : 166
+Segment 167 NACK
+seg : 167
+ numsegrecu : 166
+Segment 168 NACK
+seg : 168
+ numsegrecu : 166
+Segment 167 NACK
+seg : 167
+ numsegrecu : 166
+Segment 167 NACK
+seg : 167
+ numsegrecu : 166
+Segment 167 NACK
+seg : 167
+ numsegrecu : 166
+Segment 169 NACK
+seg : 169
+ numsegrecu : 167
+Segment 168 NACK
+seg : 168
+ numsegrecu : 167
+Segment 168 NACK
+seg : 168
+ numsegrecu : 167
+Segment 168 NACK
+seg : 168
+ numsegrecu : 167
+Segment 169 NACK
+seg : 169
+ numsegrecu : 167
+Segment 168 ACK
+Segment 169 NACK
+seg : 169
+ numsegrecu : 168
+Segment 169 NACK
+seg : 169
+ numsegrecu : 168
+Segment 169 NACK
+seg : 169
+ numsegrecu : 168
+Segment 169 NACK
+seg : 169
+ numsegrecu : 168
+Segment 169 NACK
+seg : 169
+ numsegrecu : 168
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 171 NACK
+seg : 171
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 171 NACK
+seg : 171
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 169
+Segment 170 ACK
+Segment 171 ACK
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 170
+Segment 171 NACK
+seg : 171
+ numsegrecu : 170
+Segment 172 NACK
+seg : 172
+ numsegrecu : 169
+Segment 170 NACK
+seg : 170
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 NACK
+seg : 172
+ numsegrecu : 171
+Segment 172 ACK
+Segment 173 NACK
+seg : 173
+ numsegrecu : 172
+Segment 173 NACK
+seg : 173
+ numsegrecu : 172
+Segment 173 NACK
+seg : 173
+ numsegrecu : 172
+Segment 173 NACK
+seg : 173
+ numsegrecu : 172
+Segment 175 NACK
+seg : 175
+ numsegrecu : 172
+Segment 173 NACK
+seg : 173
+ numsegrecu : 172
+Segment 173 ACK
+Segment 174 NACK
+seg : 174
+ numsegrecu : 173
+Segment 174 NACK
+seg : 174
+ numsegrecu : 173
+Segment 174 ACK
+Segment 177 NACK
+seg : 177
+ numsegrecu : 175
+Segment 178 NACK
+seg : 178
+ numsegrecu : 175
+Segment 177 NACK
+seg : 177
+ numsegrecu : 175
+Segment 177 NACK
+seg : 177
+ numsegrecu : 175
+Segment 176 NACK
+seg : 176
+ numsegrecu : 175
+Segment 176 NACK
+seg : 176
+ numsegrecu : 175
+Segment 176 NACK
+seg : 176
+ numsegrecu : 175
+Segment 178 NACK
+seg : 178
+ numsegrecu : 176
+Segment 177 ACK
+Segment 178 ACK
+Segment 179 NACK
+seg : 179
+ numsegrecu : 178
+Segment 179 NACK
+seg : 179
+ numsegrecu : 177
+Segment 178 ACK
+Segment 180 NACK
+seg : 180
+ numsegrecu : 178
+Segment 179 NACK
+seg : 179
+ numsegrecu : 178
+Segment 179 NACK
+seg : 179
+ numsegrecu : 178
+Segment 179 NACK
+seg : 179
+ numsegrecu : 178
+Segment 179 NACK
+seg : 179
+ numsegrecu : 178
+Segment 179 NACK
+seg : 179
+ numsegrecu : 178
+Segment 181 NACK
+seg : 181
+ numsegrecu : 179
+Segment 180 NACK
+seg : 180
+ numsegrecu : 179
+Segment 180 NACK
+seg : 180
+ numsegrecu : 178
+Segment 179 ACK
+Segment 180 ACK
+Segment 181 NACK
+seg : 181
+ numsegrecu : 179
+Segment 180 NACK
+seg : 180
+ numsegrecu : 178
+Segment 181 NACK
+seg : 181
+ numsegrecu : 180
+Segment 181 NACK
+seg : 181
+ numsegrecu : 180
+Segment 183 NACK
+seg : 183
+ numsegrecu : 180
+Segment 181 ACK
+Segment 182 NACK
+seg : 182
+ numsegrecu : 180
+Segment 181 NACK
+seg : 181
+ numsegrecu : 180
+Segment 181 ACK
+Segment 182 NACK
+seg : 182
+ numsegrecu : 181
+Segment 182 NACK
+seg : 182
+ numsegrecu : 181
+Segment 182 NACK
+seg : 182
+ numsegrecu : 181
+Segment 182 NACK
+seg : 182
+ numsegrecu : 181
+Segment 184 NACK
+seg : 184
+ numsegrecu : 181
+Segment 182 NACK
+seg : 182
+ numsegrecu : 181
+Segment 182 ACK
+Segment 183 NACK
+seg : 183
+ numsegrecu : 181
+Segment 182 NACK
+seg : 182
+ numsegrecu : 181
+Segment 183 ACK
+Segment 184 NACK
+seg : 184
+ numsegrecu : 183
+Segment 184 NACK
+seg : 184
+ numsegrecu : 183
+Segment 184 NACK
+seg : 184
+ numsegrecu : 183
+Segment 184 NACK
+seg : 184
+ numsegrecu : 183
+Segment 184 NACK
+seg : 184
+ numsegrecu : 183
+Segment 185 NACK
+seg : 185
+ numsegrecu : 183
+Segment 184 NACK
+seg : 184
+ numsegrecu : 183
+Segment 184 ACK
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 186 NACK
+seg : 186
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 NACK
+seg : 185
+ numsegrecu : 184
+Segment 185 ACK
+Segment 187 NACK
+seg : 187
+ numsegrecu : 185
+Segment 186 NACK
+seg : 186
+ numsegrecu : 185
+Segment 186 NACK
+seg : 186
+ numsegrecu : 185
+Segment 187 NACK
+seg : 187
+ numsegrecu : 185
+Segment 186 NACK
+seg : 186
+ numsegrecu : 185
+Segment 186 ACK
+Segment 187 NACK
+seg : 187
+ numsegrecu : 185
+Segment 186 ACK
+Segment 187 NACK
+seg : 187
+ numsegrecu : 186
+Segment 187 NACK
+seg : 187
+ numsegrecu : 186
+Segment 187 NACK
+seg : 187
+ numsegrecu : 186
+Segment 188 NACK
+seg : 188
+ numsegrecu : 186
+Segment 188 NACK
+seg : 188
+ numsegrecu : 185
+Segment 186 NACK
+seg : 186
+ numsegrecu : 187
+Segment 188 NACK
+seg : 188
+ numsegrecu : 187
+Segment 188 NACK
+seg : 188
+ numsegrecu : 187
+Segment 189 NACK
+seg : 189
+ numsegrecu : 187
+Segment 188 NACK
+seg : 188
+ numsegrecu : 187
+Segment 190 NACK
+seg : 190
+ numsegrecu : 187
+Segment 188 NACK
+seg : 188
+ numsegrecu : 187
+Segment 188 ACK
+Segment 189 NACK
+seg : 189
+ numsegrecu : 187
+Segment 188 ACK
+Segment 189 NACK
+seg : 189
+ numsegrecu : 188
+Segment 189 NACK
+seg : 189
+ numsegrecu : 188
+Segment 189 NACK
+seg : 189
+ numsegrecu : 188
+Segment 189 NACK
+seg : 189
+ numsegrecu : 188
+Segment 189 NACK
+seg : 189
+ numsegrecu : 187
+Segment 189 ACK
+Segment 191 NACK
+seg : 191
+ numsegrecu : 189
+Segment 190 ACK
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 192 NACK
+seg : 192
+ numsegrecu : 190
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 191 NACK
+seg : 191
+ numsegrecu : 190
+Segment 193 NACK
+seg : 193
+ numsegrecu : 191
+Segment 192 NACK
+seg : 192
+ numsegrecu : 191
+Segment 192 NACK
+seg : 192
+ numsegrecu : 191
+Segment 193 NACK
+seg : 193
+ numsegrecu : 192
+Segment 193 NACK
+seg : 193
+ numsegrecu : 191
+Segment 192 ACK
+Segment 193 NACK
+seg : 193
+ numsegrecu : 192
+Segment 193 NACK
+seg : 193
+ numsegrecu : 192
+Segment 193 NACK
+seg : 193
+ numsegrecu : 192
+Segment 194 NACK
+seg : 194
+ numsegrecu : 192
+Segment 198 NACK
+seg : 198
+ numsegrecu : 193
+Segment 196 NACK
+seg : 196
+ numsegrecu : 191
+Segment 192 NACK
+seg : 192
+ numsegrecu : 193
+Segment 194 NACK
+seg : 194
+ numsegrecu : 193
+Segment 194 NACK
+seg : 194
+ numsegrecu : 193
+Segment 194 ACK
+Segment 195 NACK
+seg : 195
+ numsegrecu : 194
+Segment 196 NACK
+seg : 196
+ numsegrecu : 193
+Segment 195 ACK
+Segment 196 NACK
+seg : 196
+ numsegrecu : 194
+Segment 195 NACK
+seg : 195
+ numsegrecu : 193
+Segment 194 NACK
+seg : 194
+ numsegrecu : 193
+Segment 194 NACK
+seg : 194
+ numsegrecu : 193
+Segment 194 NACK
+seg : 194
+ numsegrecu : 193
+Segment 196 NACK
+seg : 196
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 197
+Segment 198 ACK
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 201 NACK
+seg : 201
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 198
+Segment 199 NACK
+seg : 199
+ numsegrecu : 198
+Segment 199 ACK
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 NACK
+seg : 200
+ numsegrecu : 199
+Segment 200 ACK
+Segment 206 NACK
+seg : 206
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 ACK
+Segment 203 NACK
+seg : 203
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 203
+Segment 204 ACK
+Segment 205 ACK
+Segment 208 NACK
+seg : 208
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 201
+Segment 202 NACK
+seg : 202
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 208
+Segment 211 NACK
+seg : 211
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 206
+Segment 207 NACK
+seg : 207
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 208
+Segment 210 NACK
+seg : 210
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 210
+Segment 211 NACK
+seg : 211
+ numsegrecu : 209
+Segment 210 NACK
+seg : 210
+ numsegrecu : 211
+Segment 213 NACK
+seg : 213
+ numsegrecu : 211
+Segment 213 NACK
+seg : 213
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 211
+Segment 214 NACK
+seg : 214
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 211
+Segment 212 NACK
+seg : 212
+ numsegrecu : 213
+Segment 214 NACK
+seg : 214
+ numsegrecu : 212
+Segment 213 ACK
+Segment 214 NACK
+seg : 214
+ numsegrecu : 208
+Segment 209 NACK
+seg : 209
+ numsegrecu : 213
+Segment 214 NACK
+seg : 214
+ numsegrecu : 213
+Segment 214 NACK
+seg : 214
+ numsegrecu : 213
+Segment 214 NACK
+seg : 214
+ numsegrecu : 213
+Segment 215 NACK
+seg : 215
+ numsegrecu : 213
+Segment 214 ACK
+Segment 215 NACK
+seg : 215
+ numsegrecu : 213
+Segment 215 NACK
+seg : 215
+ numsegrecu : 214
+Segment 215 NACK
+seg : 215
+ numsegrecu : 214
+Segment 215 NACK
+seg : 215
+ numsegrecu : 214
+Segment 215 NACK
+seg : 215
+ numsegrecu : 214
+Segment 216 NACK
+seg : 216
+ numsegrecu : 214
+Segment 215 NACK
+seg : 215
+ numsegrecu : 214
+Segment 216 NACK
+seg : 216
+ numsegrecu : 214
+Segment 216 NACK
+seg : 216
+ numsegrecu : 215
+Segment 216 NACK
+seg : 216
+ numsegrecu : 215
+Segment 216 NACK
+seg : 216
+ numsegrecu : 213
+Segment 214 NACK
+seg : 214
+ numsegrecu : 215
+Segment 216 NACK
+seg : 216
+ numsegrecu : 215
+Segment 216 NACK
+seg : 216
+ numsegrecu : 215
+Segment 217 NACK
+seg : 217
+ numsegrecu : 215
+Segment 217 NACK
+seg : 217
+ numsegrecu : 215
+Segment 216 ACK
+Segment 217 NACK
+seg : 217
+ numsegrecu : 215
+Segment 216 ACK
+Segment 217 NACK
+seg : 217
+ numsegrecu : 216
+Segment 217 NACK
+seg : 217
+ numsegrecu : 216
+Segment 218 NACK
+seg : 218
+ numsegrecu : 216
+Segment 217 NACK
+seg : 217
+ numsegrecu : 216
+Segment 217 NACK
+seg : 217
+ numsegrecu : 216
+Segment 217 NACK
+seg : 217
+ numsegrecu : 216
+Segment 217 NACK
+seg : 217
+ numsegrecu : 216
+Segment 217 ACK
+Segment 218 NACK
+seg : 218
+ numsegrecu : 217
+Segment 218 NACK
+seg : 218
+ numsegrecu : 217
+Segment 218 NACK
+seg : 218
+ numsegrecu : 217
+Segment 218 NACK
+seg : 218
+ numsegrecu : 217
+Segment 218 NACK
+seg : 218
+ numsegrecu : 217
+Segment 218 NACK
+seg : 218
+ numsegrecu : 216
+Segment 217 NACK
+seg : 217
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 217
+Segment 218 ACK
+Segment 220 NACK
+seg : 220
+ numsegrecu : 218
+Segment 221 NACK
+seg : 221
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 217
+Segment 225 NACK
+seg : 225
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 218
+Segment 219 ACK
+Segment 220 NACK
+seg : 220
+ numsegrecu : 221
+Segment 222 NACK
+seg : 222
+ numsegrecu : 219
+Segment 220 NACK
+seg : 220
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 221
+Segment 222 NACK
+seg : 222
+ numsegrecu : 221
+Segment 222 NACK
+seg : 222
+ numsegrecu : 219
+Segment 220 ACK
+Segment 221 NACK
+seg : 221
+ numsegrecu : 219
+Segment 220 NACK
+seg : 220
+ numsegrecu : 221
+Segment 222 NACK
+seg : 222
+ numsegrecu : 220
+Segment 221 NACK
+seg : 221
+ numsegrecu : 220
+Segment 221 ACK
+Segment 222 NACK
+seg : 222
+ numsegrecu : 219
+Segment 220 NACK
+seg : 220
+ numsegrecu : 218
+Segment 221 NACK
+seg : 221
+ numsegrecu : 218
+Segment 219 NACK
+seg : 219
+ numsegrecu : 222
+Segment 223 NACK
+seg : 223
+ numsegrecu : 221
+Segment 224 NACK
+seg : 224
+ numsegrecu : 223
+Segment 224 NACK
+seg : 224
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 226 NACK
+seg : 226
+ numsegrecu : 225
+Segment 232 NACK
+seg : 232
+ numsegrecu : 226
+Segment 227 NACK
+seg : 227
+ numsegrecu : 225
+Segment 226 ACK
+Segment 227 NACK
+seg : 227
+ numsegrecu : 226
+Segment 227 NACK
+seg : 227
+ numsegrecu : 226
+Segment 227 NACK
+seg : 227
+ numsegrecu : 226
+Segment 227 NACK
+seg : 227
+ numsegrecu : 226
+Segment 227 NACK
+seg : 227
+ numsegrecu : 225
+Segment 226 ACK
+Segment 227 NACK
+seg : 227
+ numsegrecu : 226
+Segment 227 ACK
+Segment 228 NACK
+seg : 228
+ numsegrecu : 230
+Segment 231 NACK
+seg : 231
+ numsegrecu : 226
+Segment 227 NACK
+seg : 227
+ numsegrecu : 228
+Segment 229 NACK
+seg : 229
+ numsegrecu : 231
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 234 NACK
+seg : 234
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 234 NACK
+seg : 234
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 NACK
+seg : 233
+ numsegrecu : 232
+Segment 233 ACK
+Segment 234 NACK
+seg : 234
+ numsegrecu : 233
+Segment 236 NACK
+seg : 236
+ numsegrecu : 234
+Segment 235 NACK
+seg : 235
+ numsegrecu : 233
+Segment 234 ACK
+Segment 235 NACK
+seg : 235
+ numsegrecu : 234
+Segment 238 NACK
+seg : 238
+ numsegrecu : 233
+Segment 234 ACK
+Segment 235 NACK
+seg : 235
+ numsegrecu : 234
+Segment 235 NACK
+seg : 235
+ numsegrecu : 234
+Segment 235 NACK
+seg : 235
+ numsegrecu : 236
+Segment 237 NACK
+seg : 237
+ numsegrecu : 236
+Segment 237 NACK
+seg : 237
+ numsegrecu : 236
+Segment 237 NACK
+seg : 237
+ numsegrecu : 236
+Segment 237 NACK
+seg : 237
+ numsegrecu : 236
+Segment 237 NACK
+seg : 237
+ numsegrecu : 236
+Segment 239 NACK
+seg : 239
+ numsegrecu : 237
+Segment 242 NACK
+seg : 242
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 234
+Segment 235 NACK
+seg : 235
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 234
+Segment 235 NACK
+seg : 235
+ numsegrecu : 234
+Segment 235 NACK
+seg : 235
+ numsegrecu : 238
+Segment 239 ACK
+Segment 240 NACK
+seg : 240
+ numsegrecu : 238
+Segment 239 NACK
+seg : 239
+ numsegrecu : 238
+Segment 239 ACK
+Segment 240 NACK
+seg : 240
+ numsegrecu : 239
+Segment 240 NACK
+seg : 240
+ numsegrecu : 241
+Segment 246 NACK
+seg : 246
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 245 NACK
+seg : 245
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 243 NACK
+seg : 243
+ numsegrecu : 242
+Segment 244 ACK
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 245
+Segment 246 ACK
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 248 NACK
+seg : 248
+ numsegrecu : 246
+Segment 247 NACK
+seg : 247
+ numsegrecu : 246
+Segment 247 ACK
+Segment 248 NACK
+seg : 248
+ numsegrecu : 247
+Segment 248 NACK
+seg : 248
+ numsegrecu : 247
+Segment 248 NACK
+seg : 248
+ numsegrecu : 247
+Segment 248 NACK
+seg : 248
+ numsegrecu : 247
+Segment 249 NACK
+seg : 249
+ numsegrecu : 247
+Segment 248 NACK
+seg : 248
+ numsegrecu : 247
+Segment 248 NACK
+seg : 248
+ numsegrecu : 247
+Segment 249 NACK
+seg : 249
+ numsegrecu : 248
+Segment 249 NACK
+seg : 249
+ numsegrecu : 247
+Segment 248 ACK
+Segment 249 NACK
+seg : 249
+ numsegrecu : 248
+Segment 249 NACK
+seg : 249
+ numsegrecu : 248
+Segment 249 NACK
+seg : 249
+ numsegrecu : 248
+Segment 250 NACK
+seg : 250
+ numsegrecu : 248
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 251 NACK
+seg : 251
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 NACK
+seg : 250
+ numsegrecu : 249
+Segment 250 ACK
+Segment 253 NACK
+seg : 253
+ numsegrecu : 250
+Segment 251 NACK
+seg : 251
+ numsegrecu : 250
+Segment 251 NACK
+seg : 251
+ numsegrecu : 250
+Segment 251 NACK
+seg : 251
+ numsegrecu : 250
+Segment 252 NACK
+seg : 252
+ numsegrecu : 250
+Segment 251 ACK
+Segment 252 NACK
+seg : 252
+ numsegrecu : 251
+Segment 252 NACK
+seg : 252
+ numsegrecu : 251
+Segment 252 NACK
+seg : 252
+ numsegrecu : 251
+Segment 252 NACK
+seg : 252
+ numsegrecu : 251
+Segment 253 ACK
+Segment 254 NACK
+seg : 254
+ numsegrecu : 252
+Segment 253 ACK
+Segment 254 NACK
+seg : 254
+ numsegrecu : 253
+Segment 255 NACK
+seg : 255
+ numsegrecu : 253
+Segment 254 NACK
+seg : 254
+ numsegrecu : 253
+Segment 254 NACK
+seg : 254
+ numsegrecu : 253
+Segment 254 NACK
+seg : 254
+ numsegrecu : 253
+Segment 254 NACK
+seg : 254
+ numsegrecu : 253
+Segment 254 NACK
+seg : 254
+ numsegrecu : 253
+Segment 256 NACK
+seg : 256
+ numsegrecu : 254
+Segment 255 NACK
+seg : 255
+ numsegrecu : 253
+Segment 254 ACK
+Segment 255 NACK
+seg : 255
+ numsegrecu : 254
+Segment 255 NACK
+seg : 255
+ numsegrecu : 254
+Segment 256 NACK
+seg : 256
+ numsegrecu : 255
+Segment 256 NACK
+seg : 256
+ numsegrecu : 255
+Segment 256 NACK
+seg : 256
+ numsegrecu : 255
+Segment 256 NACK
+seg : 256
+ numsegrecu : 255
+Segment 256 NACK
+seg : 256
+ numsegrecu : 255
+Segment 256 NACK
+seg : 256
+ numsegrecu : 255
+Segment 257 NACK
+seg : 257
+ numsegrecu : 255
+Segment 256 ACK
+Segment 258 NACK
+seg : 258
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 258 NACK
+seg : 258
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 257 NACK
+seg : 257
+ numsegrecu : 256
+Segment 257 ACK
+Segment 258 NACK
+seg : 258
+ numsegrecu : 257
+Segment 258 NACK
+seg : 258
+ numsegrecu : 257
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 260 NACK
+seg : 260
+ numsegrecu : 258
+Segment 260 NACK
+seg : 260
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 NACK
+seg : 259
+ numsegrecu : 258
+Segment 259 ACK
+Segment 260 NACK
+seg : 260
+ numsegrecu : 259
+Segment 260 NACK
+seg : 260
+ numsegrecu : 259
+Segment 260 NACK
+seg : 260
+ numsegrecu : 259
+Segment 260 ACK
+Segment 261 NACK
+seg : 261
+ numsegrecu : 259
+Segment 261 NACK
+seg : 261
+ numsegrecu : 260
+Segment 263 NACK
+seg : 263
+ numsegrecu : 260
+Segment 261 NACK
+seg : 261
+ numsegrecu : 260
+Segment 261 NACK
+seg : 261
+ numsegrecu : 260
+Segment 261 NACK
+seg : 261
+ numsegrecu : 260
+Segment 261 NACK
+seg : 261
+ numsegrecu : 260
+Segment 261 NACK
+seg : 261
+ numsegrecu : 260
+Segment 261 ACK
+Segment 262 NACK
+seg : 262
+ numsegrecu : 261
+Segment 262 NACK
+seg : 262
+ numsegrecu : 260
+Segment 263 NACK
+seg : 263
+ numsegrecu : 261
+Segment 263 NACK
+seg : 263
+ numsegrecu : 262
+Segment 263 ACK
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 265 NACK
+seg : 265
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 265 NACK
+seg : 265
+ numsegrecu : 263
+Segment 264 NACK
+seg : 264
+ numsegrecu : 263
+Segment 264 ACK
+Segment 266 NACK
+seg : 266
+ numsegrecu : 264
+Segment 265 NACK
+seg : 265
+ numsegrecu : 264
+Segment 265 NACK
+seg : 265
+ numsegrecu : 264
+Segment 266 NACK
+seg : 266
+ numsegrecu : 264
+Segment 266 NACK
+seg : 266
+ numsegrecu : 265
+Segment 266 NACK
+seg : 266
+ numsegrecu : 265
+Segment 267 NACK
+seg : 267
+ numsegrecu : 265
+Segment 266 NACK
+seg : 266
+ numsegrecu : 265
+Segment 266 ACK
+Segment 267 NACK
+seg : 267
+ numsegrecu : 265
+Segment 266 ACK
+Segment 267 NACK
+seg : 267
+ numsegrecu : 266
+Segment 267 NACK
+seg : 267
+ numsegrecu : 266
+Segment 268 NACK
+seg : 268
+ numsegrecu : 266
+Segment 267 NACK
+seg : 267
+ numsegrecu : 266
+Segment 267 ACK
+Segment 268 NACK
+seg : 268
+ numsegrecu : 267
+Segment 268 NACK
+seg : 268
+ numsegrecu : 266
+Segment 267 NACK
+seg : 267
+ numsegrecu : 266
+Segment 268 NACK
+seg : 268
+ numsegrecu : 267
+Segment 268 NACK
+seg : 268
+ numsegrecu : 267
+Segment 268 NACK
+seg : 268
+ numsegrecu : 267
+Segment 269 NACK
+seg : 269
+ numsegrecu : 267
+Segment 268 ACK
+Segment 270 NACK
+seg : 270
+ numsegrecu : 268
+Segment 269 NACK
+seg : 269
+ numsegrecu : 268
+Segment 269 NACK
+seg : 269
+ numsegrecu : 268
+Segment 269 NACK
+seg : 269
+ numsegrecu : 268
+Segment 269 NACK
+seg : 269
+ numsegrecu : 268
+Segment 270 NACK
+seg : 270
+ numsegrecu : 268
+Segment 269 NACK
+seg : 269
+ numsegrecu : 268
+Segment 269 NACK
+seg : 269
+ numsegrecu : 268
+Segment 270 NACK
+seg : 270
+ numsegrecu : 269
+Segment 270 NACK
+seg : 270
+ numsegrecu : 269
+Segment 270 ACK
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 271 NACK
+seg : 271
+ numsegrecu : 270
+Segment 272 NACK
+seg : 272
+ numsegrecu : 270
+Segment 271 ACK
+Segment 272 NACK
+seg : 272
+ numsegrecu : 270
+Segment 273 NACK
+seg : 273
+ numsegrecu : 271
+Segment 272 NACK
+seg : 272
+ numsegrecu : 271
+Segment 272 NACK
+seg : 272
+ numsegrecu : 271
+Segment 272 NACK
+seg : 272
+ numsegrecu : 271
+Segment 273 NACK
+seg : 273
+ numsegrecu : 271
+Segment 272 NACK
+seg : 272
+ numsegrecu : 271
+Segment 273 NACK
+seg : 273
+ numsegrecu : 272
+Segment 273 NACK
+seg : 273
+ numsegrecu : 272
+Segment 273 NACK
+seg : 273
+ numsegrecu : 272
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 275 NACK
+seg : 275
+ numsegrecu : 273
+Segment 275 NACK
+seg : 275
+ numsegrecu : 273
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 274 NACK
+seg : 274
+ numsegrecu : 273
+Segment 274 ACK
+Segment 275 NACK
+seg : 275
+ numsegrecu : 274
+Segment 275 NACK
+seg : 275
+ numsegrecu : 274
+Segment 275 NACK
+seg : 275
+ numsegrecu : 274
+Segment 277 NACK
+seg : 277
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 275
+Segment 277 NACK
+seg : 277
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 275
+Segment 277 NACK
+seg : 277
+ numsegrecu : 276
+Segment 277 NACK
+seg : 277
+ numsegrecu : 275
+Segment 276 NACK
+seg : 276
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 279 NACK
+seg : 279
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 278 NACK
+seg : 278
+ numsegrecu : 277
+Segment 279 ACK
+Segment 280 NACK
+seg : 280
+ numsegrecu : 278
+Segment 279 NACK
+seg : 279
+ numsegrecu : 278
+Segment 279 NACK
+seg : 279
+ numsegrecu : 278
+Segment 279 ACK
+Segment 280 NACK
+seg : 280
+ numsegrecu : 279
+Segment 280 NACK
+seg : 280
+ numsegrecu : 279
+Segment 280 NACK
+seg : 280
+ numsegrecu : 279
+Segment 281 NACK
+seg : 281
+ numsegrecu : 279
+Segment 280 NACK
+seg : 280
+ numsegrecu : 279
+Segment 281 NACK
+seg : 281
+ numsegrecu : 279
+Segment 280 NACK
+seg : 280
+ numsegrecu : 279
+Segment 280 NACK
+seg : 280
+ numsegrecu : 279
+Segment 280 ACK
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 NACK
+seg : 281
+ numsegrecu : 280
+Segment 281 ACK
+Segment 283 NACK
+seg : 283
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 283 NACK
+seg : 283
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 282 NACK
+seg : 282
+ numsegrecu : 281
+Segment 283 NACK
+seg : 283
+ numsegrecu : 281
+Segment 282 ACK
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 285 NACK
+seg : 285
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 285 NACK
+seg : 285
+ numsegrecu : 283
+Segment 284 NACK
+seg : 284
+ numsegrecu : 283
+Segment 284 ACK
+Segment 285 NACK
+seg : 285
+ numsegrecu : 283
+Segment 285 NACK
+seg : 285
+ numsegrecu : 284
+Segment 285 ACK
+Segment 289 NACK
+seg : 289
+ numsegrecu : 285
+Segment 286 NACK
+seg : 286
+ numsegrecu : 285
+Segment 286 NACK
+seg : 286
+ numsegrecu : 285
+Segment 286 NACK
+seg : 286
+ numsegrecu : 285
+Segment 286 NACK
+seg : 286
+ numsegrecu : 285
+Segment 286 NACK
+seg : 286
+ numsegrecu : 285
+Segment 288 ACK
+Segment 289 NACK
+seg : 289
+ numsegrecu : 287
+Segment 289 ACK
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 298 NACK
+seg : 298
+ numsegrecu : 291
+Segment 292 NACK
+seg : 292
+ numsegrecu : 290
+Segment 291 NACK
+seg : 291
+ numsegrecu : 289
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 290 NACK
+seg : 290
+ numsegrecu : 289
+Segment 290 ACK
+Segment 291 NACK
+seg : 291
+ numsegrecu : 292
+Segment 293 NACK
+seg : 293
+ numsegrecu : 294
+Segment 295 NACK
+seg : 295
+ numsegrecu : 290
+Segment 291 NACK
+seg : 291
+ numsegrecu : 290
+Segment 292 NACK
+seg : 292
+ numsegrecu : 295
+Segment 296 ACK
+Segment 299 NACK
+seg : 299
+ numsegrecu : 297
+Segment 298 ACK
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 300 NACK
+seg : 300
+ numsegrecu : 298
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 299 NACK
+seg : 299
+ numsegrecu : 298
+Segment 300 NACK
+seg : 300
+ numsegrecu : 298
+Segment 300 NACK
+seg : 300
+ numsegrecu : 299
+Segment 301 NACK
+seg : 301
+ numsegrecu : 299
+Segment 300 NACK
+seg : 300
+ numsegrecu : 299
+Segment 300 NACK
+seg : 300
+ numsegrecu : 299
+Segment 300 ACK
+Segment 301 NACK
+seg : 301
+ numsegrecu : 300
+Segment 301 NACK
+seg : 301
+ numsegrecu : 300
+Segment 301 NACK
+seg : 301
+ numsegrecu : 300
+Segment 301 NACK
+seg : 301
+ numsegrecu : 300
+Segment 303 NACK
+seg : 303
+ numsegrecu : 300
+Segment 301 NACK
+seg : 301
+ numsegrecu : 300
+Segment 301 ACK
+Segment 302 NACK
+seg : 302
+ numsegrecu : 301
+Segment 303 NACK
+seg : 303
+ numsegrecu : 301
+Segment 302 NACK
+seg : 302
+ numsegrecu : 301
+Segment 302 NACK
+seg : 302
+ numsegrecu : 301
+Segment 303 NACK
+seg : 303
+ numsegrecu : 302
+Segment 303 ACK
+Segment 305 NACK
+seg : 305
+ numsegrecu : 303
+Segment 304 NACK
+seg : 304
+ numsegrecu : 303
+Segment 304 NACK
+seg : 304
+ numsegrecu : 303
+Segment 304 NACK
+seg : 304
+ numsegrecu : 303
+Segment 304 NACK
+seg : 304
+ numsegrecu : 303
+Segment 305 NACK
+seg : 305
+ numsegrecu : 303
+Segment 305 NACK
+seg : 305
+ numsegrecu : 303
+Segment 304 NACK
+seg : 304
+ numsegrecu : 305
+Segment 306 NACK
+seg : 306
+ numsegrecu : 305
+Segment 306 NACK
+seg : 306
+ numsegrecu : 303
+Segment 304 NACK
+seg : 304
+ numsegrecu : 305
+Segment 306 NACK
+seg : 306
+ numsegrecu : 305
+Segment 306 NACK
+seg : 306
+ numsegrecu : 305
+Segment 308 NACK
+seg : 308
+ numsegrecu : 305
+Segment 306 NACK
+seg : 306
+ numsegrecu : 305
+Segment 306 NACK
+seg : 306
+ numsegrecu : 305
+Segment 306 ACK
+Segment 307 NACK
+seg : 307
+ numsegrecu : 306
+Segment 307 NACK
+seg : 307
+ numsegrecu : 306
+Segment 307 NACK
+seg : 307
+ numsegrecu : 306
+Segment 307 NACK
+seg : 307
+ numsegrecu : 306
+Segment 307 NACK
+seg : 307
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 306
+Segment 307 NACK
+seg : 307
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 307
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 NACK
+seg : 309
+ numsegrecu : 308
+Segment 309 ACK
+Segment 310 NACK
+seg : 310
+ numsegrecu : 309
+Segment 310 NACK
+seg : 310
+ numsegrecu : 309
+Segment 311 NACK
+seg : 311
+ numsegrecu : 309
+Segment 313 NACK
+seg : 313
+ numsegrecu : 309
+Segment 310 ACK
+Segment 311 NACK
+seg : 311
+ numsegrecu : 309
+Segment 310 NACK
+seg : 310
+ numsegrecu : 309
+Segment 310 NACK
+seg : 310
+ numsegrecu : 309
+Segment 311 ACK
+Segment 312 NACK
+seg : 312
+ numsegrecu : 309
+Segment 310 NACK
+seg : 310
+ numsegrecu : 309
+Segment 310 NACK
+seg : 310
+ numsegrecu : 309
+Segment 310 ACK
+Segment 311 ACK
+Segment 312 NACK
+seg : 312
+ numsegrecu : 311
+Segment 313 ACK
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 312
+Segment 313 ACK
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 NACK
+seg : 314
+ numsegrecu : 313
+Segment 314 ACK
+Segment 315 NACK
+seg : 315
+ numsegrecu : 313
+Segment 315 NACK
+seg : 315
+ numsegrecu : 314
+Segment 315 NACK
+seg : 315
+ numsegrecu : 314
+Segment 315 NACK
+seg : 315
+ numsegrecu : 314
+Segment 315 NACK
+seg : 315
+ numsegrecu : 314
+Segment 315 NACK
+seg : 315
+ numsegrecu : 314
+Segment 316 NACK
+seg : 316
+ numsegrecu : 314
+Segment 315 ACK
+Segment 317 NACK
+seg : 317
+ numsegrecu : 314
+Segment 315 ACK
+Segment 316 NACK
+seg : 316
+ numsegrecu : 315
+Segment 317 NACK
+seg : 317
+ numsegrecu : 315
+Segment 317 NACK
+seg : 317
+ numsegrecu : 315
+Segment 316 NACK
+seg : 316
+ numsegrecu : 315
+Segment 316 NACK
+seg : 316
+ numsegrecu : 315
+Segment 318 NACK
+seg : 318
+ numsegrecu : 316
+Segment 317 NACK
+seg : 317
+ numsegrecu : 316
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 319 NACK
+seg : 319
+ numsegrecu : 317
+Segment 318 NACK
+seg : 318
+ numsegrecu : 317
+Segment 319 NACK
+seg : 319
+ numsegrecu : 318
+Segment 319 NACK
+seg : 319
+ numsegrecu : 317
+Segment 319 NACK
+seg : 319
+ numsegrecu : 318
+Segment 320 NACK
+seg : 320
+ numsegrecu : 318
+Segment 319 NACK
+seg : 319
+ numsegrecu : 318
+Segment 319 NACK
+seg : 319
+ numsegrecu : 318
+Segment 320 NACK
+seg : 320
+ numsegrecu : 318
+Segment 319 ACK
+Segment 320 NACK
+seg : 320
+ numsegrecu : 319
+Segment 320 NACK
+seg : 320
+ numsegrecu : 319
+Segment 320 NACK
+seg : 320
+ numsegrecu : 319
+Segment 320 NACK
+seg : 320
+ numsegrecu : 319
+Segment 320 NACK
+seg : 320
+ numsegrecu : 319
+Segment 321 NACK
+seg : 321
+ numsegrecu : 319
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 NACK
+seg : 321
+ numsegrecu : 320
+Segment 321 ACK
+Segment 322 NACK
+seg : 322
+ numsegrecu : 320
+Segment 321 ACK
+Segment 322 NACK
+seg : 322
+ numsegrecu : 321
+Segment 323 NACK
+seg : 323
+ numsegrecu : 321
+Segment 322 NACK
+seg : 322
+ numsegrecu : 321
+Segment 322 NACK
+seg : 322
+ numsegrecu : 321
+Segment 323 NACK
+seg : 323
+ numsegrecu : 321
+Segment 322 NACK
+seg : 322
+ numsegrecu : 321
+Segment 322 ACK
+Segment 323 NACK
+seg : 323
+ numsegrecu : 322
+Segment 323 NACK
+seg : 323
+ numsegrecu : 321
+Segment 324 NACK
+seg : 324
+ numsegrecu : 322
+Segment 323 NACK
+seg : 323
+ numsegrecu : 322
+Segment 323 ACK
+Segment 324 NACK
+seg : 324
+ numsegrecu : 323
+Segment 324 NACK
+seg : 324
+ numsegrecu : 323
+Segment 324 NACK
+seg : 324
+ numsegrecu : 323
+Segment 325 NACK
+seg : 325
+ numsegrecu : 323
+Segment 325 NACK
+seg : 325
+ numsegrecu : 323
+Segment 324 NACK
+seg : 324
+ numsegrecu : 323
+Segment 324 ACK
+Segment 326 NACK
+seg : 326
+ numsegrecu : 324
+Segment 325 NACK
+seg : 325
+ numsegrecu : 324
+Segment 325 NACK
+seg : 325
+ numsegrecu : 324
+Segment 326 NACK
+seg : 326
+ numsegrecu : 325
+Segment 328 NACK
+seg : 328
+ numsegrecu : 325
+Segment 326 NACK
+seg : 326
+ numsegrecu : 325
+Segment 326 NACK
+seg : 326
+ numsegrecu : 325
+Segment 327 NACK
+seg : 327
+ numsegrecu : 326
+Segment 327 NACK
+seg : 327
+ numsegrecu : 326
+Segment 329 NACK
+seg : 329
+ numsegrecu : 326
+Segment 328 NACK
+seg : 328
+ numsegrecu : 327
+Segment 329 NACK
+seg : 329
+ numsegrecu : 328
+Segment 330 NACK
+seg : 330
+ numsegrecu : 328
+Segment 329 NACK
+seg : 329
+ numsegrecu : 328
+Segment 329 NACK
+seg : 329
+ numsegrecu : 328
+Segment 331 NACK
+seg : 331
+ numsegrecu : 329
+Segment 330 NACK
+seg : 330
+ numsegrecu : 329
+Segment 331 NACK
+seg : 331
+ numsegrecu : 329
+Segment 330 NACK
+seg : 330
+ numsegrecu : 329
+Segment 330 NACK
+seg : 330
+ numsegrecu : 329
+Segment 330 NACK
+seg : 330
+ numsegrecu : 329
+Segment 332 NACK
+seg : 332
+ numsegrecu : 330
+Segment 331 NACK
+seg : 331
+ numsegrecu : 330
+Segment 331 NACK
+seg : 331
+ numsegrecu : 330
+Segment 332 NACK
+seg : 332
+ numsegrecu : 331
+Segment 332 NACK
+seg : 332
+ numsegrecu : 331
+Segment 332 NACK
+seg : 332
+ numsegrecu : 331
+Segment 332 NACK
+seg : 332
+ numsegrecu : 331
+Segment 332 NACK
+seg : 332
+ numsegrecu : 331
+Segment 332 NACK
+seg : 332
+ numsegrecu : 331
+Segment 334 NACK
+seg : 334
+ numsegrecu : 332
+Segment 333 NACK
+seg : 333
+ numsegrecu : 332
+Segment 335 NACK
+seg : 335
+ numsegrecu : 332
+Segment 333 NACK
+seg : 333
+ numsegrecu : 332
+Segment 333 NACK
+seg : 333
+ numsegrecu : 332
+Segment 333 NACK
+seg : 333
+ numsegrecu : 332
+Segment 333 ACK
+Segment 334 NACK
+seg : 334
+ numsegrecu : 332
+Segment 334 ACK
+Segment 335 NACK
+seg : 335
+ numsegrecu : 334
+Segment 335 NACK
+seg : 335
+ numsegrecu : 334
+Segment 335 NACK
+seg : 335
+ numsegrecu : 334
+Segment 335 ACK
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 337 NACK
+seg : 337
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 NACK
+seg : 336
+ numsegrecu : 335
+Segment 336 ACK
+Segment 338 NACK
+seg : 338
+ numsegrecu : 336
+Segment 337 NACK
+seg : 337
+ numsegrecu : 336
+Segment 337 NACK
+seg : 337
+ numsegrecu : 336
+Segment 338 NACK
+seg : 338
+ numsegrecu : 337
+Segment 338 NACK
+seg : 338
+ numsegrecu : 337
+Segment 338 NACK
+seg : 338
+ numsegrecu : 337
+Segment 338 NACK
+seg : 338
+ numsegrecu : 337
+Segment 340 NACK
+seg : 340
+ numsegrecu : 338
+Segment 339 NACK
+seg : 339
+ numse
