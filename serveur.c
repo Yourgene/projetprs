@@ -17,8 +17,6 @@
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
-double calculrtt(struct timeval *debut, struct timeval* fin);
-void inittab(unsigned long * tabrtt);
 
 struct timeval end[10000], start[10000];
 double t1,t2;
@@ -159,7 +157,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		char c;
 		int nbseg, seg=0;
 		int taillef=0, indexrtt=0;
-		double rtt;
+		double rtt=0, rttmoy;
 		int lastseg=0;
 		int sstresh = 9999999;
 		int duplicateACK=0;
@@ -212,7 +210,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			lastseg = taillef%1400;
 			//printf("lastseg : %d\n",lastseg);
 		}else{
-			nbseg = (taillef/1400) + 1;
+			nbseg = (taillef/1400);
 		}
 		i=0;
 		//envoi des segments du fichier
@@ -233,25 +231,27 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						
 						numsegrecu=extractack(bufferrec);
 						//calcul rtt
-						gettimeofday(&end[numsegrecu], NULL); 
-
+						/*gettimeofday(&end[numsegrecu], NULL); 
+						t1=0;
+						t2=0;
 						//calcul 1 val rtt
-						t1 += debut.tv_sec+(debut.tv_usec/1000000.0);
-						t2 += fin.tv_sec+(fin.tv_usec/1000000.0);
-
+						t1 += start[numsegrecu].tv_sec+(start[numsegrecu].tv_usec/1000000.0);
+						t2 += end[numsegrecu].tv_sec+(end[numsegrecu].tv_usec/1000000.0);
+						rtt = rtt + t2-t1;
 						indexrtt++;
-						if (indexrtt==20){
-							t1=0;
-							t2=0;
-							rtt = calculrtt(start, end);
-
-
-
+						if (indexrtt==5){
+							rttmoy = (rtt/5);
+							rtt=0;
 							indexrtt=0;
-						}
-						printf("DEBUG : RTT : %f\n", rtt);
+						}*/
+						//printf("DEBUG : RTT : %f\n", rttmoy);
 						if(segaack==numsegrecu){
-							window++;
+							
+							if(window >= sstresh){
+								//Congestion avoidance
+							}else{
+								window++; //slow start
+							}
 							printf("ACK OK : %d\n",numsegrecu);
 							segaack++;
 						}else{
@@ -260,8 +260,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}else{
 								duplicateACK=0;
 								sstresh=(seg-numsegrecu)/2;
-								window=sstresh;
-								seg = numsegrecu;
+								window=1;
+								seg = numsegrecu+1;
 							}
 						}
 
@@ -269,8 +269,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
     	    	}
     		}else{
 					
-						if(seg<nbseg){
-							do{
+				if(seg<nbseg){
+						do{
 							for(i=0;i<6;i++){
 								tab[i]='\0';
 							}
@@ -283,12 +283,13 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
 							}
-							gettimeofday(&start[seg], NULL);//obtenir temps systeme pour rtt
+							//gettimeofday(&start[seg], NULL);//obtenir temps systeme pour rtt
 							seg++;
-							//	printf("segment n° %d sent\n",seg);
+							//	printf("segment n° %d sent sur %d\n",seg, nbseg);
 							segenv++;
 						}
 						while(segenv<window);
+						//printf ("DEBUG : window : %d\n", window);
 						segenv=0;
 				}else{
 
@@ -310,12 +311,12 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						//printf("segment lastseg n° %d sent\n",seg);
 						//acquittement des segments reçus
-						if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
+						/*if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
 						{
 							perror( "recvfrom() error \n" );
 							return -1;
 						}
-						numsegrecu=extractack(bufferrec);
+						numsegrecu=extractack(bufferrec);*/
 						
 					}
 				}
@@ -357,20 +358,6 @@ int extractack(char * t){
 	}
 }
 
-double calculrtt(struct timeval *debut, struct timeval* fin){
-	double rtt;
-	int i;
-	for (i=0;i<20;i++){
-		t1 += debut[i].tv_sec+(debut[i].tv_usec/1000000.0);
-		t2 += fin[i].tv_sec+(fin[i].tv_usec/1000000.0);
-	}
-	rtt = (t2-t1)/100.0;
-	return rtt;
-}
-
-void inittab(unsigned long * tabrtt){
-	int i;
-	for(i=0;i<20;i++){
-		tabrtt[i]=20000;
-	}
-}
+//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg
+//./client1 192.168.5.298 8080 sample4_l.jpg
+//./serveur 8080
