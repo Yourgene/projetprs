@@ -18,6 +18,11 @@
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
 
+//return the new flightSize
+int updateFlightSize(int seg, int numsegrecu){
+	return (seg-numsegrecu);
+}
+
 struct timeval end[10000], start[10000];
 double t1,t2;
 
@@ -167,6 +172,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int numsegrecu;
 		int segenv=0;
 		char bufferrec[RCVSIZE];
+		int flightSize =0;
 		//ouverture fichier
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
@@ -180,12 +186,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		struct pollfd ufds[1];
 		ufds[0].fd = descenv2;
 		ufds[0].events = POLLIN;
-		//envoi d'un message prevenant de l'envoi d'un fichier
-		/*char txt[]="file";
-		//printf("envoi taille fichier\n");
-		if(sendto(descenv2, &txt, sizeof(txt), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-			perror("send preventing msg error\n");
-		}*/
+
 		//envoi taille fichier
 		while(1)
 	  	{
@@ -215,8 +216,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		i=0;
 		//envoi des segments du fichier
 		do{
-			
-			
 			//acquittement des segments reçus
 			 // wait for events on the sockets, 1ms timeout
    			rv = poll(ufds, 1, 0);
@@ -230,6 +229,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						
 						numsegrecu=extractack(bufferrec);
+
+						flightSize = updateFlightSize(seg, numsegrecu);//maj du flightSize
+
 						//calcul rtt
 						/*gettimeofday(&end[numsegrecu], NULL); 
 						t1=0;
@@ -247,29 +249,29 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						//printf("DEBUG : RTT : %f\n", rttmoy);
 						if(segaack==numsegrecu){
 							
-							if(window >= sstresh){
+							if(window > sstresh){
 								//Congestion avoidance
 							}else{
 								window++; //slow start
 							}
 							printf("ACK OK : %d\n",numsegrecu);
 							segaack++;
-						}else{
+							duplicateACK=0;
+						}else{//si segment pas recu
 							if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){
 								duplicateACK++;
 							}else{
-								duplicateACK=0;
-								sstresh=(seg-numsegrecu)/2;
+								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
+								//NOTE : ajouter une nouvelle variable pour contenir le segment a renvoyer
 							}
 						}
-
-						
     	    	}
+
     		}else{
 					
-				if(seg<nbseg){
+				if(seg<nbseg){//s'il y a encore des segments a envoyer
 						do{
 							for(i=0;i<6;i++){
 								tab[i]='\0';
@@ -291,7 +293,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						while(segenv<window);
 						//printf ("DEBUG : window : %d\n", window);
 						segenv=0;
-				}else{
+				}else{//dernier segment
 
 					if(lastseg!=0){
 						i=0;
