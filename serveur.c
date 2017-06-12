@@ -9,6 +9,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <errno.h>
+#include <sys/time.h>
 #include <poll.h>
 
 #define RCVSIZE 1024
@@ -16,6 +17,10 @@
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
+unsigned long calculrtt(struct timeval debut, struct timeval fin);
+void inittab(unsigned long * tabrtt);
+
+struct timeval stop[10000], start[10000];
 
 int main (int argc, char *argv[]) {
 	if(argc!=2){
@@ -148,14 +153,22 @@ return 0;
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//taille segment 1005
 		socklen_t taille = sizeof(adresseenv2);
-		int i;
-		char tab[1006];
+		unsigned long rttmoy=20000;
+		unsigned long tabrtt[20];
+		inittab(tabrtt);
+		int i, indexrtt=0;
+		char tab[1406];
 		char c;
 		int nbseg, seg=0;
 		int taillef=0;
 		int lastseg=0;
+		int sstresh = 9999999;
+		int duplicateACK=0;
+		int window = 1;
+		int segaack=0;
 		//variable ack
 		int numsegrecu;
+		int segenv=0;
 		char bufferrec[RCVSIZE];
 		//ouverture fichier
 		FILE* f = NULL;
@@ -195,33 +208,21 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			perror("sendto file error\n");
 		}*/
 		//calcul du nombre de segments requis
-		if(taillef%1000!=0){
-			nbseg = (taillef/1000);
-			lastseg = taillef%1000;
+		if(taillef%1400!=0){
+			nbseg = (taillef/1400);
+			lastseg = taillef%1400;
 			//printf("lastseg : %d\n",lastseg);
 		}else{
-			nbseg = (taillef/1000) + 1;
+			nbseg = (taillef/1400) + 1;
 		}
 		i=0;
 		//envoi des segments du fichier
 		do{
-			for(i=0;i<6;i++){
-				tab[i]='\0';
-			}
-			sprintf(tab, "%d", seg);
-			for(i=6;i<1006;i++){
-				tab[i]=fgetc(f);
-			}
 			
-			//printf("tab : %s\n",tab);
-			if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-				perror("sendto file error\n");
-			}
-			//	printf("segment n° %d sent\n",seg);
 			
 			//acquittement des segments reçus
 			 // wait for events on the sockets, 1ms timeout
-   			rv = poll(ufds, 1, 1);
+   			rv = poll(ufds, 1, 0);
 
     		if (rv > 0) {
    		    	 if (ufds[0].revents & POLLIN) {
@@ -230,64 +231,100 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							perror( "recvfrom() error \n" );
 							return -1;
 						}
+						
 						numsegrecu=extractack(bufferrec);
-						if(seg==numsegrecu){
-							printf("Segment %d ACK\n",seg);
-						}else{
-							printf("Segment %d NACK\n",seg);
-							printf("seg : %d\n numsegrecu : %d\n",seg,numsegrecu);
-							
-
+						gettimeofday(&stop[numsegrecu], NULL);
+						tabrtt[indexrtt]=calculrtt(start[numsegrecu],stop[numsegrecu]);
+						rttmoy = rttmoy + tabrtt[indexrtt];
+						indexrtt=indexrtt+19;
+						if(indexrtt>=20){
+							indexrtt = indexrtt - 20;
 						}
-						seg = numsegrecu;
+						rttmoy = (rttmoy - tabrtt[indexrtt])/20;
+						indexrtt = indexrtt + 2;
+						if(indexrtt>=20){
+							indexrtt = indexrtt - 20;
+						}
+						printf("DEBUG : RTT : %lu\n",rttmoy);
+						if(segaack==numsegrecu){
+							window++;
+							printf("ACK OK : %d\n",numsegrecu);
+							segaack++;
+						}else{
+							if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){
+								duplicateACK++;
+							}else{
+								duplicateACK=0;
+								sstresh=(seg-numsegrecu)/2;
+								window=sstresh;
+								seg = numsegrecu;
+							}
+						}
+
+						
     	    	}
-    		}
-			
-			//fin ack
-			seg++;
-		}
-		while(seg<nbseg);
-		if(lastseg!=0){
-			i=0;
-			for(i=0;i<6;i++){
-				tab[i]='\0';
-			}
-			sprintf(tab, "%d", seg);
-			do{	
-				tab[i]=fgetc(f); //ne surtout pas supprimer pour l instant cette ligne.
-				i++;
-			}
-			while(i<lastseg+4);
-			tab[i]='\0';
-		//	printf("tab : %s\n",tab);
-			if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-				perror("sendto file error\n");
-			}
-			//printf("segment lastseg n° %d sent\n",seg);
-			//acquittement des segments reçus
-			if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
-			{
-				perror( "recvfrom() error \n" );
-				return -1;
-			}
-			numsegrecu=extractack(bufferrec);
-			if(seg==numsegrecu){
-				printf("Segment (lastseg) %d ACK\n",seg);
-			}else{
-				printf("Segment (lastseg) %d NACK\n",seg);
-				printf("seg : %d\n numsegrecu : %d\n",seg,numsegrecu);
+    		}else{
+					
+						if(seg<nbseg){
+							do{
+							for(i=0;i<6;i++){
+								tab[i]='\0';
+							}
+							sprintf(tab, "%d", seg);
+							for(i=6;i<1406;i++){
+								tab[i]=fgetc(f);
+							}
+							
+							//printf("tab : %s\n",tab);
+							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+								perror("sendto file error\n");
+							}
+							gettimeofday(&start[seg], NULL);//obtenir temps systeme
+							seg++;
+							//	printf("segment n° %d sent\n",seg);
+							segenv++;
+						}
+						while(segenv<window);
+						segenv=0;
+				}else{
 
+					if(lastseg!=0){
+						i=0;
+						for(i=0;i<6;i++){
+							tab[i]='\0';
+						}
+						sprintf(tab, "%d", seg);
+						do{	
+							tab[i]=fgetc(f); //ne surtout pas supprimer pour l instant cette ligne.
+							i++;
+						}
+						while(i<lastseg+6);
+						tab[i]='\0';
+					//	printf("tab : %s\n",tab);
+						if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+							perror("sendto file error\n");
+						}
+						//printf("segment lastseg n° %d sent\n",seg);
+						//acquittement des segments reçus
+						if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
+						{
+							perror( "recvfrom() error \n" );
+							return -1;
+						}
+						numsegrecu=extractack(bufferrec);
+						
+					}
+				}
 			}
-			//fin ack
 		}
+		while(numsegrecu!=nbseg);
+		printf("numsegrecu : %d\n",numsegrecu);
 		fclose(f);
-		printf("INFO : fichier %s envoye\n", nomf);
-
-		//envoi message fin
 		strcpy(tab, "FIN");
 		if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-				perror("sendto FIN error\n");
-			}
+			perror("sendto FIN error\n");
+		}
+		
 			//printf("%d %d %d %d %d\n",descenv2,sizeof(tab),ntohs(adresseenv2.sin_port),ntohl(adresseenv2.sin_addr.s_addr),taille);
 		return 0;
 	}
@@ -313,5 +350,20 @@ int extractack(char * t){
 	}else{
 		printf("ERROR : ACK : |%s|\n",tack);
 		return (-1);
+	}
+}
+
+unsigned long calculrtt(struct timeval debut, struct timeval fin){
+	unsigned long rtt = fin.tv_usec-debut.tv_usec;
+	if ((rtt>99999)||(rtt<200)){
+		rtt=20000;
+	}
+	return rtt;
+}
+
+void inittab(unsigned long * tabrtt){
+	int i;
+	for(i=0;i<20;i++){
+		tabrtt[i]=20000;
 	}
 }
