@@ -17,10 +17,11 @@
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
-unsigned long calculrtt(struct timeval debut, struct timeval fin);
+double calculrtt(struct timeval *debut, struct timeval* fin);
 void inittab(unsigned long * tabrtt);
 
-struct timeval stop[10000], start[10000];
+struct timeval end[10000], start[10000];
+double t1,t2;
 
 int main (int argc, char *argv[]) {
 	if(argc!=2){
@@ -157,7 +158,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		char tab[1406];
 		char c;
 		int nbseg, seg=0;
-		int taillef=0;
+		int taillef=0, indexrtt=0;
+		double rtt;
 		int lastseg=0;
 		int sstresh = 9999999;
 		int duplicateACK=0;
@@ -230,11 +232,24 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						
 						numsegrecu=extractack(bufferrec);
-
 						//calcul rtt
-						gettimeofday(&stop[numsegrecu], NULL); 
-						calculrtt(start[numsegrecu], stop[numsegrecu]);
+						gettimeofday(&end[numsegrecu], NULL); 
 
+						//calcul 1 val rtt
+						t1 += debut.tv_sec+(debut.tv_usec/1000000.0);
+						t2 += fin.tv_sec+(fin.tv_usec/1000000.0);
+
+						indexrtt++;
+						if (indexrtt==20){
+							t1=0;
+							t2=0;
+							rtt = calculrtt(start, end);
+
+
+
+							indexrtt=0;
+						}
+						printf("DEBUG : RTT : %f\n", rtt);
 						if(segaack==numsegrecu){
 							window++;
 							printf("ACK OK : %d\n",numsegrecu);
@@ -342,11 +357,14 @@ int extractack(char * t){
 	}
 }
 
-unsigned long calculrtt(struct timeval debut, struct timeval fin){
-	unsigned long rtt = fin.tv_usec-debut.tv_usec;
-	if ((rtt>99999)||(rtt<200)){
-		rtt=20000;
+double calculrtt(struct timeval *debut, struct timeval* fin){
+	double rtt;
+	int i;
+	for (i=0;i<20;i++){
+		t1 += debut[i].tv_sec+(debut[i].tv_usec/1000000.0);
+		t2 += fin[i].tv_sec+(fin[i].tv_usec/1000000.0);
 	}
+	rtt = (t2-t1)/100.0;
 	return rtt;
 }
 
