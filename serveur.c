@@ -153,10 +153,7 @@ return 0;
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//taille segment 1005
 		socklen_t taille = sizeof(adresseenv2);
-		unsigned long rttmoy=20000;
-		unsigned long tabrtt[20];
-		inittab(tabrtt);
-		int i, indexrtt=0;
+		int i;
 		char tab[1406];
 		char c;
 		int nbseg, seg=0;
@@ -233,19 +230,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						
 						numsegrecu=extractack(bufferrec);
-						gettimeofday(&stop[numsegrecu], NULL);
-						tabrtt[indexrtt]=calculrtt(start[numsegrecu],stop[numsegrecu]);
-						rttmoy = rttmoy + tabrtt[indexrtt];
-						indexrtt=indexrtt+19;
-						if(indexrtt>=20){
-							indexrtt = indexrtt - 20;
-						}
-						rttmoy = (rttmoy - tabrtt[indexrtt])/20;
-						indexrtt = indexrtt + 2;
-						if(indexrtt>=20){
-							indexrtt = indexrtt - 20;
-						}
-						printf("DEBUG : RTT : %lu\n",rttmoy);
+
+						//calcul rtt
+						gettimeofday(&stop[numsegrecu], NULL); 
+						calculrtt(start[numsegrecu], stop[numsegrecu]);
+
 						if(segaack==numsegrecu){
 							window++;
 							printf("ACK OK : %d\n",numsegrecu);
@@ -279,7 +268,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
 							}
-							gettimeofday(&start[seg], NULL);//obtenir temps systeme
+							gettimeofday(&start[seg], NULL);//obtenir temps systeme pour rtt
 							seg++;
 							//	printf("segment n° %d sent\n",seg);
 							segenv++;
