@@ -17,6 +17,7 @@
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
+int getTaille(FILE* fp);
 
 struct timeval end[10000], start[10000];
 double t1,t2;
@@ -180,30 +181,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		struct pollfd ufds[1];
 		ufds[0].fd = descenv2;
 		ufds[0].events = POLLIN;
-		//envoi d'un message prevenant de l'envoi d'un fichier
-		/*char txt[]="file";
-		//printf("envoi taille fichier\n");
-		if(sendto(descenv2, &txt, sizeof(txt), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-			perror("send preventing msg error\n");
-		}*/
-		//envoi taille fichier
-		while(1)
-	  	{
-   	   		taillef++;
-			c=fgetc(f);
-    		if( feof(f) )
-   			{ 
-    			break ;
-    		}
-   		}
-		rewind(f);
 
+		taillef = getTaille(f);
 		//printf("taille du fichier : %d\n",taillef);
 		sprintf(tab, "%d", taillef);
-	//	printf("tab taille : %s\n",tab);
-		/*if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){ //sert a envoyer la taille du fichier, non utiliser par les clients du projet
-			perror("sendto file error\n");
-		}*/
 		//calcul du nombre de segments requis
 		if(taillef%1400!=0){
 			nbseg = (taillef/1400);
@@ -300,7 +281,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						sprintf(tab, "%d", seg);
 						do{	
-							tab[i]=fgetc(f); //ne surtout pas supprimer pour l instant cette ligne.
+							tab[i]=fgetc(f); 
 							i++;
 						}
 						while(i<lastseg+6);
@@ -356,6 +337,15 @@ int extractack(char * t){
 		printf("ERROR : ACK : |%s|\n",tack);
 		return (-1);
 	}
+}
+
+int getTaille(FILE* fp){
+    fseek(fp, 0L, SEEK_END);
+    int size = ftell(fp);
+    rewind(fp);
+    return size;
+    
+    
 }
 
 //python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg
