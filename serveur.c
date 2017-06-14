@@ -19,7 +19,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
 int getTaille(FILE* fp);
 
-struct timeval end[10000], start[10000];
+struct timeval end[1000], start[1000], stop;
 double t1,t2;
 
 int main (int argc, char *argv[]) {
@@ -61,7 +61,7 @@ int main (int argc, char *argv[]) {
 	while (1) {
 		
            socklen_t taille = sizeof(serveur);
-			int read = recvfrom(descserv, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &serveur, &taille);
+			int read = recvfrom(descserv, buffer, sizeof(buffer), 0,  (struct sockaddr *) &serveur, &taille);
      
 			if( read <= 0 )
 			{
@@ -106,7 +106,7 @@ int main (int argc, char *argv[]) {
 					sprintf(str, "%d", port);
 					strcat(buffersyn, str);
 					//printf("buffersynack : %s \n", buffersyn);
-					sendto(descserv, &buffersyn, sizeof(buffersyn), 0, (struct sockaddr *)&serveur, taille);
+					sendto(descserv, buffersyn, sizeof(buffersyn), 0, (struct sockaddr *)&serveur, taille);
 					printf("INFO : SYN-ACK sent \n");
 					read = recvfrom(descserv, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &serveur, &taille);
      
@@ -120,7 +120,7 @@ int main (int argc, char *argv[]) {
 			
 					if(strcmp("ACK",buffer)==0){
 						printf("INFO : ACK Received\n");
-						read = recvfrom(desccli, &buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
+						read = recvfrom(desccli, buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
 						//printf("ACK received : %s \n",buffer);
 						if( read <= 0 )
 						{
@@ -154,16 +154,16 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//taille segment 1005
 		socklen_t taille = sizeof(adresseenv2);
 		int i;
+		int nbelemrttmoy=5;
 		char tab[1406];
-		char c;
-		int nbseg, seg=0;
-		int taillef=0, indexrtt=0;
-		double rtt=0, rttmoy;
+		int nbseg, seg=1;
+		int taillef=0;
+		double rtt=0, rttmoy=(0.05); //valeur de rttmoy pris comme valeur initiale. ne compte que pour les premieres trames
 		int lastseg=0;
 		int sstresh = 9999999;
 		int duplicateACK=0;
 		int window = 1;
-		int segaack=0;
+		int segaack=1;
 		//variable ack
 		int numsegrecu;
 		int segenv=0;
@@ -199,34 +199,36 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			
 			
 			//acquittement des segments reçus
-			 // wait for events on the sockets, 1ms timeout
+			// wait for events on the sockets, 0ms timeout
    			rv = poll(ufds, 1, 0);
 
     		if (rv > 0) {
    		    	 if (ufds[0].revents & POLLIN) {
-   	    		     if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
+					//printf("receiving %d %d %d %d\n", descenv2, ntohl(adresseenv2.sin_addr.s_addr), ntohs(adresseenv2.sin_port), taille);
+   	    		    if( recvfrom(descenv2, bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
 						{
 							perror( "recvfrom() error \n" );
 							return -1;
 						}
+					numsegrecu=extractack(bufferrec);
+					printf("received %d\n", numsegrecu);
+					//calcul rtt
 						
-						numsegrecu=extractack(bufferrec);
-						//calcul rtt
-						/*gettimeofday(&end[numsegrecu], NULL); 
-						t1=0;
-						t2=0;
-						//calcul 1 val rtt
-						t1 += start[numsegrecu].tv_sec+(start[numsegrecu].tv_usec/1000000.0);
-						t2 += end[numsegrecu].tv_sec+(end[numsegrecu].tv_usec/1000000.0);
-						rtt = rtt + t2-t1;
-						indexrtt++;
-						if (indexrtt==5){
-							rttmoy = (rtt/5);
-							rtt=0;
-							indexrtt=0;
-						}*/
-						//printf("DEBUG : RTT : %f\n", rttmoy);
-						if(segaack==numsegrecu){
+					gettimeofday(&stop, NULL);
+					printf("gettime OK \n");
+					end[numsegrecu]=stop;
+					printf("received2 %d\n", numsegrecu);
+					t1=0;
+					t2=0;
+					//calcul 1 val rtt
+					t1 += start[numsegrecu].tv_sec+(start[numsegrecu].tv_usec/1000000.0);
+					t2 += end[numsegrecu].tv_sec+(end[numsegrecu].tv_usec/1000000.0);
+						
+					printf("received3 %d\n", numsegrecu);
+					rtt = (t2-t1);
+					rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
+					printf("DEBUG : RTT : %f %d\n", rttmoy, numsegrecu);
+					if(segaack==numsegrecu){
 							
 							if(window >= sstresh){
 								//Congestion avoidance
@@ -251,8 +253,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
     		}else{
 					
 				if(seg<nbseg){
-						do{
-							for(i=0;i<6;i++){
+					do{
+						for(i=0;i<6;i++){
 								tab[i]='\0';
 							}
 							sprintf(tab, "%d", seg);
@@ -261,12 +263,12 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}
 							
 							//printf("tab : %s\n",tab);
-							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+							if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
 							}
-							//gettimeofday(&start[seg], NULL);//obtenir temps systeme pour rtt
+							gettimeofday(&start[seg], NULL);//obtenir temps systeme pour rtt
 							seg++;
-							//	printf("segment n° %d sent sur %d\n",seg, nbseg);
+								printf("segment n° %d sent sur %d\n",seg, nbseg);
 							segenv++;
 						}
 						while(segenv<window);
@@ -287,18 +289,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						while(i<lastseg+6);
 						tab[i]='\0';
 					//	printf("tab : %s\n",tab);
-						if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+						if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 							perror("sendto file error\n");
-						}
-						//printf("segment lastseg n° %d sent\n",seg);
-						//acquittement des segments reçus
-						/*if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
-						{
-							perror( "recvfrom() error \n" );
-							return -1;
-						}
-						numsegrecu=extractack(bufferrec);*/
-						
+						}	
 					}
 				}
 			}
@@ -307,7 +300,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		printf("numsegrecu : %d\n",numsegrecu);
 		fclose(f);
 		strcpy(tab, "FIN");
-		if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+		if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 			perror("sendto FIN error\n");
 		}
 		
@@ -326,11 +319,7 @@ int extractack(char * t){
 		tnumseg[j]=t[i];
 		j++;
 	}
-	//printf("DEBUG : fct ackrecu %s\n",tack);
-	//printf("DEBUG : fct numsegrecu %s\n",tnumseg);
 	int numseg=atoi(tnumseg);
-	//printf("DEBUG : fct numsegrecu converti %d\n",numseg);
-	//printf("DEBUG : res strcmp %d\n",strncmp("ACK",tack,3));
 	if(strncmp("ACK",tack,3)==0){
 		return (numseg);
 	}else{
