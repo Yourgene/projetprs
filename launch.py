@@ -6,12 +6,23 @@ server_name= sys.argv[1]
 ip_address= sys.argv[2]
 server_port= sys.argv[3]
 file_name= sys.argv[4]
+scenario= sys.argv[5]
 output_file= "output.txt"
-
+i=0
 name= server_name.split("-")
 suffix= name[0][-2:]
 
-client_name= "client1"
+if scenario=="1":
+	client_name= "client1"
+elif scenario=="2":
+	client_name="client2"
+elif scenario=="3":
+	client_name= "client1"
+	while i<3:
+		server_launch_command= "./" +server_name +" " +server_port +" &"
+		client_launch_command= "./" +client_name +" " +ip_address +" " +server_port +" " +file_name + " 0"
+		i=i+1
+		time.sleep(1)
 
 output= open(output_file, "a")
 
