@@ -97,9 +97,9 @@ int main (int argc, char *argv[]) {
 					setsockopt(desccli, SOL_SOCKET, SO_REUSEADDR, &valid, sizeof(int));
 					client.sin_family= AF_INET;
 					client.sin_port= htons(port);
-					inet_aton("192.168.5.298",&client.sin_addr);
+					inet_aton("192.168.0.26",&client.sin_addr);
 					if (bind(desccli, (struct sockaddr*) &client, sizeof(client)) == -1) {
-						perror("blind descserv2 fail\n");
+						perror("bind descserv2 fail ");
 						close(desccli);
 						exit(-1);
 					}
@@ -157,7 +157,7 @@ return 0;
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//taille segment 1005
 		socklen_t taille = sizeof(adresseenv2);
-		int i;
+		int i,cpt;
 		char tab[1406];
 		char c;
 		int nbseg, seg=0;
@@ -170,9 +170,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int segaack=0;
 		//variable ack
 		int numsegrecu;
-		int segenv=0;
 		char bufferrec[RCVSIZE];
 		int flightSize =0;
+		int windowAcc = 0; //incrémenteur utilisé pour le congestion avoidance
+		int nbAckSent=0;
 		//ouverture fichier
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
@@ -199,12 +200,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    		}
 		rewind(f);
 
-		//printf("taille du fichier : %d\n",taillef);
+		
 		sprintf(tab, "%d", taillef);
-	//	printf("tab taille : %s\n",tab);
-		/*if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){ //sert a envoyer la taille du fichier, non utiliser par les clients du projet
-			perror("sendto file error\n");
-		}*/
 		//calcul du nombre de segments requis
 		if(taillef%1400!=0){
 			nbseg = (taillef/1400);
@@ -218,7 +215,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		do{
 			//acquittement des segments reçus
 			 // wait for events on the sockets, 1ms timeout
-   			rv = poll(ufds, 1, 0);
+   			rv = poll(ufds, 1, 1);
 
     		if (rv > 0) {
    		    	 if (ufds[0].revents & POLLIN) {
@@ -232,47 +229,56 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 
 						flightSize = updateFlightSize(seg, numsegrecu);//maj du flightSize
 
-						//calcul rtt
-						/*gettimeofday(&end[numsegrecu], NULL); 
-						t1=0;
-						t2=0;
-						//calcul 1 val rtt
-						t1 += start[numsegrecu].tv_sec+(start[numsegrecu].tv_usec/1000000.0);
-						t2 += end[numsegrecu].tv_sec+(end[numsegrecu].tv_usec/1000000.0);
-						rtt = rtt + t2-t1;
-						indexrtt++;
-						if (indexrtt==5){
-							rttmoy = (rtt/5);
-							rtt=0;
-							indexrtt=0;
-						}*/
 						//printf("DEBUG : RTT : %f\n", rttmoy);
-						if(segaack==numsegrecu){
+						if(segaack<=numsegrecu){
 							
-							if(window > sstresh){
-								//Congestion avoidance
-							}else{
-								window++; //slow start
+							//calcul nombre segments acquittés
+							nbAckSent = (numsegrecu-segaack)+1;
+							
+							for (cpt=0;cpt < nbAckSent; cpt++){
+								
+								//congestion avoidance : la window "augmente" de 1/window a chaque ACK
+								if(window > sstresh){
+									if (windowAcc < window){
+										printf("INFO : C.A, window augmente pas et reste a %d\n", window);
+										windowAcc ++;
+									}
+									else {
+										printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
+										window = window+1;
+										windowAcc = 0;
+									}
+								//slow start
+								}else{
+									printf("INFO : slow start, window passe de %d a %d\n", window, window+1);
+									window++; 
+								}
+								
+								segaack++;
 							}
-							printf("ACK OK : %d\n",numsegrecu);
-							segaack++;
+							
+							printf("ACK recu : %d\n",numsegrecu);
 							duplicateACK=0;
 						}else{//si segment pas recu
 							if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){
+								printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
 								duplicateACK++;
 							}else{
 								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
+								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
+								duplicateACK=0;
 								//NOTE : ajouter une nouvelle variable pour contenir le segment a renvoyer
 							}
 						}
     	    	}
-
     		}else{
 					
 				if(seg<nbseg){//s'il y a encore des segments a envoyer
-						do{
+						
+						while(seg<=(window+segaack)){//utilisation de la window de la window
+//						printf("DEBUG : seg = %d - window = %d - segack - %d\n",seg, window, segaack);
 							for(i=0;i<6;i++){
 								tab[i]='\0';
 							}
@@ -285,14 +291,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
 							}
-							//gettimeofday(&start[seg], NULL);//obtenir temps systeme pour rtt
+							printf("segment n° %d sent sur %d\n",seg, nbseg);
 							seg++;
-							//	printf("segment n° %d sent sur %d\n",seg, nbseg);
-							segenv++;
+							
 						}
-						while(segenv<window);
-						//printf ("DEBUG : window : %d\n", window);
-						segenv=0;
+						
 				}else{//dernier segment
 
 					if(lastseg!=0){
@@ -311,14 +314,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 							perror("sendto file error\n");
 						}
-						//printf("segment lastseg n° %d sent\n",seg);
-						//acquittement des segments reçus
-						/*if( recvfrom(descenv2, &bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
-						{
-							perror( "recvfrom() error \n" );
-							return -1;
-						}
-						numsegrecu=extractack(bufferrec);*/
 						
 					}
 				}
