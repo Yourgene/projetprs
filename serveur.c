@@ -41,6 +41,8 @@ int main (int argc, char *argv[]) {
 	int valid= 1;
 	char buffer[RCVSIZE];
 	char str[4];
+
+	char addrserv[]="192.168.5.298";
 	
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
@@ -100,7 +102,7 @@ int main (int argc, char *argv[]) {
 					setsockopt(desccli, SOL_SOCKET, SO_REUSEADDR, &valid, sizeof(int));
 					client.sin_family= AF_INET;
 					client.sin_port= htons(port);
-					inet_aton("192.168.0.26",&client.sin_addr);
+					inet_aton(addrserv,&client.sin_addr);
 					if (bind(desccli, (struct sockaddr*) &client, sizeof(client)) == -1) {
 						perror("bind descserv2 fail ");
 						close(desccli);
@@ -160,7 +162,7 @@ return 0;
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//taille segment 1005
 		socklen_t taille = sizeof(adresseenv2);
-		int i,cpt,nbelemrttmoy=5,j;
+		int i,cpt,nbelemrttmoy=5;
 		char tab[1406];
 		int nbseg, seg=1;
 		int taillef=0;
@@ -218,7 +220,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					numsegrecu=extractack(bufferrec);
 					//printf("received %d\n", numsegrecu);
 					//calcul rtt
-						numsegrecu=extractack(bufferrec);
 
 						gettimeofday(&end[numsegrecu%100], NULL);
 						//printf("gettime OK \n");
@@ -243,17 +244,17 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								//congestion avoidance : la window "augmente" de 1/window a chaque ACK
 								if(window > sstresh){
 									if (windowAcc < window){
-										printf("INFO : C.A, window augmente pas et reste a %d\n", window);
+										//printf("INFO : C.A, window augmente pas et reste a %d\n", window);
 										windowAcc ++;
 									}
 									else {
-										printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
+										//printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
 										window = window+1;
 										windowAcc = 0;
 									}
 								//slow start
 								}else{
-									printf("INFO : slow start, window passe de %d a %d\n", window, window+1);
+									//printf("INFO : slow start, window passe de %d a %d\n", window, window+1);
 									window++; 
 								}
 								
@@ -264,13 +265,13 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							duplicateACK=0;
 						}else{//si segment pas recu
 							if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){
-								printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
+								//printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
 								duplicateACK++;
 							}else{
 								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
-								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
+								//printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
 								duplicateACK=0;
 								//NOTE : ajouter une nouvelle variable pour contenir le segment a renvoyer
 							}
@@ -296,7 +297,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								perror("sendto file error\n");
 							}
 							gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
-							printf("segment n° %d sent sur %d\n",seg, nbseg);
+							//printf("segment n° %d sent sur %d\n",seg, nbseg);
 							seg++;
 							
 						}
@@ -364,6 +365,8 @@ int getTaille(FILE* fp){
     
 }
 
-//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg
+//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 1         //test scenario 1
+//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 2         //test scenario 2
+//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 3         //test scenario 3  a corriger 
 //./client1 192.168.5.298 8080 sample4_l.jpg
 //./serveur 8080
