@@ -221,8 +221,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    			}
 			if (rv == 0)
     		{
-      			printf("  poll() timed out. rtt : %f\n", rttmoy);
-				  rv = poll(fds, nfds, rttmoy*1000);
+      			printf("  INFO : poll() timed out. rtt : %f --- ", rttmoy);
+				sstresh=flightSize/2;
+				window=1;
+				seg = numsegrecu+1;
+				printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
     		}
     		if (rv > 0) {
    		    	 if (fds[0].revents & POLLIN) {
