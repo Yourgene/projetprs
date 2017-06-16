@@ -25,7 +25,7 @@ int updateFlightSize(int seg, int numsegrecu){
 	return (seg-numsegrecu);
 }
 
-struct timeval end[1000], start[1000];
+struct timeval end[10], start[10];
 
 double t1,t2;
 
@@ -42,7 +42,7 @@ int main (int argc, char *argv[]) {
 	char buffer[RCVSIZE];
 	char str[4];
 
-	char addrserv[]="192.168.0.50";
+	char addrserv[]="134.214.202.237";
 	
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
@@ -212,6 +212,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    			rv = poll(ufds, 1, rttmoy);
     		if (rv > 0) {
    		    	 if (ufds[0].revents & POLLIN) {
+
+					printf("DEBUG : seg = %d - window = %d - segack - %d\n",seg, window, segaack);
 					//printf("receiving %d %d %d %d\n", descenv2, ntohl(adresseenv2.sin_addr.s_addr), ntohs(adresseenv2.sin_port), taille);
    	    		    if( recvfrom(descenv2, bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
 						{
@@ -221,7 +223,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					numsegrecu=extractack(bufferrec);
 					printf("ACK recu : %d\n",numsegrecu);
 					//calcul rtt
-
+/*
 						gettimeofday(&end[numsegrecu%100], NULL);
 						//printf("gettime OK \n");
 						//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
@@ -233,17 +235,16 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						
 
 
-						//printf("DEBUG : RTT : %f\n", rttmoy);
-						if(segaack<=numsegrecu){ // si on recoit un AC correct
+						printf("DEBUG : RTT : %f\n", rttmoy);*/
+						if(segaack<=numsegrecu){ // si on recoit un ACk correct
 							
 							flightSize = updateFlightSize(seg, numsegrecu);
 							//maj du flightSize || a verifier mais ta valeur de seg ici n' a aucun sens
 							// flightsize = nb segments envoyés mais pas acquittés, cad seg - ackrecu. 
-		
-						
 							
 							//calcul nombre segments acquittés
 							nbAckSent = (numsegrecu-segaack)+1;
+							printf("nombre ack recus a acquitter : %d\n", nbAckSent);
 							
 							for (cpt=0;cpt < nbAckSent; cpt++){
 								
@@ -286,18 +287,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						else{//si ACK recu < dernier ack, on l'ignore car c'est un ack arrivé en retard
 							printf("INFO : ACK %d recu mais non traité car en retard, nous sommes a l'ACK %d \n", numsegrecu, segaack);
-							/* A VIRER
-							 * if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){ // a quoi l'expression apres le '&&' maxime ?
-								printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
-								duplicateACK++;
-							}else{
-								sstresh=flightSize/2;
-								window=1;
-								seg = numsegrecu+1;
-								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
-								duplicateACK=0;
-								//NOTE : ajouter une nouvelle variable pour contenir le segment a renvoyer
-							}*/
 						}
     	    	}
     		}else{
