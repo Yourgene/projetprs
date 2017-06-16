@@ -13,17 +13,14 @@
 #include <poll.h>
 
 #define RCVSIZE 1024
+#define TRUE 1
+#define FALSE 0
 
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
 int getTaille(FILE* fp);
-
-
-//return the new flightSize
-int updateFlightSize(int seg, int numsegrecu){
-	return (seg-numsegrecu);
-}
+int updateFlightSize(int seg, int numsegrecu);
 
 struct timeval end[1000], start[1000];
 
@@ -34,7 +31,7 @@ int main (int argc, char *argv[]) {
 		printf("ERROR : necessite un argument : appel sous la forme './serveur numport'\n");
 		exit(-1);
 	}
-	printf("INFO : serveur lance sur l' adresse 192.168.5.298\n");
+	
 	struct sockaddr_in serveur;
 	int port = atoi(argv[1]);
 	int portserv=port;
@@ -42,8 +39,8 @@ int main (int argc, char *argv[]) {
 	char buffer[RCVSIZE];
 	char str[4];
 
-	char addrserv[]="192.168.0.50";
-	
+	char addrserv[]="192.168.5.298"; //192.168.0.50    ou    192.168.5.298
+	printf("INFO : serveur lance sur l' adresse %s\n",addrserv);
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
 
@@ -187,12 +184,19 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
     	}else{
         	printf("Impossible d'ouvrir le fichier %s\n",nomf);
     	}
+		taillef = getTaille(f);
 		//init pour poll()
 		int rv;
-		struct pollfd ufds[1];
+		/*struct pollfd ufds[1];
 		ufds[0].fd = descenv2;
-		ufds[0].events = POLLIN;
-		taillef = getTaille(f);
+		ufds[0].events = POLLIN;*/
+		
+		//init pour poll()v2
+		struct pollfd fds[200];
+  		int    nfds = 1;
+		memset(fds, 0 , sizeof(fds));
+		fds[0].fd = descenv2;
+  		fds[0].events = POLLIN;
 		//printf("taille du fichier : %d\n",taillef);
 
 		sprintf(tab, "%d", taillef);
@@ -209,9 +213,18 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		do{
 			//acquittement des segments reçus
 			// wait for events on the sockets, 0ms timeout
-   			rv = poll(ufds, 1, rttmoy);
+   			rv = poll(fds, nfds, rttmoy*1000); //rttmoy*1000
+			if (rv < 0)
+    		{
+    			perror("  poll() failed");
+    			break;
+   			}
+			if (rv == 0)
+    		{
+      			printf("  poll() timed out.\n");
+    		}
     		if (rv > 0) {
-   		    	 if (ufds[0].revents & POLLIN) {
+   		    	 if (fds[0].revents & POLLIN) {
 					//printf("receiving %d %d %d %d\n", descenv2, ntohl(adresseenv2.sin_addr.s_addr), ntohs(adresseenv2.sin_port), taille);
    	    		    if( recvfrom(descenv2, bufferrec, sizeof(bufferrec), 0,  (struct sockaddr *) &adresseenv2, &taille) <= 0 )
 						{
@@ -386,6 +399,11 @@ int getTaille(FILE* fp){
     return size;
     
     
+}
+
+//return the new flightSize
+int updateFlightSize(int seg, int numsegrecu){
+	return (seg-numsegrecu);
 }
 
 //python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 1         //test scenario 1
