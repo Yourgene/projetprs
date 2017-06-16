@@ -42,7 +42,7 @@ int main (int argc, char *argv[]) {
 	char buffer[RCVSIZE];
 	char str[4];
 
-	char addrserv[]="192.168.5.298";
+	char addrserv[]="192.168.0.50";
 	
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
@@ -178,6 +178,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int flightSize =0;
 		int windowAcc = 0; //incrémenteur utilisé pour le congestion avoidance
 		int nbAckSent=0;
+		int lastReceivedACK=0;
 		//ouverture fichier
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
@@ -218,7 +219,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							return -1;
 						}
 					numsegrecu=extractack(bufferrec);
-					//printf("received %d\n", numsegrecu);
+					printf("ACK recu : %d\n",numsegrecu);
 					//calcul rtt
 
 						gettimeofday(&end[numsegrecu%100], NULL);
@@ -231,10 +232,15 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						//printf("DEBUG : RTT : %f %d\n", rttmoy, numsegrecu);
 						
 
-						flightSize = updateFlightSize(seg, numsegrecu);//maj du flightSize || a verifier mais ta valeur de seg ici n' a aucun sens
 
 						//printf("DEBUG : RTT : %f\n", rttmoy);
-						if(segaack<=numsegrecu){
+						if(segaack<=numsegrecu){ // si on recoit un AC correct
+							
+							flightSize = updateFlightSize(seg, numsegrecu);
+							//maj du flightSize || a verifier mais ta valeur de seg ici n' a aucun sens
+							// flightsize = nb segments envoyés mais pas acquittés, cad seg - ackrecu. 
+		
+						
 							
 							//calcul nombre segments acquittés
 							nbAckSent = (numsegrecu-segaack)+1;
@@ -244,37 +250,54 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								//congestion avoidance : la window "augmente" de 1/window a chaque ACK
 								if(window > sstresh){
 									if (windowAcc < window){
-										//printf("INFO : C.A, window augmente pas et reste a %d\n", window);
+										printf("INFO : C.A, window augmente pas et reste a %d\n", window);
 										windowAcc ++;
 									}
 									else {
-										//printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
+										printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
 										window = window+1;
 										windowAcc = 0;
 									}
 								//slow start
 								}else{
-									//printf("INFO : slow start, window passe de %d a %d\n", window, window+1);
+									printf("INFO : slow start, window passe de %d a %d\n", window, window+1);
 									window++; 
 								}
 								
-								segaack++;
+								segaack++;	
 							}
+							duplicateACK = 0;
+							lastReceivedACK = numsegrecu;
 							
-							printf("ACK recu : %d\n",numsegrecu);
-							duplicateACK=0;
-						}else{//si segment pas recu
-							if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){
-								//printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
+						}
+						else if (lastReceivedACK == numsegrecu){ // si on recoit a nouveau l'ACK precedent, perte potentielle
+							
+							if(duplicateACK<3){ 
+								printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
 								duplicateACK++;
 							}else{
 								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
-								//printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
+								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
 								duplicateACK=0;
 								//NOTE : ajouter une nouvelle variable pour contenir le segment a renvoyer
 							}
+						}
+						else{//si ACK recu < dernier ack, on l'ignore car c'est un ack arrivé en retard
+							printf("INFO : ACK %d recu mais non traité car en retard, nous sommes a l'ACK %d \n", numsegrecu, segaack);
+							/* A VIRER
+							 * if((duplicateACK<3)&&(numsegrecu==(segaack-(1+duplicateACK)))){ // a quoi l'expression apres le '&&' maxime ?
+								printf("INFO : reception du meme ACK %d a nouveau \n", numsegrecu);
+								duplicateACK++;
+							}else{
+								sstresh=flightSize/2;
+								window=1;
+								seg = numsegrecu+1;
+								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
+								duplicateACK=0;
+								//NOTE : ajouter une nouvelle variable pour contenir le segment a renvoyer
+							}*/
 						}
     	    	}
     		}else{
@@ -283,7 +306,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				if(seg<nbseg){//s'il y a encore des segments a envoyer
 						
 						while(seg<=(window+segaack)){//utilisation de la window de la window
-//						printf("DEBUG : seg = %d - window = %d - segack - %d\n",seg, window, segaack);
+						printf("DEBUG : seg = %d - window = %d - segack - %d\n",seg, window, segaack);
 							for(i=0;i<6;i++){
 								tab[i]='\0';
 							}
@@ -297,7 +320,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								perror("sendto file error\n");
 							}
 							gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
-							//printf("segment n° %d sent sur %d\n",seg, nbseg);
+							printf("segment n° %d sent sur %d\n",seg, nbseg);
 							seg++;
 							
 						}
