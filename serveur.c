@@ -221,7 +221,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    			}
 			if (rv == 0)
     		{
-      			printf("  poll() timed out.\n");
+      			printf("  poll() timed out. rtt : %f\n", rttmoy);
+				  rv = poll(fds, nfds, rttmoy*1000);
     		}
     		if (rv > 0) {
    		    	 if (fds[0].revents & POLLIN) {
