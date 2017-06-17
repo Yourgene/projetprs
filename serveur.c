@@ -225,7 +225,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    			rv = poll(fds, nfds, 0); // ancienne valeur : rttmoy*1000
 			if (rv < 0)
     		{
-    			perror("  poll() failed");
+    			perror("poll() failed");
     			break;
    			}
 			/*if (rv == 0)
