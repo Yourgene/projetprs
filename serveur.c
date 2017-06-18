@@ -15,6 +15,7 @@
 #define RCVSIZE 1024
 #define TRUE 1
 #define FALSE 0
+#define TABSIZE 1406
 
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
@@ -167,7 +168,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		//taille segment 1005
 		socklen_t taille = sizeof(adresseenv2);
 		int i,cpt,nbelemrttmoy=5;
-		char tab[1406];
+		char tab[TABSIZE];
+		char octets[TABSIZE-6];
 		int nbseg, seg=1;
 		int taillef=0;
 		double rtt=0, rttmoy=(0.05); //valeur de rttmoy pris comme valeur initiale. ne compte que pour les premieres trames
@@ -183,6 +185,8 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int windowAcc = 0; //incrémenteur utilisé pour le congestion avoidance
 		int nbAckSent=0;
 		int lastReceivedACK=0;
+		int nbBytes=0;
+		
 	
 	
 		FILE* f = NULL;
@@ -211,9 +215,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		sprintf(tab, "%d", taillef);
 		//calcul du nombre de segments requis
 		if(taillef%1400!=0){
-			nbseg = (taillef/1400);
-			lastseg = taillef%1400;
-			//printf("lastseg : %d\n",lastseg);
+			nbseg = (taillef/1400)+1;
 		}else{
 			nbseg = (taillef/1400);
 		}
@@ -223,6 +225,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			//acquittement des segments reçus
 			// wait for events on the sockets, 0ms timeout
    			rv = poll(fds, nfds, 0); // ancienne valeur : rttmoy*1000
+
 			if (rv < 0)
     		{
     			perror("poll() failed");
@@ -344,23 +347,39 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					
 
 				if(seg<nbseg){//s'il y a encore des segments a envoyer
-						if (LOGS){
-								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
-						}
 						
 						while(seg<=(window+segaack)){//utilisation de la window 
 							if (LOGS){
+								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
 							}
 						
-							for(i=0;i<6;i++){
+							/*for(i=0;i<6;i++){
 								tab[i]='\0';
 							}
 							sprintf(tab, "%d", seg);
 							for(i=6;i<1406;i++){
 								tab[i]=fgetc(f);
+							}*/
+							
+							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
+								perror ("Erreur copie octets\n");
+							}
+							for(i=0;i<6;i++){
+								tab[i]='\0';
 							}
 							
+							sprintf(tab, "%d", seg);
+							for(i=0;i<nbBytes;i++){
+								tab [i+6]=octets[i];
+							}
+							
+							if (LOGS){
+								printf("DEBUG : nb bytes lus =%d\n", nbBytes);
+							}
+							
+							
+					
 							
 							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
@@ -370,10 +389,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
 							}
 							seg++;
-							
 						}
 						
-				}else{//dernier segment
+				}/*else{//dernier segment
 					if (LOGS){
 						printf("INFO : envoi du dernier segment...\n");
 					}
@@ -393,7 +411,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							perror("sendto file error\n");
 						}	
 					}
-				}
+				}*/
 			}
 		}
 		while(numsegrecu!=nbseg);
@@ -436,7 +454,7 @@ int getTaille(FILE* fp){
 
 //return the new flightSize
 int updateFlightSize(int seg, int numsegrecu){
-	return (seg-numsegrecu);
+	return (seg - numsegrecu);
 }
 
 //python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 1         //test scenario 1

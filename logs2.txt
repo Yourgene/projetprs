@@ -1,0 +1,3904 @@
+INFO : etat des logs = 1
+INFO : serveur lance sur l' adresse 192.168.0.50
+INFO : SYN Received
+INFO : SYN-ACK sent 
+INFO : ACK Received
+INFO : debut envoi fichier sample4_l.jpg
+INFO : taille du fichier = 355915
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 1 - window = 1 - segack - 1
+INFO : segment n° 1 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 2 - window = 1 - segack - 1
+INFO : segment n° 2 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 1 - ACK attendu = 1 
+DEBUG : RTT : 0.042156
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 3 (seg = 1 - ack recu = 2) - nb segs a acquitter = 1
+INFO : slow start, window passe de 1 a 2
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 3 - window = 2 - segack - 2
+INFO : segment n° 3 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 4 - window = 2 - segack - 2
+INFO : segment n° 4 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 2 - ACK attendu = 2 
+DEBUG : RTT : 0.036223
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 5 (seg = 2 - ack recu = 3) - nb segs a acquitter = 1
+INFO : slow start, window passe de 2 a 3
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 5 - window = 3 - segack - 3
+INFO : segment n° 5 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 6 - window = 3 - segack - 3
+INFO : segment n° 6 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 4 - ACK attendu = 3 
+DEBUG : RTT : 0.030704
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 7 (seg = 4 - ack recu = 3) - nb segs a acquitter = 2
+INFO : slow start, window passe de 3 a 4
+INFO : slow start, window passe de 4 a 5
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 7 - window = 5 - segack - 5
+INFO : segment n° 7 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 8 - window = 5 - segack - 5
+INFO : segment n° 8 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 9 - window = 5 - segack - 5
+INFO : segment n° 9 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 10 - window = 5 - segack - 5
+INFO : segment n° 10 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 3 - ACK attendu = 5 
+DEBUG : RTT : 0.026763
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 6 - ACK attendu = 5 
+DEBUG : RTT : 0.023854
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 11 (seg = 6 - ack recu = 5) - nb segs a acquitter = 2
+INFO : slow start, window passe de 5 a 6
+INFO : slow start, window passe de 6 a 7
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 11 - window = 7 - segack - 7
+INFO : segment n° 11 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 12 - window = 7 - segack - 7
+INFO : segment n° 12 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 13 - window = 7 - segack - 7
+INFO : segment n° 13 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 14 - window = 7 - segack - 7
+INFO : segment n° 14 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 10 - ACK attendu = 7 
+DEBUG : RTT : 0.020998
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 15 (seg = 10 - ack recu = 5) - nb segs a acquitter = 4
+INFO : slow start, window passe de 7 a 8
+INFO : slow start, window passe de 8 a 9
+INFO : slow start, window passe de 9 a 10
+INFO : slow start, window passe de 10 a 11
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 15 - window = 11 - segack - 11
+INFO : segment n° 15 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 16 - window = 11 - segack - 11
+INFO : segment n° 16 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 17 - window = 11 - segack - 11
+INFO : segment n° 17 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 18 - window = 11 - segack - 11
+INFO : segment n° 18 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 19 - window = 11 - segack - 11
+INFO : segment n° 19 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 20 - window = 11 - segack - 11
+INFO : segment n° 20 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 21 - window = 11 - segack - 11
+INFO : segment n° 21 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 22 - window = 11 - segack - 11
+INFO : segment n° 22 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 7 - ACK attendu = 11 
+DEBUG : RTT : 0.018793
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 8 - ACK attendu = 11 
+DEBUG : RTT : 0.017202
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 9 - ACK attendu = 11 
+DEBUG : RTT : 0.015974
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 12 - ACK attendu = 11 
+DEBUG : RTT : 0.014713
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 23 (seg = 12 - ack recu = 11) - nb segs a acquitter = 2
+INFO : slow start, window passe de 11 a 12
+INFO : slow start, window passe de 12 a 13
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 23 - window = 13 - segack - 13
+INFO : segment n° 23 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 24 - window = 13 - segack - 13
+INFO : segment n° 24 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 25 - window = 13 - segack - 13
+INFO : segment n° 25 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 26 - window = 13 - segack - 13
+INFO : segment n° 26 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 11 - ACK attendu = 13 
+DEBUG : RTT : 0.013824
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 13 - ACK attendu = 13 
+DEBUG : RTT : 0.013200
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 27 (seg = 13 - ack recu = 14) - nb segs a acquitter = 1
+INFO : slow start, window passe de 13 a 14
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 27 - window = 14 - segack - 14
+INFO : segment n° 27 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 28 - window = 14 - segack - 14
+INFO : segment n° 28 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 14 - ACK attendu = 14 
+DEBUG : RTT : 0.012745
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 29 (seg = 14 - ack recu = 15) - nb segs a acquitter = 1
+INFO : slow start, window passe de 14 a 15
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 29 - window = 15 - segack - 15
+INFO : segment n° 29 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 30 - window = 15 - segack - 15
+INFO : segment n° 30 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 20 - ACK attendu = 15 
+DEBUG : RTT : 0.011944
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 31 (seg = 20 - ack recu = 11) - nb segs a acquitter = 6
+INFO : slow start, window passe de 15 a 16
+INFO : slow start, window passe de 16 a 17
+INFO : slow start, window passe de 17 a 18
+INFO : slow start, window passe de 18 a 19
+INFO : slow start, window passe de 19 a 20
+INFO : slow start, window passe de 20 a 21
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 31 - window = 21 - segack - 21
+INFO : segment n° 31 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 32 - window = 21 - segack - 21
+INFO : segment n° 32 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 33 - window = 21 - segack - 21
+INFO : segment n° 33 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 34 - window = 21 - segack - 21
+INFO : segment n° 34 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 35 - window = 21 - segack - 21
+INFO : segment n° 35 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 36 - window = 21 - segack - 21
+INFO : segment n° 36 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 37 - window = 21 - segack - 21
+INFO : segment n° 37 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 38 - window = 21 - segack - 21
+INFO : segment n° 38 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 39 - window = 21 - segack - 21
+INFO : segment n° 39 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 40 - window = 21 - segack - 21
+INFO : segment n° 40 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 41 - window = 21 - segack - 21
+INFO : segment n° 41 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 42 - window = 21 - segack - 21
+INFO : segment n° 42 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 15 - ACK attendu = 21 
+DEBUG : RTT : 0.011415
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 19 - ACK attendu = 21 
+DEBUG : RTT : 0.010960
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 16 - ACK attendu = 21 
+DEBUG : RTT : 0.010794
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 21 - ACK attendu = 21 
+DEBUG : RTT : 0.010812
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 43 (seg = 21 - ack recu = 22) - nb segs a acquitter = 1
+INFO : slow start, window passe de 21 a 22
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 43 - window = 22 - segack - 22
+INFO : segment n° 43 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 44 - window = 22 - segack - 22
+INFO : segment n° 44 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 17 - ACK attendu = 22 
+DEBUG : RTT : 0.010888
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 18 - ACK attendu = 22 
+DEBUG : RTT : 0.010969
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 22 - ACK attendu = 22 
+DEBUG : RTT : 0.011207
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 45 (seg = 22 - ack recu = 23) - nb segs a acquitter = 1
+INFO : slow start, window passe de 22 a 23
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 45 - window = 23 - segack - 23
+INFO : segment n° 45 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 46 - window = 23 - segack - 23
+INFO : segment n° 46 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 29 - ACK attendu = 23 
+DEBUG : RTT : 0.010734
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 47 (seg = 29 - ack recu = 18) - nb segs a acquitter = 7
+INFO : slow start, window passe de 23 a 24
+INFO : slow start, window passe de 24 a 25
+INFO : slow start, window passe de 25 a 26
+INFO : slow start, window passe de 26 a 27
+INFO : slow start, window passe de 27 a 28
+INFO : slow start, window passe de 28 a 29
+INFO : slow start, window passe de 29 a 30
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 47 - window = 30 - segack - 30
+INFO : segment n° 47 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 48 - window = 30 - segack - 30
+INFO : segment n° 48 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 49 - window = 30 - segack - 30
+INFO : segment n° 49 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 50 - window = 30 - segack - 30
+INFO : segment n° 50 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 51 - window = 30 - segack - 30
+INFO : segment n° 51 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 52 - window = 30 - segack - 30
+INFO : segment n° 52 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 53 - window = 30 - segack - 30
+INFO : segment n° 53 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 54 - window = 30 - segack - 30
+INFO : segment n° 54 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 55 - window = 30 - segack - 30
+INFO : segment n° 55 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 56 - window = 30 - segack - 30
+INFO : segment n° 56 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 57 - window = 30 - segack - 30
+INFO : segment n° 57 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 58 - window = 30 - segack - 30
+INFO : segment n° 58 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 59 - window = 30 - segack - 30
+INFO : segment n° 59 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 60 - window = 30 - segack - 30
+INFO : segment n° 60 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 25 - ACK attendu = 30 
+DEBUG : RTT : 0.010710
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 31 - ACK attendu = 30 
+DEBUG : RTT : 0.010231
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 61 (seg = 31 - ack recu = 30) - nb segs a acquitter = 2
+INFO : slow start, window passe de 30 a 31
+INFO : slow start, window passe de 31 a 32
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 61 - window = 32 - segack - 32
+INFO : segment n° 61 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 62 - window = 32 - segack - 32
+INFO : segment n° 62 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 63 - window = 32 - segack - 32
+INFO : segment n° 63 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 64 - window = 32 - segack - 32
+INFO : segment n° 64 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 30 - ACK attendu = 32 
+DEBUG : RTT : 0.010369
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 27 - ACK attendu = 32 
+DEBUG : RTT : 0.010615
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 36 - ACK attendu = 32 
+DEBUG : RTT : 0.010381
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 65 (seg = 36 - ack recu = 29) - nb segs a acquitter = 5
+INFO : slow start, window passe de 32 a 33
+INFO : slow start, window passe de 33 a 34
+INFO : slow start, window passe de 34 a 35
+INFO : slow start, window passe de 35 a 36
+INFO : slow start, window passe de 36 a 37
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 65 - window = 37 - segack - 37
+INFO : segment n° 65 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 66 - window = 37 - segack - 37
+INFO : segment n° 66 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 67 - window = 37 - segack - 37
+INFO : segment n° 67 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 68 - window = 37 - segack - 37
+INFO : segment n° 68 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 69 - window = 37 - segack - 37
+INFO : segment n° 69 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 70 - window = 37 - segack - 37
+INFO : segment n° 70 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 71 - window = 37 - segack - 37
+INFO : segment n° 71 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 72 - window = 37 - segack - 37
+INFO : segment n° 72 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 73 - window = 37 - segack - 37
+INFO : segment n° 73 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 74 - window = 37 - segack - 37
+INFO : segment n° 74 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 38 - ACK attendu = 37 
+DEBUG : RTT : 0.010250
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 75 (seg = 38 - ack recu = 37) - nb segs a acquitter = 2
+INFO : slow start, window passe de 37 a 38
+INFO : slow start, window passe de 38 a 39
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 75 - window = 39 - segack - 39
+INFO : segment n° 75 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 76 - window = 39 - segack - 39
+INFO : segment n° 76 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 77 - window = 39 - segack - 39
+INFO : segment n° 77 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 78 - window = 39 - segack - 39
+INFO : segment n° 78 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 40 - ACK attendu = 39 
+DEBUG : RTT : 0.010190
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 79 (seg = 40 - ack recu = 39) - nb segs a acquitter = 2
+INFO : slow start, window passe de 39 a 40
+INFO : slow start, window passe de 40 a 41
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 79 - window = 41 - segack - 41
+INFO : segment n° 79 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 80 - window = 41 - segack - 41
+INFO : segment n° 80 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 81 - window = 41 - segack - 41
+INFO : segment n° 81 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 82 - window = 41 - segack - 41
+INFO : segment n° 82 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 42 - ACK attendu = 41 
+DEBUG : RTT : 0.010142
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 83 (seg = 42 - ack recu = 41) - nb segs a acquitter = 2
+INFO : slow start, window passe de 41 a 42
+INFO : slow start, window passe de 42 a 43
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 83 - window = 43 - segack - 43
+INFO : segment n° 83 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 84 - window = 43 - segack - 43
+INFO : segment n° 84 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 85 - window = 43 - segack - 43
+INFO : segment n° 85 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 86 - window = 43 - segack - 43
+INFO : segment n° 86 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 41 - ACK attendu = 43 
+DEBUG : RTT : 0.010284
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 37 - ACK attendu = 43 
+DEBUG : RTT : 0.010468
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 32 - ACK attendu = 43 
+DEBUG : RTT : 0.010649
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 44 - ACK attendu = 43 
+DEBUG : RTT : 0.010372
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 87 (seg = 44 - ack recu = 43) - nb segs a acquitter = 2
+INFO : slow start, window passe de 43 a 44
+INFO : slow start, window passe de 44 a 45
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 87 - window = 45 - segack - 45
+INFO : segment n° 87 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 45 - segack - 45
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 45 - segack - 45
+INFO : segment n° 89 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 90 - window = 45 - segack - 45
+INFO : segment n° 90 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 35 - ACK attendu = 45 
+DEBUG : RTT : 0.010684
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 46 - ACK attendu = 45 
+DEBUG : RTT : 0.010245
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 91 (seg = 46 - ack recu = 45) - nb segs a acquitter = 2
+INFO : slow start, window passe de 45 a 46
+INFO : slow start, window passe de 46 a 47
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 91 - window = 47 - segack - 47
+INFO : segment n° 91 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 92 - window = 47 - segack - 47
+INFO : segment n° 92 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 93 - window = 47 - segack - 47
+INFO : segment n° 93 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 94 - window = 47 - segack - 47
+INFO : segment n° 94 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 45 - ACK attendu = 47 
+DEBUG : RTT : 0.009930
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 39 - ACK attendu = 47 
+DEBUG : RTT : 0.010333
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 43 - ACK attendu = 47 
+DEBUG : RTT : 0.010539
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 57 - ACK attendu = 47 
+DEBUG : RTT : 0.010179
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 95 (seg = 57 - ack recu = 38) - nb segs a acquitter = 11
+INFO : slow start, window passe de 47 a 48
+INFO : slow start, window passe de 48 a 49
+INFO : slow start, window passe de 49 a 50
+INFO : slow start, window passe de 50 a 51
+INFO : slow start, window passe de 51 a 52
+INFO : slow start, window passe de 52 a 53
+INFO : slow start, window passe de 53 a 54
+INFO : slow start, window passe de 54 a 55
+INFO : slow start, window passe de 55 a 56
+INFO : slow start, window passe de 56 a 57
+INFO : slow start, window passe de 57 a 58
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 95 - window = 58 - segack - 58
+INFO : segment n° 95 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 96 - window = 58 - segack - 58
+INFO : segment n° 96 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 97 - window = 58 - segack - 58
+INFO : segment n° 97 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 98 - window = 58 - segack - 58
+INFO : segment n° 98 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 99 - window = 58 - segack - 58
+INFO : segment n° 99 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 100 - window = 58 - segack - 58
+INFO : segment n° 100 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 101 - window = 58 - segack - 58
+INFO : segment n° 101 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 102 - window = 58 - segack - 58
+INFO : segment n° 102 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 103 - window = 58 - segack - 58
+INFO : segment n° 103 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 104 - window = 58 - segack - 58
+INFO : segment n° 104 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 105 - window = 58 - segack - 58
+INFO : segment n° 105 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 106 - window = 58 - segack - 58
+INFO : segment n° 106 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 107 - window = 58 - segack - 58
+INFO : segment n° 107 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 108 - window = 58 - segack - 58
+INFO : segment n° 108 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 109 - window = 58 - segack - 58
+INFO : segment n° 109 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 110 - window = 58 - segack - 58
+INFO : segment n° 110 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 111 - window = 58 - segack - 58
+INFO : segment n° 111 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 112 - window = 58 - segack - 58
+INFO : segment n° 112 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 113 - window = 58 - segack - 58
+INFO : segment n° 113 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 114 - window = 58 - segack - 58
+INFO : segment n° 114 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 115 - window = 58 - segack - 58
+INFO : segment n° 115 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 116 - window = 58 - segack - 58
+INFO : segment n° 116 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 60 - ACK attendu = 58 
+DEBUG : RTT : 0.010061
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 117 (seg = 60 - ack recu = 57) - nb segs a acquitter = 3
+INFO : slow start, window passe de 58 a 59
+INFO : slow start, window passe de 59 a 60
+INFO : slow start, window passe de 60 a 61
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 117 - window = 61 - segack - 61
+INFO : segment n° 117 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 118 - window = 61 - segack - 61
+INFO : segment n° 118 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 119 - window = 61 - segack - 61
+INFO : segment n° 119 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 120 - window = 61 - segack - 61
+INFO : segment n° 120 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 121 - window = 61 - segack - 61
+INFO : segment n° 121 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 122 - window = 61 - segack - 61
+INFO : segment n° 122 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 63 - ACK attendu = 61 
+DEBUG : RTT : 0.009747
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 123 (seg = 63 - ack recu = 60) - nb segs a acquitter = 3
+INFO : slow start, window passe de 61 a 62
+INFO : slow start, window passe de 62 a 63
+INFO : slow start, window passe de 63 a 64
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 123 - window = 64 - segack - 64
+INFO : segment n° 123 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 124 - window = 64 - segack - 64
+INFO : segment n° 124 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 125 - window = 64 - segack - 64
+INFO : segment n° 125 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 126 - window = 64 - segack - 64
+INFO : segment n° 126 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 127 - window = 64 - segack - 64
+INFO : segment n° 127 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 128 - window = 64 - segack - 64
+INFO : segment n° 128 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 52 - ACK attendu = 64 
+DEBUG : RTT : 0.009887
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 58 - ACK attendu = 64 
+DEBUG : RTT : 0.009960
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 56 - ACK attendu = 64 
+DEBUG : RTT : 0.010089
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 47 - ACK attendu = 64 
+DEBUG : RTT : 0.010312
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 66 - ACK attendu = 64 
+DEBUG : RTT : 0.009926
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 129 (seg = 66 - ack recu = 63) - nb segs a acquitter = 3
+INFO : slow start, window passe de 64 a 65
+INFO : slow start, window passe de 65 a 66
+INFO : slow start, window passe de 66 a 67
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 129 - window = 67 - segack - 67
+INFO : segment n° 129 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 130 - window = 67 - segack - 67
+INFO : segment n° 130 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 131 - window = 67 - segack - 67
+INFO : segment n° 131 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 132 - window = 67 - segack - 67
+INFO : segment n° 132 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 133 - window = 67 - segack - 67
+INFO : segment n° 133 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 134 - window = 67 - segack - 67
+INFO : segment n° 134 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 59 - ACK attendu = 67 
+DEBUG : RTT : 0.010158
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 70 - ACK attendu = 67 
+DEBUG : RTT : 0.009869
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 135 (seg = 70 - ack recu = 65) - nb segs a acquitter = 4
+INFO : slow start, window passe de 67 a 68
+INFO : slow start, window passe de 68 a 69
+INFO : slow start, window passe de 69 a 70
+INFO : slow start, window passe de 70 a 71
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 135 - window = 71 - segack - 71
+INFO : segment n° 135 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 136 - window = 71 - segack - 71
+INFO : segment n° 136 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 137 - window = 71 - segack - 71
+INFO : segment n° 137 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 138 - window = 71 - segack - 71
+INFO : segment n° 138 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 139 - window = 71 - segack - 71
+INFO : segment n° 139 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 140 - window = 71 - segack - 71
+INFO : segment n° 140 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 141 - window = 71 - segack - 71
+INFO : segment n° 141 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 142 - window = 71 - segack - 71
+INFO : segment n° 142 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 50 - ACK attendu = 71 
+DEBUG : RTT : 0.010273
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 49 - ACK attendu = 71 
+DEBUG : RTT : 0.010601
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 67 - ACK attendu = 71 
+DEBUG : RTT : 0.010303
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 68 - ACK attendu = 71 
+DEBUG : RTT : 0.010064
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 78 - ACK attendu = 71 
+DEBUG : RTT : 0.009802
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 143 (seg = 78 - ack recu = 65) - nb segs a acquitter = 8
+INFO : slow start, window passe de 71 a 72
+INFO : slow start, window passe de 72 a 73
+INFO : slow start, window passe de 73 a 74
+INFO : slow start, window passe de 74 a 75
+INFO : slow start, window passe de 75 a 76
+INFO : slow start, window passe de 76 a 77
+INFO : slow start, window passe de 77 a 78
+INFO : slow start, window passe de 78 a 79
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 143 - window = 79 - segack - 79
+INFO : segment n° 143 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 144 - window = 79 - segack - 79
+INFO : segment n° 144 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 145 - window = 79 - segack - 79
+INFO : segment n° 145 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 146 - window = 79 - segack - 79
+INFO : segment n° 146 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 147 - window = 79 - segack - 79
+INFO : segment n° 147 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 148 - window = 79 - segack - 79
+INFO : segment n° 148 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 149 - window = 79 - segack - 79
+INFO : segment n° 149 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 150 - window = 79 - segack - 79
+INFO : segment n° 150 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 151 - window = 79 - segack - 79
+INFO : segment n° 151 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 152 - window = 79 - segack - 79
+INFO : segment n° 152 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 153 - window = 79 - segack - 79
+INFO : segment n° 153 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 154 - window = 79 - segack - 79
+INFO : segment n° 154 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 155 - window = 79 - segack - 79
+INFO : segment n° 155 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 156 - window = 79 - segack - 79
+INFO : segment n° 156 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 157 - window = 79 - segack - 79
+INFO : segment n° 157 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 158 - window = 79 - segack - 79
+INFO : segment n° 158 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 53 - ACK attendu = 79 
+DEBUG : RTT : 0.007862
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 62 - ACK attendu = 79 
+DEBUG : RTT : 0.008453
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 51 - ACK attendu = 79 
+DEBUG : RTT : 0.006791
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 54 - ACK attendu = 79 
+DEBUG : RTT : 0.005450
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 69 - ACK attendu = 79 
+DEBUG : RTT : 0.006265
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 75 - ACK attendu = 79 
+DEBUG : RTT : 0.006894
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 65 - ACK attendu = 79 
+DEBUG : RTT : 0.007533
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 79 
+DEBUG : RTT : 0.007749
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 9999999 - Flight Size = 159 (seg = 87 - ack recu = 72) - nb segs a acquitter = 9
+INFO : slow start, window passe de 79 a 80
+INFO : slow start, window passe de 80 a 81
+INFO : slow start, window passe de 81 a 82
+INFO : slow start, window passe de 82 a 83
+INFO : slow start, window passe de 83 a 84
+INFO : slow start, window passe de 84 a 85
+INFO : slow start, window passe de 85 a 86
+INFO : slow start, window passe de 86 a 87
+INFO : slow start, window passe de 87 a 88
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 159 - window = 88 - segack - 88
+INFO : segment n° 159 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 160 - window = 88 - segack - 88
+INFO : segment n° 160 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 161 - window = 88 - segack - 88
+INFO : segment n° 161 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 162 - window = 88 - segack - 88
+INFO : segment n° 162 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 163 - window = 88 - segack - 88
+INFO : segment n° 163 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 164 - window = 88 - segack - 88
+INFO : segment n° 164 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 165 - window = 88 - segack - 88
+INFO : segment n° 165 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 166 - window = 88 - segack - 88
+INFO : segment n° 166 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 167 - window = 88 - segack - 88
+INFO : segment n° 167 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 168 - window = 88 - segack - 88
+INFO : segment n° 168 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 169 - window = 88 - segack - 88
+INFO : segment n° 169 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 170 - window = 88 - segack - 88
+INFO : segment n° 170 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 171 - window = 88 - segack - 88
+INFO : segment n° 171 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 172 - window = 88 - segack - 88
+INFO : segment n° 172 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 173 - window = 88 - segack - 88
+INFO : segment n° 173 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 174 - window = 88 - segack - 88
+INFO : segment n° 174 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 175 - window = 88 - segack - 88
+INFO : segment n° 175 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 176 - window = 88 - segack - 88
+INFO : segment n° 176 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 74 - ACK attendu = 88 
+DEBUG : RTT : 0.006208
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 64 - ACK attendu = 88 
+DEBUG : RTT : 0.005029
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 73 - ACK attendu = 88 
+DEBUG : RTT : 0.004037
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 80 - ACK attendu = 88 
+DEBUG : RTT : 0.005288
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.006072
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 71 - ACK attendu = 88 
+DEBUG : RTT : 0.004938
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 79 - ACK attendu = 88 
+DEBUG : RTT : 0.006077
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 77 - ACK attendu = 88 
+DEBUG : RTT : 0.007043
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.007562
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 85 - ACK attendu = 88 
+DEBUG : RTT : 0.008230
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 72 - ACK attendu = 88 
+DEBUG : RTT : 0.006924
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 84 - ACK attendu = 88 
+DEBUG : RTT : 0.007953
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 83 - ACK attendu = 88 
+DEBUG : RTT : 0.008836
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 81 - ACK attendu = 88 
+DEBUG : RTT : 0.009572
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.010157
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.010767
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.011282
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.011703
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.012040
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.012417
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.012745
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.013049
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.013330
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.013596
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.013825
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014011
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014203
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014357
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014539
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014695
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014833
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.014945
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015054
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015142
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015236
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015325
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015411
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015515
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015605
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015678
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015776
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015873
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.015963
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016055
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016153
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016233
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016297
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016356
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016429
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016510
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016630
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016750
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016857
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.016962
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017070
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017162
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017271
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017367
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017459
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017553
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017670
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017786
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017880
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.017955
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018049
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018140
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018225
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018305
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018381
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018458
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018555
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018657
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018757
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018863
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.018993
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019099
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019220
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019337
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019434
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019550
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019762
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.019993
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.020209
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 87 - ACK attendu = 88 
+DEBUG : RTT : 0.020540
+INFO : paquet 87 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 36 - window = 1 - seg à envoyer = 88 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 88 - window = 1 - segack - 88
+INFO : segment n° 88 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 89 - window = 1 - segack - 88
+INFO : segment n° 89 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 88 
+DEBUG : RTT : 0.019187
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 36 - Flight Size = 90 (seg = 176 - ack recu = -86) - nb segs a acquitter = 89
+INFO : slow start, window passe de 1 a 2
+INFO : slow start, window passe de 2 a 3
+INFO : slow start, window passe de 3 a 4
+INFO : slow start, window passe de 4 a 5
+INFO : slow start, window passe de 5 a 6
+INFO : slow start, window passe de 6 a 7
+INFO : slow start, window passe de 7 a 8
+INFO : slow start, window passe de 8 a 9
+INFO : slow start, window passe de 9 a 10
+INFO : slow start, window passe de 10 a 11
+INFO : slow start, window passe de 11 a 12
+INFO : slow start, window passe de 12 a 13
+INFO : slow start, window passe de 13 a 14
+INFO : slow start, window passe de 14 a 15
+INFO : slow start, window passe de 15 a 16
+INFO : slow start, window passe de 16 a 17
+INFO : slow start, window passe de 17 a 18
+INFO : slow start, window passe de 18 a 19
+INFO : slow start, window passe de 19 a 20
+INFO : slow start, window passe de 20 a 21
+INFO : slow start, window passe de 21 a 22
+INFO : slow start, window passe de 22 a 23
+INFO : slow start, window passe de 23 a 24
+INFO : slow start, window passe de 24 a 25
+INFO : slow start, window passe de 25 a 26
+INFO : slow start, window passe de 26 a 27
+INFO : slow start, window passe de 27 a 28
+INFO : slow start, window passe de 28 a 29
+INFO : slow start, window passe de 29 a 30
+INFO : slow start, window passe de 30 a 31
+INFO : slow start, window passe de 31 a 32
+INFO : slow start, window passe de 32 a 33
+INFO : slow start, window passe de 33 a 34
+INFO : slow start, window passe de 34 a 35
+INFO : slow start, window passe de 35 a 36
+INFO : slow start, window passe de 36 a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window augmente pas et reste a 37
+INFO : C.A, window passe de 37 a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+INFO : C.A, window augmente pas et reste a 38
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.018109
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 90 - window = 38 - segack - 177
+INFO : segment n° 90 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 91 - window = 38 - segack - 177
+INFO : segment n° 91 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 92 - window = 38 - segack - 177
+INFO : segment n° 92 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 93 - window = 38 - segack - 177
+INFO : segment n° 93 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 94 - window = 38 - segack - 177
+INFO : segment n° 94 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 95 - window = 38 - segack - 177
+INFO : segment n° 95 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 96 - window = 38 - segack - 177
+INFO : segment n° 96 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 97 - window = 38 - segack - 177
+INFO : segment n° 97 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 98 - window = 38 - segack - 177
+INFO : segment n° 98 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 99 - window = 38 - segack - 177
+INFO : segment n° 99 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 100 - window = 38 - segack - 177
+INFO : segment n° 100 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 101 - window = 38 - segack - 177
+INFO : segment n° 101 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 102 - window = 38 - segack - 177
+INFO : segment n° 102 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 103 - window = 38 - segack - 177
+INFO : segment n° 103 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 104 - window = 38 - segack - 177
+INFO : segment n° 104 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 105 - window = 38 - segack - 177
+INFO : segment n° 105 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 106 - window = 38 - segack - 177
+INFO : segment n° 106 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 107 - window = 38 - segack - 177
+INFO : segment n° 107 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 108 - window = 38 - segack - 177
+INFO : segment n° 108 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 109 - window = 38 - segack - 177
+INFO : segment n° 109 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 110 - window = 38 - segack - 177
+INFO : segment n° 110 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 111 - window = 38 - segack - 177
+INFO : segment n° 111 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 112 - window = 38 - segack - 177
+INFO : segment n° 112 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 113 - window = 38 - segack - 177
+INFO : segment n° 113 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 114 - window = 38 - segack - 177
+INFO : segment n° 114 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 115 - window = 38 - segack - 177
+INFO : segment n° 115 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 116 - window = 38 - segack - 177
+INFO : segment n° 116 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 117 - window = 38 - segack - 177
+INFO : segment n° 117 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 118 - window = 38 - segack - 177
+INFO : segment n° 118 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 119 - window = 38 - segack - 177
+INFO : segment n° 119 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 120 - window = 38 - segack - 177
+INFO : segment n° 120 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 121 - window = 38 - segack - 177
+INFO : segment n° 121 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 122 - window = 38 - segack - 177
+INFO : segment n° 122 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 123 - window = 38 - segack - 177
+INFO : segment n° 123 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 124 - window = 38 - segack - 177
+INFO : segment n° 124 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 125 - window = 38 - segack - 177
+INFO : segment n° 125 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 126 - window = 38 - segack - 177
+INFO : segment n° 126 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 127 - window = 38 - segack - 177
+INFO : segment n° 127 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 128 - window = 38 - segack - 177
+INFO : segment n° 128 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 129 - window = 38 - segack - 177
+INFO : segment n° 129 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 130 - window = 38 - segack - 177
+INFO : segment n° 130 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 131 - window = 38 - segack - 177
+INFO : segment n° 131 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 132 - window = 38 - segack - 177
+INFO : segment n° 132 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 133 - window = 38 - segack - 177
+INFO : segment n° 133 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 134 - window = 38 - segack - 177
+INFO : segment n° 134 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 135 - window = 38 - segack - 177
+INFO : segment n° 135 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 136 - window = 38 - segack - 177
+INFO : segment n° 136 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 137 - window = 38 - segack - 177
+INFO : segment n° 137 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 138 - window = 38 - segack - 177
+INFO : segment n° 138 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 139 - window = 38 - segack - 177
+INFO : segment n° 139 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 140 - window = 38 - segack - 177
+INFO : segment n° 140 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 141 - window = 38 - segack - 177
+INFO : segment n° 141 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 142 - window = 38 - segack - 177
+INFO : segment n° 142 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 143 - window = 38 - segack - 177
+INFO : segment n° 143 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 144 - window = 38 - segack - 177
+INFO : segment n° 144 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 145 - window = 38 - segack - 177
+INFO : segment n° 145 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 146 - window = 38 - segack - 177
+INFO : segment n° 146 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 147 - window = 38 - segack - 177
+INFO : segment n° 147 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 148 - window = 38 - segack - 177
+INFO : segment n° 148 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 149 - window = 38 - segack - 177
+INFO : segment n° 149 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 150 - window = 38 - segack - 177
+INFO : segment n° 150 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 151 - window = 38 - segack - 177
+INFO : segment n° 151 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 152 - window = 38 - segack - 177
+INFO : segment n° 152 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 153 - window = 38 - segack - 177
+INFO : segment n° 153 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 154 - window = 38 - segack - 177
+INFO : segment n° 154 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 155 - window = 38 - segack - 177
+INFO : segment n° 155 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 156 - window = 38 - segack - 177
+INFO : segment n° 156 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 157 - window = 38 - segack - 177
+INFO : segment n° 157 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 158 - window = 38 - segack - 177
+INFO : segment n° 158 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 159 - window = 38 - segack - 177
+INFO : segment n° 159 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 160 - window = 38 - segack - 177
+INFO : segment n° 160 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 161 - window = 38 - segack - 177
+INFO : segment n° 161 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 162 - window = 38 - segack - 177
+INFO : segment n° 162 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 163 - window = 38 - segack - 177
+INFO : segment n° 163 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 164 - window = 38 - segack - 177
+INFO : segment n° 164 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 165 - window = 38 - segack - 177
+INFO : segment n° 165 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 166 - window = 38 - segack - 177
+INFO : segment n° 166 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 167 - window = 38 - segack - 177
+INFO : segment n° 167 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 168 - window = 38 - segack - 177
+INFO : segment n° 168 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 169 - window = 38 - segack - 177
+INFO : segment n° 169 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 170 - window = 38 - segack - 177
+INFO : segment n° 170 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 171 - window = 38 - segack - 177
+INFO : segment n° 171 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 172 - window = 38 - segack - 177
+INFO : segment n° 172 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 173 - window = 38 - segack - 177
+INFO : segment n° 173 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 174 - window = 38 - segack - 177
+INFO : segment n° 174 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 175 - window = 38 - segack - 177
+INFO : segment n° 175 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 176 - window = 38 - segack - 177
+INFO : segment n° 176 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 177 - window = 38 - segack - 177
+INFO : segment n° 177 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 178 - window = 38 - segack - 177
+INFO : segment n° 178 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 179 - window = 38 - segack - 177
+INFO : segment n° 179 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 180 - window = 38 - segack - 177
+INFO : segment n° 180 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 181 - window = 38 - segack - 177
+INFO : segment n° 181 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 182 - window = 38 - segack - 177
+INFO : segment n° 182 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 183 - window = 38 - segack - 177
+INFO : segment n° 183 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 184 - window = 38 - segack - 177
+INFO : segment n° 184 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 185 - window = 38 - segack - 177
+INFO : segment n° 185 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 186 - window = 38 - segack - 177
+INFO : segment n° 186 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 187 - window = 38 - segack - 177
+INFO : segment n° 187 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 188 - window = 38 - segack - 177
+INFO : segment n° 188 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 189 - window = 38 - segack - 177
+INFO : segment n° 189 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 190 - window = 38 - segack - 177
+INFO : segment n° 190 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 191 - window = 38 - segack - 177
+INFO : segment n° 191 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 192 - window = 38 - segack - 177
+INFO : segment n° 192 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 193 - window = 38 - segack - 177
+INFO : segment n° 193 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 194 - window = 38 - segack - 177
+INFO : segment n° 194 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 195 - window = 38 - segack - 177
+INFO : segment n° 195 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 196 - window = 38 - segack - 177
+INFO : segment n° 196 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 197 - window = 38 - segack - 177
+INFO : segment n° 197 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 198 - window = 38 - segack - 177
+INFO : segment n° 198 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 199 - window = 38 - segack - 177
+INFO : segment n° 199 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 200 - window = 38 - segack - 177
+INFO : segment n° 200 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 201 - window = 38 - segack - 177
+INFO : segment n° 201 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 202 - window = 38 - segack - 177
+INFO : segment n° 202 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 203 - window = 38 - segack - 177
+INFO : segment n° 203 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 204 - window = 38 - segack - 177
+INFO : segment n° 204 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 205 - window = 38 - segack - 177
+INFO : segment n° 205 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 206 - window = 38 - segack - 177
+INFO : segment n° 206 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 207 - window = 38 - segack - 177
+INFO : segment n° 207 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 208 - window = 38 - segack - 177
+INFO : segment n° 208 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 209 - window = 38 - segack - 177
+INFO : segment n° 209 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 210 - window = 38 - segack - 177
+INFO : segment n° 210 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 211 - window = 38 - segack - 177
+INFO : segment n° 211 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 212 - window = 38 - segack - 177
+INFO : segment n° 212 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 213 - window = 38 - segack - 177
+INFO : segment n° 213 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 214 - window = 38 - segack - 177
+INFO : segment n° 214 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 215 - window = 38 - segack - 177
+INFO : segment n° 215 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.016845
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.015835
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.015027
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.014382
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.013868
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.013457
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.013128
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012866
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012657
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012489
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012360
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012256
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012174
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012108
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012059
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.012020
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011989
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011964
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011945
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011933
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011923
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011916
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011910
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011906
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011903
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011900
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011899
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011899
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011899
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011899
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011900
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011900
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011901
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011902
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011903
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011904
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011905
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011906
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011907
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011908
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011910
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011911
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011912
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011913
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011915
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011916
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011917
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011919
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011920
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011921
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011923
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011924
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011926
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011928
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011929
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011930
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011932
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011933
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011935
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011936
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011937
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011938
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011940
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011941
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011942
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011944
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011945
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011946
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011947
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011948
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011949
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011951
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011952
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011954
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011955
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011957
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011958
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011960
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011961
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011962
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011964
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011965
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011966
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011968
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011969
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011970
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011971
+INFO : paquet 176 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = -43 - window = 1 - seg à envoyer = 177 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011973
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011974
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 177 
+DEBUG : RTT : 0.011975
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 181 - ACK attendu = 177 
+DEBUG : RTT : 0.011665
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 177 (seg = 181 - ack recu = -4) - nb segs a acquitter = 5
+INFO : C.A, window passe de 1 a 2
+INFO : C.A, window augmente pas et reste a 2
+INFO : C.A, window augmente pas et reste a 2
+INFO : C.A, window passe de 2 a 3
+INFO : C.A, window augmente pas et reste a 3
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 182 
+DEBUG : RTT : 0.011729
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 182 
+DEBUG : RTT : 0.011780
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 182 - ACK attendu = 182 
+DEBUG : RTT : 0.011452
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 177 (seg = 182 - ack recu = -5) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 3
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 176 - ACK attendu = 183 
+DEBUG : RTT : 0.011560
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 187 - ACK attendu = 183 
+DEBUG : RTT : 0.010964
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 177 (seg = 187 - ack recu = -10) - nb segs a acquitter = 5
+INFO : C.A, window augmente pas et reste a 3
+INFO : C.A, window passe de 3 a 4
+INFO : C.A, window augmente pas et reste a 4
+INFO : C.A, window augmente pas et reste a 4
+INFO : C.A, window augmente pas et reste a 4
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 178 - ACK attendu = 188 
+DEBUG : RTT : 0.011047
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 179 - ACK attendu = 188 
+DEBUG : RTT : 0.011044
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 177 - window = 4 - segack - 188
+INFO : segment n° 177 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 178 - window = 4 - segack - 188
+INFO : segment n° 178 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 179 - window = 4 - segack - 188
+INFO : segment n° 179 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 180 - window = 4 - segack - 188
+INFO : segment n° 180 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 181 - window = 4 - segack - 188
+INFO : segment n° 181 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 182 - window = 4 - segack - 188
+INFO : segment n° 182 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 183 - window = 4 - segack - 188
+INFO : segment n° 183 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 184 - window = 4 - segack - 188
+INFO : segment n° 184 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 185 - window = 4 - segack - 188
+INFO : segment n° 185 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 186 - window = 4 - segack - 188
+INFO : segment n° 186 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 187 - window = 4 - segack - 188
+INFO : segment n° 187 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 188 - window = 4 - segack - 188
+INFO : segment n° 188 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 189 - window = 4 - segack - 188
+INFO : segment n° 189 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 190 - window = 4 - segack - 188
+INFO : segment n° 190 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 191 - window = 4 - segack - 188
+INFO : segment n° 191 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 192 - window = 4 - segack - 188
+INFO : segment n° 192 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 177 - ACK attendu = 188 
+DEBUG : RTT : 0.009913
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 186 - ACK attendu = 188 
+DEBUG : RTT : 0.008380
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 185 - ACK attendu = 188 
+DEBUG : RTT : 0.007242
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 189 - ACK attendu = 188 
+DEBUG : RTT : 0.006016
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 189 - ack recu = 4) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 4
+INFO : C.A, window passe de 4 a 5
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 190 - ACK attendu = 190 
+DEBUG : RTT : 0.004981
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 190 - ack recu = 3) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 5
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 188 - ACK attendu = 191 
+DEBUG : RTT : 0.004293
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 191 - ACK attendu = 191 
+DEBUG : RTT : 0.003541
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 191 - ack recu = 2) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 5
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 184 - ACK attendu = 192 
+DEBUG : RTT : 0.003477
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 193 - ACK attendu = 192 
+DEBUG : RTT : 0.005271
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 193 - ack recu = 0) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window augmente pas et reste a 5
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 198 - ACK attendu = 194 
+DEBUG : RTT : 0.006402
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 198 - ack recu = -5) - nb segs a acquitter = 5
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window passe de 5 a 6
+INFO : C.A, window augmente pas et reste a 6
+INFO : C.A, window augmente pas et reste a 6
+INFO : C.A, window augmente pas et reste a 6
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 192 - ACK attendu = 199 
+DEBUG : RTT : 0.005158
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 194 - ACK attendu = 199 
+DEBUG : RTT : 0.006553
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 200 - ACK attendu = 199 
+DEBUG : RTT : 0.007312
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 200 - ack recu = -7) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 6
+INFO : C.A, window augmente pas et reste a 6
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 197 - ACK attendu = 201 
+DEBUG : RTT : 0.008108
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 206 - ACK attendu = 201 
+DEBUG : RTT : 0.008215
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 193 (seg = 206 - ack recu = -13) - nb segs a acquitter = 6
+INFO : C.A, window augmente pas et reste a 6
+INFO : C.A, window passe de 6 a 7
+INFO : C.A, window augmente pas et reste a 7
+INFO : C.A, window augmente pas et reste a 7
+INFO : C.A, window augmente pas et reste a 7
+INFO : C.A, window augmente pas et reste a 7
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 195 - ACK attendu = 207 
+DEBUG : RTT : 0.008949
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 193 - window = 7 - segack - 207
+INFO : segment n° 193 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 194 - window = 7 - segack - 207
+INFO : segment n° 194 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 195 - window = 7 - segack - 207
+INFO : segment n° 195 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 196 - window = 7 - segack - 207
+INFO : segment n° 196 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 197 - window = 7 - segack - 207
+INFO : segment n° 197 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 198 - window = 7 - segack - 207
+INFO : segment n° 198 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 199 - window = 7 - segack - 207
+INFO : segment n° 199 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 200 - window = 7 - segack - 207
+INFO : segment n° 200 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 201 - window = 7 - segack - 207
+INFO : segment n° 201 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 202 - window = 7 - segack - 207
+INFO : segment n° 202 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 203 - window = 7 - segack - 207
+INFO : segment n° 203 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 204 - window = 7 - segack - 207
+INFO : segment n° 204 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 205 - window = 7 - segack - 207
+INFO : segment n° 205 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 206 - window = 7 - segack - 207
+INFO : segment n° 206 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 207 - window = 7 - segack - 207
+INFO : segment n° 207 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 208 - window = 7 - segack - 207
+INFO : segment n° 208 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 209 - window = 7 - segack - 207
+INFO : segment n° 209 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 210 - window = 7 - segack - 207
+INFO : segment n° 210 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 211 - window = 7 - segack - 207
+INFO : segment n° 211 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 212 - window = 7 - segack - 207
+INFO : segment n° 212 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 213 - window = 7 - segack - 207
+INFO : segment n° 213 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 214 - window = 7 - segack - 207
+INFO : segment n° 214 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 201 - ACK attendu = 207 
+DEBUG : RTT : 0.007941
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 208 - ACK attendu = 207 
+DEBUG : RTT : 0.006698
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 215 (seg = 208 - ack recu = 7) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 7
+INFO : C.A, window augmente pas et reste a 7
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 196 - ACK attendu = 209 
+DEBUG : RTT : 0.006493
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 210 - ACK attendu = 209 
+DEBUG : RTT : 0.005422
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 215 (seg = 210 - ack recu = 5) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 7
+INFO : C.A, window passe de 7 a 8
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 204 - ACK attendu = 211 
+DEBUG : RTT : 0.004945
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 203 - ACK attendu = 211 
+DEBUG : RTT : 0.004616
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 214 - ACK attendu = 211 
+DEBUG : RTT : 0.003695
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 215 (seg = 214 - ack recu = 1) - nb segs a acquitter = 4
+INFO : C.A, window augmente pas et reste a 8
+INFO : C.A, window augmente pas et reste a 8
+INFO : C.A, window augmente pas et reste a 8
+INFO : C.A, window augmente pas et reste a 8
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 215 
+DEBUG : RTT : 0.005598
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = -43 - Flight Size = 215 (seg = 215 - ack recu = 0) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 8
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 212 - ACK attendu = 216 
+DEBUG : RTT : 0.004593
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.006325
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.007710
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.008819
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.009706
+INFO : paquet 215 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 216 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.010416
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.010984
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 216 - window = 1 - segack - 216
+INFO : segment n° 216 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 217 - window = 1 - segack - 216
+INFO : segment n° 217 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.011545
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.012030
+INFO : paquet 215 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 216 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 216 - window = 1 - segack - 216
+INFO : segment n° 216 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 217 - window = 1 - segack - 216
+INFO : segment n° 217 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.012557
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.013030
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.013486
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.014017
+INFO : paquet 215 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 216 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 216 - window = 1 - segack - 216
+INFO : segment n° 216 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 217 - window = 1 - segack - 216
+INFO : segment n° 217 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.014567
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.015007
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.015360
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.015719
+INFO : paquet 215 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 216 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 216 - window = 1 - segack - 216
+INFO : segment n° 216 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 217 - window = 1 - segack - 216
+INFO : segment n° 217 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.016184
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.016742
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.017189
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.017739
+INFO : paquet 215 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 216 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 216 - window = 1 - segack - 216
+INFO : segment n° 216 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 217 - window = 1 - segack - 216
+INFO : segment n° 217 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.018367
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.018876
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.019359
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.019920
+INFO : paquet 215 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 216 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 216 - window = 1 - segack - 216
+INFO : segment n° 216 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 217 - window = 1 - segack - 216
+INFO : segment n° 217 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 216 
+DEBUG : RTT : 0.020538
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 217 - ACK attendu = 216 
+DEBUG : RTT : 0.016431
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 218 (seg = 217 - ack recu = 1) - nb segs a acquitter = 2
+INFO : C.A, window passe de 1 a 2
+INFO : C.A, window augmente pas et reste a 2
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 218 - window = 2 - segack - 218
+INFO : segment n° 218 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 219 - window = 2 - segack - 218
+INFO : segment n° 219 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 220 - window = 2 - segack - 218
+INFO : segment n° 220 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 218 
+DEBUG : RTT : 0.017989
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 215 - ACK attendu = 218 
+DEBUG : RTT : 0.019333
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 216 - ACK attendu = 218 
+DEBUG : RTT : 0.016060
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 217 - ACK attendu = 218 
+DEBUG : RTT : 0.013396
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 217 - ACK attendu = 218 
+DEBUG : RTT : 0.011938
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 217 - ACK attendu = 218 
+DEBUG : RTT : 0.011341
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 217 - ACK attendu = 218 
+DEBUG : RTT : 0.010907
+INFO : paquet 217 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 218 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 218 - window = 1 - segack - 218
+INFO : segment n° 218 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 219 - window = 1 - segack - 218
+INFO : segment n° 219 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 220 - ACK attendu = 218 
+DEBUG : RTT : 0.010449
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 220 (seg = 220 - ack recu = 0) - nb segs a acquitter = 3
+INFO : C.A, window passe de 1 a 2
+INFO : C.A, window augmente pas et reste a 2
+INFO : C.A, window augmente pas et reste a 2
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 220 - window = 2 - segack - 221
+INFO : segment n° 220 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 221 - window = 2 - segack - 221
+INFO : segment n° 221 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 222 - window = 2 - segack - 221
+INFO : segment n° 222 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 223 - window = 2 - segack - 221
+INFO : segment n° 223 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 219 - ACK attendu = 221 
+DEBUG : RTT : 0.008640
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 218 - ACK attendu = 221 
+DEBUG : RTT : 0.007515
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 220 - ACK attendu = 221 
+DEBUG : RTT : 0.007740
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 220 - ACK attendu = 221 
+DEBUG : RTT : 0.008356
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 221 - ACK attendu = 221 
+DEBUG : RTT : 0.008835
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 224 (seg = 221 - ack recu = 3) - nb segs a acquitter = 1
+INFO : C.A, window passe de 2 a 3
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 224 - window = 3 - segack - 222
+INFO : segment n° 224 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 225 - window = 3 - segack - 222
+INFO : segment n° 225 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 222 - ACK attendu = 222 
+DEBUG : RTT : 0.009297
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 226 (seg = 222 - ack recu = 4) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 3
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 226 - window = 3 - segack - 223
+INFO : segment n° 226 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 220 - ACK attendu = 223 
+DEBUG : RTT : 0.009856
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 226 - ACK attendu = 223 
+DEBUG : RTT : 0.009653
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 227 (seg = 226 - ack recu = 1) - nb segs a acquitter = 4
+INFO : C.A, window augmente pas et reste a 3
+INFO : C.A, window augmente pas et reste a 3
+INFO : C.A, window passe de 3 a 4
+INFO : C.A, window augmente pas et reste a 4
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 227 - window = 4 - segack - 227
+INFO : segment n° 227 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 228 - window = 4 - segack - 227
+INFO : segment n° 228 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 229 - window = 4 - segack - 227
+INFO : segment n° 229 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 230 - window = 4 - segack - 227
+INFO : segment n° 230 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 231 - window = 4 - segack - 227
+INFO : segment n° 231 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 224 - ACK attendu = 227 
+DEBUG : RTT : 0.009962
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 225 - ACK attendu = 227 
+DEBUG : RTT : 0.010363
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 227 - ACK attendu = 227 
+DEBUG : RTT : 0.010035
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 232 (seg = 227 - ack recu = 5) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 4
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 232 - window = 4 - segack - 228
+INFO : segment n° 232 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 230 - ACK attendu = 228 
+DEBUG : RTT : 0.009827
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 233 (seg = 230 - ack recu = 3) - nb segs a acquitter = 3
+INFO : C.A, window augmente pas et reste a 4
+INFO : C.A, window augmente pas et reste a 4
+INFO : C.A, window passe de 4 a 5
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 233 - window = 5 - segack - 231
+INFO : segment n° 233 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 234 - window = 5 - segack - 231
+INFO : segment n° 234 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 235 - window = 5 - segack - 231
+INFO : segment n° 235 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 236 - window = 5 - segack - 231
+INFO : segment n° 236 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 231 - ACK attendu = 231 
+DEBUG : RTT : 0.009866
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 237 (seg = 231 - ack recu = 6) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 5
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 229 - ACK attendu = 232 
+DEBUG : RTT : 0.010021
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 237 - window = 5 - segack - 232
+INFO : segment n° 237 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 233 - ACK attendu = 232 
+DEBUG : RTT : 0.009756
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 238 (seg = 233 - ack recu = 5) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window augmente pas et reste a 5
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 238 - window = 5 - segack - 234
+INFO : segment n° 238 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 239 - window = 5 - segack - 234
+INFO : segment n° 239 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 232 - ACK attendu = 234 
+DEBUG : RTT : 0.010095
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 236 - ACK attendu = 234 
+DEBUG : RTT : 0.009937
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 240 (seg = 236 - ack recu = 4) - nb segs a acquitter = 3
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window passe de 5 a 6
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 240 - window = 6 - segack - 237
+INFO : segment n° 240 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 241 - window = 6 - segack - 237
+INFO : segment n° 241 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 242 - window = 6 - segack - 237
+INFO : segment n° 242 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 243 - window = 6 - segack - 237
+INFO : segment n° 243 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 235 - ACK attendu = 237 
+DEBUG : RTT : 0.010223
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 237 - ACK attendu = 237 
+DEBUG : RTT : 0.010564
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 244 (seg = 237 - ack recu = 7) - nb segs a acquitter = 1
+INFO : C.A, window augmente pas et reste a 6
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 244 - window = 6 - segack - 238
+INFO : segment n° 244 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 239 - ACK attendu = 238 
+DEBUG : RTT : 0.010364
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 0 - Flight Size = 245 (seg = 239 - ack recu = 6) - nb segs a acquitter = 2
+INFO : C.A, window augmente pas et reste a 6
+INFO : C.A, window augmente pas et reste a 6
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 245 - window = 6 - segack - 240
+INFO : segment n° 245 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 246 - window = 6 - segack - 240
+INFO : segment n° 246 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 239 - ACK attendu = 240 
+DEBUG : RTT : 0.010770
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 239 - ACK attendu = 240 
+DEBUG : RTT : 0.011133
+INFO : reception de cet ACK pour la 1 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 239 - ACK attendu = 240 
+DEBUG : RTT : 0.013142
+INFO : reception de cet ACK pour la 2 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 239 - ACK attendu = 240 
+DEBUG : RTT : 0.014750
+INFO : paquet 239 perdu, reprise a fenetre = 1
+INFO : segment perdu car meme ACK 3 fois 
+INFO : nouveaux params : ssthresh = 3 - window = 1 - seg à envoyer = 240 
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 240 - window = 1 - segack - 240
+INFO : segment n° 240 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 241 - window = 1 - segack - 240
+INFO : segment n° 241 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 246 - ACK attendu = 240 
+DEBUG : RTT : 0.016053
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 3 - Flight Size = 242 (seg = 246 - ack recu = -4) - nb segs a acquitter = 7
+INFO : slow start, window passe de 1 a 2
+INFO : slow start, window passe de 2 a 3
+INFO : slow start, window passe de 3 a 4
+INFO : C.A, window augmente pas et reste a 4
+INFO : C.A, window passe de 4 a 5
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window augmente pas et reste a 5
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 242 - window = 5 - segack - 247
+INFO : segment n° 242 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 243 - window = 5 - segack - 247
+INFO : segment n° 243 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 244 - window = 5 - segack - 247
+INFO : segment n° 244 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 245 - window = 5 - segack - 247
+INFO : segment n° 245 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 246 - window = 5 - segack - 247
+INFO : segment n° 246 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 247 - window = 5 - segack - 247
+INFO : segment n° 247 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 248 - window = 5 - segack - 247
+INFO : segment n° 248 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 249 - window = 5 - segack - 247
+INFO : segment n° 249 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 250 - window = 5 - segack - 247
+INFO : segment n° 250 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 251 - window = 5 - segack - 247
+INFO : segment n° 251 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 252 - window = 5 - segack - 247
+INFO : segment n° 252 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 246 - ACK attendu = 247 
+DEBUG : RTT : 0.013223
+INFO : reception de cet ACK pour la 0 fois 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 251 - ACK attendu = 247 
+DEBUG : RTT : 0.012324
+INFO : reception ACK correct(cad >= a ACK attendu)
+INFO : ssthresh = 3 - Flight Size = 253 (seg = 251 - ack recu = 2) - nb segs a acquitter = 5
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window augmente pas et reste a 5
+INFO : C.A, window passe de 5 a 6
+INFO : C.A, window augmente pas et reste a 6
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 253 - window = 6 - segack - 252
+INFO : segment n° 253 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 254 - window = 6 - segack - 252
+INFO : segment n° 254 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 255 - window = 6 - segack - 252
+INFO : segment n° 255 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 256 - window = 6 - segack - 252
+INFO : segment n° 256 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 257 - window = 6 - segack - 252
+INFO : segment n° 257 sent sur 254
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 258 - window = 6 - segack - 252
+INFO : segment n° 258 sent sur 254
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 246 - ACK attendu = 252 
+DEBUG : RTT : 0.012307
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 247 - ACK attendu = 252 
+DEBUG : RTT : 0.012237
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 246 - ACK attendu = 252 
+DEBUG : RTT : 0.012239
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 246 - ACK attendu = 252 
+DEBUG : RTT : 0.012240
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 246 - ACK attendu = 252 
+DEBUG : RTT : 0.012241
+INFO : ACK non traité car arrivé en retard ! 
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 250 - ACK attendu = 252 
+DEBUG : RTT : 0.011993
+INFO : ACK non traité car arrivé en retard ! 
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+
+---------- ARRIVEE D'UN ACK ----------
+DEBUG : ACK recu = 249 - ACK attendu = 252 
+DEBUG : RTT : 0.011998
+INFO : ACK non traité car arrivé en retard ! 
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+INFO : envoi du dernier segment...
+IN
