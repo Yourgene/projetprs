@@ -47,7 +47,7 @@ int main (int argc, char *argv[]) {
 	char buffer[RCVSIZE];
 	char str[4];
 
-	char addrserv[]="192.168.0.50"; //192.168.0.50    ou    192.168.5.298
+	char addrserv[]="192.168.5.298"; //192.168.0.50    ou    192.168.5.298
 	printf("INFO : serveur lance sur l' adresse %s\n",addrserv);
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
@@ -187,7 +187,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int lastReceivedACK=0;
 		int nbBytes=0;
 		
-	
+	int attente;
 	
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
@@ -205,7 +205,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		ufds[0].events = POLLIN;*/
 		
 		//init pour poll()v2
-		struct pollfd fds[200];
+		struct pollfd fds[1];
   		int    nfds = 1;
 		memset(fds, 0 , sizeof(fds));
 		fds[0].fd = descenv2;
@@ -222,27 +222,95 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		i=0;
 		//envoi des segments du fichier
 		do{
+			if(seg<nbseg){//s'il y a encore des segments a envoyer
+						
+						while(seg<=(window+segaack)){//utilisation de la window 
+							if (LOGS){
+								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
+								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
+							}
+						
+							/*for(i=0;i<6;i++){
+								tab[i]='\0';
+							}
+							sprintf(tab, "%d", seg);
+							for(i=6;i<1406;i++){
+								tab[i]=fgetc(f);
+							}*/
+							
+							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
+								perror ("Erreur copie octets\n");
+							}
+							for(i=0;i<6;i++){
+								tab[i]='\0';
+							}
+							
+							sprintf(tab, "%d", seg);
+							for(i=0;i<nbBytes;i++){
+								tab [i+6]=octets[i];
+							}
+							
+							if (LOGS){
+								printf("DEBUG : nb bytes lus =%d\n", nbBytes);
+							}
+							
+							
+							
+							
+							if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+								perror("sendto file error\n");
+							}
+							gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
+							if (LOGS){
+								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
+							}
+							seg++;
+						}
+						
+				}/*else{
+					if (LOGS){
+						printf("INFO : envoi du dernier segment...\n");
+					}
+					if(lastseg!=0){
+						i=0;
+						for(i=0;i<6;i++){
+							tab[i]='\0';
+						}
+						sprintf(tab, "%d", seg);
+						do{	
+							tab[i]=fgetc(f); 
+							i++;
+						}
+						while(i<lastseg+6);
+						tab[i]='\0';
+						if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+							perror("sendto file error\n");
+						}	
+					}
+				}*/
+			
 			//acquittement des segments reçus
 			// wait for events on the sockets, 0ms timeout
-   			rv = poll(fds, nfds, 0); // ancienne valeur : rttmoy*1000
+			attente = (int)(rttmoy*1000.0);
+			//printf("DEBUG : attente : %d ms \n",attente);
+   			rv = poll(fds, nfds, attente); // ancienne valeur : rttmoy*1000
 
 			if (rv < 0)
     		{
     			perror("poll() failed");
     			break;
    			}
-			/*if (rv == 0)
+			if (rv == 0)
     		{
 				sstresh=flightSize/2;
 				window=1;
 				seg = numsegrecu+1;
-				
 				if (LOGS){
-					printf("ERREUR : segment perdu car poll timeout : rtt : %f \n,rttmoy");
+					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
 					printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
 				}
 							
-    		}*/
+    		}
     		else if (rv > 0) {
    		    	 if (fds[0].revents & POLLIN) {
 					if (LOGS){
@@ -328,7 +396,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
+								if(LOGS){
 								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
+								}
 								duplicateACK=0;
 								if (LOGS){
 									printf("INFO : segment perdu car meme ACK 3 fois \n");
@@ -343,76 +413,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}
 						}
     	    	}
-    		}else{
-					
-
-				if(seg<nbseg){//s'il y a encore des segments a envoyer
-						
-						while(seg<=(window+segaack)){//utilisation de la window 
-							if (LOGS){
-								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
-								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
-							}
-						
-							/*for(i=0;i<6;i++){
-								tab[i]='\0';
-							}
-							sprintf(tab, "%d", seg);
-							for(i=6;i<1406;i++){
-								tab[i]=fgetc(f);
-							}*/
-							
-							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
-								perror ("Erreur copie octets\n");
-							}
-							for(i=0;i<6;i++){
-								tab[i]='\0';
-							}
-							
-							sprintf(tab, "%d", seg);
-							for(i=0;i<nbBytes;i++){
-								tab [i+6]=octets[i];
-							}
-							
-							if (LOGS){
-								printf("DEBUG : nb bytes lus =%d\n", nbBytes);
-							}
-							
-							
-					
-							
-							if(sendto(descenv2, &tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-								perror("sendto file error\n");
-							}
-							gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
-							if (LOGS){
-								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
-							}
-							seg++;
-						}
-						
-				}/*else{//dernier segment
-					if (LOGS){
-						printf("INFO : envoi du dernier segment...\n");
-					}
-					if(lastseg!=0){
-						i=0;
-						for(i=0;i<6;i++){
-							tab[i]='\0';
-						}
-						sprintf(tab, "%d", seg);
-						do{	
-							tab[i]=fgetc(f); 
-							i++;
-						}
-						while(i<lastseg+6);
-						tab[i]='\0';
-						if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-							perror("sendto file error\n");
-						}	
-					}
-				}*/
-			}
+    		}	
 		}
 		while(numsegrecu!=nbseg);
 		fclose(f);
@@ -457,8 +458,8 @@ int updateFlightSize(int seg, int numsegrecu){
 	return (seg - numsegrecu);
 }
 
-//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 1         //test scenario 1
-//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 2         //test scenario 2
-//python3 launch.py serveur 192.168.5.298 8080 sample4_l.jpg 3         //test scenario 3  a corriger 
+//python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 1         //test scenario 1
+//python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 2         //test scenario 2
+//python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 3         //test scenario 3  a corriger 
 //./client1 192.168.5.298 8080 sample4_l.jpg
-//./serveur 8080
+//./serveur 8080 1
