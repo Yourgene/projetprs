@@ -173,7 +173,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbseg, seg=1;
 		int taillef=0;
 		double rtt=0, rttmoy=(0.05); //valeur de rttmoy pris comme valeur initiale : 50ms. ne compte que pour les premieres trames
-		int lastseg=0;
 		int sstresh = 9999999;
 		int duplicateACK=0;
 		int window = 1;
@@ -186,8 +185,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbAckSent=0;
 		int lastReceivedACK=0;
 		int nbBytes=0;
+
+		int segaenv;
 		
-	int attente;
+		int attente;
 	
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
@@ -217,12 +218,14 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		}
 		i=0;
 		//envoi des segments du fichier
-		do{
-			if(seg<nbseg){//s'il y a encore des segments a envoyer
-						
-						while(seg<=(window+segaack)){//utilisation de la window 
+		//do{
+		while(numsegrecu<nbseg){
+			//if(seg<nbseg){//s'il y a encore des segments a envoyer
+						segaenv=window;
+						printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
+						while((/*seg<=(window+segaack*/segaenv>0)&&(numsegrecu < nbseg)){//utilisation de la window 
 							if (LOGS){
-								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
+								
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
 							}
 							
@@ -250,9 +253,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
 							}
 							seg++;
+							segaenv--;
 						}
 						
-				}
+				//}
 			
 			//acquittement des segments reçus
 			// wait for events on the sockets, 0ms timeout
@@ -270,6 +274,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				sstresh=flightSize/2;
 				window=1;
 				seg = numsegrecu+1;
+				if(fseek(f,seg*1400,SEEK_SET)){
+					perror("fseek timeout failed\n");
+				}
 				if (LOGS){
 					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
 					printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
@@ -361,6 +368,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
+								if(fseek(f,seg*1400,SEEK_SET)){
+									perror("fseek duplicate failed\n");
+								}
 								if(LOGS){
 								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
 								}
@@ -380,7 +390,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
     	    	}
     		}	
 		}
-		while(numsegrecu!=nbseg);
+		
 		fclose(f);
 		strcpy(tab, "FIN");
 		if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
