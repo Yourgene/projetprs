@@ -24,7 +24,7 @@ int getTaille(FILE* fp);
 int updateFlightSize(int seg, int numsegrecu);
 
 struct timeval end[1000], start[1000];
-
+char renvoitab[30*1406];
 double t1,t2;
 int LOGS;
 
@@ -172,10 +172,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		char octets[TABSIZE-6];
 		int nbseg, seg=1;
 		int taillef=0;
-		double rtt=0, rttmoy=(0.05); //valeur de rttmoy pris comme valeur initiale : 50ms. ne compte que pour les premieres trames
+		double rtt=0, rttmoy=(0.03); //valeur de rttmoy pris comme valeur initiale : 50ms. ne compte que pour les premieres trames
 		int sstresh = 9999999;
 		int duplicateACK=0;
-		int window = 1;
+		int window = 2;
 		int segaack=1;
 		//variable ack
 		int numsegrecu=0;
@@ -185,7 +185,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbAckSent=0;
 		int lastReceivedACK=0;
 		int nbBytes=0;
-
+		int j,k; //utilisés pour le tableau de renvoi
 		int segaenv;
 		
 		int attente;
@@ -222,6 +222,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		if(LOGS){
 			printf("nombre de segments a envoyer : %d\n",nbseg);
 		}
+		for(i=0;i<6;i++){
+			tab[i]='\0';
+		}
 		while(numsegrecu!=nbseg){
 			//if(seg<nbseg){//s'il y a encore des segments a envoyer
 						segaenv=window;
@@ -235,9 +238,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
 								perror ("Erreur copie octets\n");
 							}
-							for(i=0;i<6;i++){
-								tab[i]='\0';
-							}
+							
 							
 							sprintf(tab, "%d", seg);
 							for(i=0;i<nbBytes;i++){
@@ -247,7 +248,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if (LOGS){
 								printf("DEBUG : nb bytes lus =%d\n", nbBytes);
 							}
-
+							k=0;
+							for(j=((seg%30)*1406);j<((seg%30)*1406)+1406;j++){
+								renvoitab[j]=tab[k];
+								k++;
+							}
 							if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
 							}
@@ -255,6 +260,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if (LOGS){
 								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
 							}
+							if(seg==nbseg){break;}
 							seg++;
 							segaenv--;
 						}
@@ -303,6 +309,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					//calcul rtt
 
 						gettimeofday(&end[numsegrecu%100], NULL);
+						if(numsegrecu==nbseg){
+							break;
+
+						}
 						//printf("gettime OK \n");
 						//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
 						t1 = start[numsegrecu%100].tv_sec+(start[numsegrecu%100].tv_usec/1000000.0);
@@ -370,9 +380,25 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}else{
 								sstresh=flightSize/2;
 								window=1;
-								seg = numsegrecu+1;
-								if(fseek(f,(seg-1)*1400,SEEK_SET)){
-									perror("fseek duplicate failed\n");
+								if((seg-numsegrecu)<30){
+									k=0;
+									for(j=(((numsegrecu+1)%30)*1406);j<(((numsegrecu+1)%30)*1406)+1406;j++){
+										tab[k]=renvoitab[j];
+										k++;
+									}
+									if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+										perror("sendto file error\n");
+									}
+									gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
+									if (LOGS){
+										printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
+									}
+									//window=0;
+								}else{
+									seg = numsegrecu+1;
+									if(fseek(f,(seg-1)*1400,SEEK_SET)){
+										perror("fseek duplicate failed\n");
+									}
 								}
 								if(LOGS){
 								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
