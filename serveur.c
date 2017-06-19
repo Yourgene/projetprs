@@ -178,7 +178,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int window = 1;
 		int segaack=1;
 		//variable ack
-		int numsegrecu;
+		int numsegrecu=0;
 		char bufferrec[RCVSIZE];
 		int flightSize =0;
 		int windowAcc = 0; //incrémenteur utilisé pour le congestion avoidance
@@ -219,13 +219,16 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		i=0;
 		//envoi des segments du fichier
 		//do{
-		while(numsegrecu<nbseg){
+		if(LOGS){
+			printf("nombre de segments a envoyer : %d\n",nbseg);
+		}
+		while(numsegrecu!=nbseg){
 			//if(seg<nbseg){//s'il y a encore des segments a envoyer
 						segaenv=window;
-						printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
+						
 						while((/*seg<=(window+segaack*/segaenv>0)&&(numsegrecu < nbseg)){//utilisation de la window 
 							if (LOGS){
-								
+								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
 							}
 							
@@ -274,7 +277,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				sstresh=flightSize/2;
 				window=1;
 				seg = numsegrecu+1;
-				if(fseek(f,seg*1400,SEEK_SET)){
+				if(fseek(f,(seg-1)*1400,SEEK_SET)){
 					perror("fseek timeout failed\n");
 				}
 				if (LOGS){
@@ -368,7 +371,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								sstresh=flightSize/2;
 								window=1;
 								seg = numsegrecu+1;
-								if(fseek(f,seg*1400,SEEK_SET)){
+								if(fseek(f,(seg-1)*1400,SEEK_SET)){
 									perror("fseek duplicate failed\n");
 								}
 								if(LOGS){
