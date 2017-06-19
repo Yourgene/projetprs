@@ -18,10 +18,18 @@
 #define TABSIZE 1406
 
 
+
+
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
 int getTaille(FILE* fp);
 int updateFlightSize(int seg, int numsegrecu);
+int getAttente(int rtt){
+	if (rtt == 0) {
+		return 1.5;
+	}
+	return rtt;
+}
 
 struct timeval end[1000], start[1000];
 char renvoitab[30*1406];
@@ -47,7 +55,7 @@ int main (int argc, char *argv[]) {
 	char buffer[RCVSIZE];
 	char str[4];
 
-	char addrserv[]="192.168.5.298"; //192.168.0.50    ou    192.168.5.298
+	char addrserv[]="192.168.0.50"; //192.168.0.50    ou    192.168.5.298
 	printf("INFO : serveur lance sur l' adresse %s\n",addrserv);
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
@@ -107,6 +115,7 @@ int main (int argc, char *argv[]) {
 					setsockopt(desccli, SOL_SOCKET, SO_REUSEADDR, &valid, sizeof(int));
 					client.sin_family= AF_INET;
 					client.sin_port= htons(port);
+					printf("INFO : port utilisé par le client = %d\n",port);
 					inet_aton(addrserv,&client.sin_addr);
 					if (bind(desccli, (struct sockaddr*) &client, sizeof(client)) == -1) {
 						perror("bind descserv2 fail ");
@@ -135,7 +144,6 @@ int main (int argc, char *argv[]) {
 					if(strcmp("ACK",buffer)==0){
 						printf("INFO : ACK Received\n");
 						read = recvfrom(desccli, buffer, sizeof(buffer), 0,  (struct sockaddr *) &client, &taillecli);
-						//printf("ACK received : %s \n",buffer);
 						if( read <= 0 )
 						{
 							perror( "recvfrom() error \n" );
@@ -143,6 +151,9 @@ int main (int argc, char *argv[]) {
 						}
 						printf("INFO : debut envoi fichier %s\n",buffer);
 						envoifile(buffer,desccli, client);
+						printf("INFO : fin de la transmission, fermeture du thread\n");
+						close(desccli);
+						exit(1);
 						}else{
 							printf("ERROR : ACK invalide : %s\n",buffer);
 						}
@@ -175,7 +186,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		double rtt=0, rttmoy=(0.03); //valeur de rttmoy pris comme valeur initiale : 50ms. ne compte que pour les premieres trames
 		int sstresh = 9999999;
 		int duplicateACK=0;
-		int window = 2;
+		int window = 1;
 		int segaack=1;
 		//variable ack
 		int numsegrecu=0;
@@ -225,11 +236,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		for(i=0;i<6;i++){
 			tab[i]='\0';
 		}
-		while(numsegrecu!=nbseg){
-			//if(seg<nbseg){//s'il y a encore des segments a envoyer
+		while(numsegrecu != nbseg){
+			if(seg<nbseg){//s'il y a encore des segments a envoyer
 						segaenv=window;
 						
-						while((/*seg<=(window+segaack*/segaenv>0)&&(numsegrecu < nbseg)){//utilisation de la window 
+						while((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg)){//utilisation de la window 
 							if (LOGS){
 								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
@@ -247,6 +258,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							
 							if (LOGS){
 								printf("DEBUG : nb bytes lus =%d\n", nbBytes);
+								
 							}
 							k=0;
 							for(j=((seg%30)*1406);j<((seg%30)*1406)+1406;j++){
@@ -265,13 +277,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							segaenv--;
 						}
 						
-				//}
+				} 
 			
 			//acquittement des segments reçus
-			// wait for events on the sockets, 0ms timeout
-			attente = (int)(rttmoy*1000.0);
-			//printf("DEBUG : attente : %d ms \n",attente);
-   			rv = poll(fds, nfds, attente); // ancienne valeur : rttmoy*1000
+			attente = getAttente((int)(rttmoy*1000.0));
+   			rv = poll(fds, nfds, attente);
 
 			if (rv < 0)
     		{
@@ -287,6 +297,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					perror("fseek timeout failed\n");
 				}
 				if (LOGS){
+					printf("\n---------- TIMEOUT DETECTE ----------\n");
 					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
 					printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
 				}
@@ -313,7 +324,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							break;
 
 						}
-						//printf("gettime OK \n");
+				
 						//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
 						t1 = start[numsegrecu%100].tv_sec+(start[numsegrecu%100].tv_usec/1000000.0);
 						t2 = end[numsegrecu%100].tv_sec+(end[numsegrecu%100].tv_usec/1000000.0);
@@ -321,7 +332,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
 						
 						if (LOGS){
-							//printf("DEBUG : RTT : %f\n", rttmoy);
 						}
 
 						if(segaack<=numsegrecu){ // si on recoit un ACK correct
@@ -377,10 +387,14 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								}
 								duplicateACK++;
 								
-							}else{
+							}else{ //seg perdu
 								sstresh=flightSize/2;
 								window=1;
 								if((seg-numsegrecu)<30){
+									
+									if(LOGS){
+										printf("INFO : paquet %d perdu, mais stocké dans le tableau\n", numsegrecu);
+									}
 									k=0;
 									for(j=(((numsegrecu+1)%30)*1406);j<(((numsegrecu+1)%30)*1406)+1406;j++){
 										tab[k]=renvoitab[j];
@@ -391,10 +405,13 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 									}
 									gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
 									if (LOGS){
-										printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
+										printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
 									}
-									//window=0;
+									
 								}else{
+									if(LOGS){
+										printf("INFO : paquet %d perdu, et pas stocké dans le tableau\n", numsegrecu);
+									}
 									seg = numsegrecu+1;
 									if(fseek(f,(seg-1)*1400,SEEK_SET)){
 										perror("fseek duplicate failed\n");
@@ -465,5 +482,5 @@ int updateFlightSize(int seg, int numsegrecu){
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 1         //test scenario 1
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 2         //test scenario 2
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 3         //test scenario 3  a corriger 
-//./client1 192.168.5.298 8080 sample4_l.jpg
+//./client1 192.168.5.298 8080 sample4_l.jpg   ou 192.168.0.50
 //./serveur 8080 1
