@@ -165,14 +165,14 @@ return 0;
 
 
 int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
-		//taille segment 1005
+		//taille segment 1406
 		socklen_t taille = sizeof(adresseenv2);
 		int i,cpt,nbelemrttmoy=5;
 		char tab[TABSIZE];
 		char octets[TABSIZE-6];
 		int nbseg, seg=1;
 		int taillef=0;
-		double rtt=0, rttmoy=(0.05); //valeur de rttmoy pris comme valeur initiale. ne compte que pour les premieres trames
+		double rtt=0, rttmoy=(0.05); //valeur de rttmoy pris comme valeur initiale : 50ms. ne compte que pour les premieres trames
 		int lastseg=0;
 		int sstresh = 9999999;
 		int duplicateACK=0;
@@ -198,13 +198,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
         	printf("Impossible d'ouvrir le fichier %s\n",nomf);
     	}
 		taillef = getTaille(f);
-		//init pour poll()
-		int rv;
-		/*struct pollfd ufds[1];
-		ufds[0].fd = descenv2;
-		ufds[0].events = POLLIN;*/
-		
+
 		//init pour poll()v2
+		int rv;
 		struct pollfd fds[1];
   		int    nfds = 1;
 		memset(fds, 0 , sizeof(fds));
@@ -229,14 +225,6 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
 							}
-						
-							/*for(i=0;i<6;i++){
-								tab[i]='\0';
-							}
-							sprintf(tab, "%d", seg);
-							for(i=6;i<1406;i++){
-								tab[i]=fgetc(f);
-							}*/
 							
 							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
 								perror ("Erreur copie octets\n");
@@ -253,10 +241,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if (LOGS){
 								printf("DEBUG : nb bytes lus =%d\n", nbBytes);
 							}
-							
-							
-							
-							
+
 							if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 								perror("sendto file error\n");
 							}
@@ -267,27 +252,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							seg++;
 						}
 						
-				}/*else{
-					if (LOGS){
-						printf("INFO : envoi du dernier segment...\n");
-					}
-					if(lastseg!=0){
-						i=0;
-						for(i=0;i<6;i++){
-							tab[i]='\0';
-						}
-						sprintf(tab, "%d", seg);
-						do{	
-							tab[i]=fgetc(f); 
-							i++;
-						}
-						while(i<lastseg+6);
-						tab[i]='\0';
-						if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-							perror("sendto file error\n");
-						}	
-					}
-				}*/
+				}
 			
 			//acquittement des segments reçus
 			// wait for events on the sockets, 0ms timeout
@@ -336,7 +301,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
 						
 						if (LOGS){
-							printf("DEBUG : RTT : %f\n", rttmoy);
+							//printf("DEBUG : RTT : %f\n", rttmoy);
 						}
 
 						if(segaack<=numsegrecu){ // si on recoit un ACK correct
