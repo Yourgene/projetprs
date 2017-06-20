@@ -196,6 +196,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbAckSent=0;
 		int lastReceivedACK=0;
 		int nbBytes=0;
+		int isItEOF = 0;
 		int j,k; //utilisés pour le tableau de renvoi
 		int segaenv;
 		
@@ -230,17 +231,21 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		i=0;
 		//envoi des segments du fichier
 		//do{
+		
+		
+		
+		
 		if(LOGS){
 			printf("nombre de segments a envoyer : %d\n",nbseg);
 		}
 		for(i=0;i<6;i++){
 			tab[i]='\0';
 		}
-		while(numsegrecu != nbseg){
-			if(seg<nbseg){//s'il y a encore des segments a envoyer
+		while(numsegrecu != nbseg && !isItEOF){
+			if(seg<nbseg && !isItEOF){//s'il y a encore des segments a envoyer
 						segaenv=window;
 						
-						while((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg)){//utilisation de la window 
+						while((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg) && !isItEOF){//utilisation de la window 
 							if (LOGS){
 								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
@@ -248,6 +253,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							
 							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
 								perror ("Erreur copie octets\n");
+							}
+							else if (nbBytes == 0){
+								break;
+								isItEOF = 1;
 							}
 							
 							
@@ -279,7 +288,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						
 				} 
 			
-			//acquittement des segments reçus
+			
 			attente = getAttente((int)(rttmoy*1000.0));
    			rv = poll(fds, nfds, attente);
 
@@ -301,6 +310,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
 					printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
 				}
+				isItEOF = 0;
 							
     		}
     		else if (rv > 0) {
@@ -388,6 +398,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								duplicateACK++;
 								
 							}else{ //seg perdu
+								isItEOF = 0;
 								sstresh=flightSize/2;
 								window=1;
 								if((seg-numsegrecu)<30){
@@ -442,6 +453,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 			perror("sendto FIN error\n");
 		}
+		printf("INFO : nb segs totaux = %d - dernier ack recu = %d - seg courant = %d\n",nbseg, numsegrecu, seg);
 		return 0;
 	}
 
@@ -482,5 +494,6 @@ int updateFlightSize(int seg, int numsegrecu){
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 1         //test scenario 1
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 2         //test scenario 2
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 3         //test scenario 3  a corriger 
-//./client1 192.168.5.298 8080 sample4_l.jpg   ou 192.168.0.50
+//./client1 192.168.5.298 8080 sample4_l.jpg   
+//./client1 192.168.0.50 8080 sample4_l.jpg   
 //./serveur 8080 1
