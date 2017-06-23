@@ -197,7 +197,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int segaenv=1;
 		int senv;
 		int attente;
-	
+		int segrenvoye=0;
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
 		if (f != NULL){
@@ -238,10 +238,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			if(seg<nbseg){//s'il y a encore des segments a envoyer
 						
 						
-						while((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg)){//utilisation de la window 
+						if((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg)){//utilisation de la window 
 							if (LOGS){
 								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
-								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
+								printf("DEBUG : segment = %d - window = %d - segack - %d segaenv = %d\n",seg, window, segaack, segaenv);
 							}
 							if((seg-1)%250==0){
 								if ( (nbBytes = fread(temptab,sizeof(char),TEMP,f))<0){	
@@ -322,7 +322,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 						perror("sendto file error\n");
 					}
-					gettimeofday(&start[l%100], NULL);//obtenir temps systeme pour rtt
+					//gettimeofday(&start[l%100], NULL);//obtenir temps systeme pour rtt
 					if (LOGS){
 						printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
 					}
@@ -335,6 +335,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				}
 				window=1;
 				segaenv=window;
+				//sleep(attente);
 							
     		}
     		else if (rv > 0) {
@@ -354,12 +355,17 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					}
 					//calcul rtt
 
-						//gettimeofday(&end[numsegrecu%100], NULL);
+						gettimeofday(&end[numsegrecu%100], NULL);
 						if(numsegrecu==nbseg){
 							break;
 
 						}
-				
+						//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
+						t1 = start[(numsegrecu)%100].tv_sec+(start[(numsegrecu)%100].tv_usec/1000000.0);
+						t2 = end[(numsegrecu)%100].tv_sec+(end[(numsegrecu)%100].tv_usec/1000000.0);
+						rtt = (t2-t1);
+						//printf("-----------------------------------------\nt1 : %f\n t2 : %f\n rtt : %f\n--------------------------------\n", t1, t2, rtt);
+						rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
 						
 						
 						if (LOGS){
@@ -379,11 +385,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							
 							
 							for (cpt=0;cpt < nbAckSent; cpt++){
-								//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
-								t1 = start[(numsegrecu+nbAckSent)%100].tv_sec+(start[(numsegrecu+nbAckSent)%100].tv_usec/1000000.0);
-								t2 = end[(numsegrecu+nbAckSent)%100].tv_sec+(end[(numsegrecu+nbAckSent)%100].tv_usec/1000000.0);
-								rtt = (t2-t1);
-								rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
+								
 								//congestion avoidance : la window "augmente" de 1/window a chaque ACK
 								if(window > sstresh){
 									if (windowAcc < window){
@@ -417,7 +419,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						}
 						else if (lastReceivedACK == numsegrecu){ // si on recoit a nouveau l'ACK precedent, perte potentielle
 							
-							if(duplicateACK<3){ 
+							if((duplicateACK<3)||(numsegrecu+1<=segrenvoye)){ 
 								if (LOGS){
 									printf("INFO : reception de cet ACK pour la %d fois \n", duplicateACK);
 								}
@@ -427,6 +429,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								sstresh=flightSize/2;
 								window=1;
 								segaenv=window;
+								segrenvoye=numsegrecu+1;
 								if((seg-numsegrecu)<30){
 									
 									if(LOGS){
@@ -441,6 +444,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 										perror("sendto file error\n");
 									}
 									//gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
+									//sleep(attente);
 									if (LOGS){
 										printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
 									}
@@ -517,7 +521,7 @@ int updateFlightSize(int seg, int numsegrecu){
 }
 
 int getAttente(int rtt){
-	printf("rtt : %d\n",rtt);
+	//printf("rtt : %d\n",rtt);
 	if (rtt <= 0) {
 		return 1;
 	}
