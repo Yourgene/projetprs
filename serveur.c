@@ -197,6 +197,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int segaenv=1;
 		int senv;
 		int attente;
+		int freadBytes;
 		int segrenvoye=0;
 		FILE* f = NULL;
 		f = fopen(nomf,"r");
@@ -235,7 +236,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		}
 		while(numsegrecu != nbseg){
 			//printf("debut de boucle\n");
-			if(seg<nbseg){//s'il y a encore des segments a envoyer
+			if(seg<nbseg+1){//s'il y a encore des segments a envoyer
 						
 						
 						if((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg)){//utilisation de la window 
@@ -244,16 +245,16 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								printf("DEBUG : segment = %d - window = %d - segack - %d segaenv = %d\n",seg, window, segaack, segaenv);
 							}
 							if((seg-1)%250==0){
-								if ( (nbBytes = fread(temptab,sizeof(char),TEMP,f))<0){	
+								if ( (freadBytes = fread(temptab,sizeof(char),TEMP,f))<0){	
 									perror ("Erreur copie octets\n");
 								}
 							}
 
-							if(nbBytes!=TEMP){
-								if(seg%250!=0){
-									nbBytes=1400;
+							if(freadBytes!=TEMP){
+								if(seg%250==nbseg%250){
+									nbBytes=freadBytes%1400;
 								}else{
-									nbBytes=nbBytes%TEMP;
+									nbBytes=1400;
 								}
 							}else{
 								nbBytes=1400;
@@ -271,7 +272,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								
 							}
 							k=0;
-							for(j=((seg%250)*1406);j<((seg%250)*1406)+1406;j++){
+							for(j=(((seg)%250)*1406);j<(((seg)%250)*1406)+1406;j++){
 								renvoitab[j]=tab[k];
 								k++;
 							}
@@ -284,14 +285,15 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}
 							
 							flightSize = updateFlightSize(seg, numsegrecu);
+							if(seg==nbseg){break;}
 							seg++;
 							segaenv--;
-							if(seg==nbseg){break;}
+							
 							//maj du flightSize
 							
 						}
 						
-				} 
+				}else{break;}
 			
 			//acquittement des segments reçus
 			//printf("debut getAttente()\n");
