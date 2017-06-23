@@ -16,6 +16,7 @@
 #define TRUE 1
 #define FALSE 0
 #define TABSIZE 1406
+#define TEMP 350000 //=1400*250
 
 
 
@@ -24,15 +25,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2);
 int extractack(char * t);
 int getTaille(FILE* fp);
 int updateFlightSize(int seg, int numsegrecu);
-int getAttente(int rtt){
-	if (rtt == 0) {
-		return 1.5;
-	}
-	return rtt;
-}
+int getAttente(int rtt);
 
 struct timeval end[1000], start[1000];
-char renvoitab[30*1406];
+char renvoitab[250*1406];
+char temptab[TEMP];
 double t1,t2;
 int LOGS;
 
@@ -55,7 +52,7 @@ int main (int argc, char *argv[]) {
 	char buffer[RCVSIZE];
 	char str[4];
 
-	char addrserv[]="192.168.0.50"; //192.168.0.50    ou    192.168.5.298
+	char addrserv[]="192.168.5.298"; //192.168.0.50    ou    192.168.5.298
 	printf("INFO : serveur lance sur l' adresse %s\n",addrserv);
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
@@ -180,11 +177,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		socklen_t taille = sizeof(adresseenv2);
 		int i,cpt,nbelemrttmoy=5;
 		char tab[TABSIZE];
-		char octets[TABSIZE-6];
+		//char octets[TABSIZE-6];
 		int nbseg, seg=1;
 		int taillef=0;
 		double rtt=0, rttmoy=(0.03); //valeur de rttmoy pris comme valeur initiale : 50ms. ne compte que pour les premieres trames
-		int sstresh = 9999999;
+		int sstresh = 65535;
 		int duplicateACK=0;
 		int window = 1;
 		int segaack=1;
@@ -196,9 +193,9 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbAckSent=0;
 		int lastReceivedACK=0;
 		int nbBytes=0;
-		int j,k; //utilisés pour le tableau de renvoi
-		int segaenv;
-		
+		int j,k,l; //utilisés pour le tableau de renvoi
+		int segaenv=1;
+		int senv;
 		int attente;
 	
 		FILE* f = NULL;
@@ -237,23 +234,36 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			tab[i]='\0';
 		}
 		while(numsegrecu != nbseg){
+			//printf("debut de boucle\n");
 			if(seg<nbseg){//s'il y a encore des segments a envoyer
-						segaenv=window;
+						
 						
 						while((/*seg<=window+segaack*/segaenv>0)&&(numsegrecu <= nbseg)){//utilisation de la window 
 							if (LOGS){
 								printf("\n---------- ENVOI D'UNE SERIE SEGMENTS ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
 							}
-							
-							if ( (nbBytes = fread(octets,sizeof(char),TABSIZE-6,f))<0){	
-								perror ("Erreur copie octets\n");
+							if((seg-1)%250==0){
+								if ( (nbBytes = fread(temptab,sizeof(char),TEMP,f))<0){	
+									perror ("Erreur copie octets\n");
+								}
 							}
-							
-							
+
+							if(nbBytes!=TEMP){
+								if(seg%250!=0){
+									nbBytes=1400;
+								}else{
+									nbBytes=nbBytes%TEMP;
+								}
+							}else{
+								nbBytes=1400;
+							}
+
+							k=0;
 							sprintf(tab, "%d", seg);
-							for(i=0;i<nbBytes;i++){
-								tab [i+6]=octets[i];
+							for(i=((seg-1)%250)*1400;i<((((seg-1)%250)*1400)+1400);i++){
+								tab [k+6]=temptab[i];
+								k++;
 							}
 							
 							if (LOGS){
@@ -261,7 +271,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								
 							}
 							k=0;
-							for(j=((seg%30)*1406);j<((seg%30)*1406)+1406;j++){
+							for(j=((seg%250)*1406);j<((seg%250)*1406)+1406;j++){
 								renvoitab[j]=tab[k];
 								k++;
 							}
@@ -275,35 +285,60 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if(seg==nbseg){break;}
 							seg++;
 							segaenv--;
+							//maj du flightSize
+							flightSize = updateFlightSize(seg, numsegrecu);
 						}
 						
 				} 
 			
 			//acquittement des segments reçus
+			//printf("debut getAttente()\n");
 			attente = getAttente((int)(rttmoy*1000.0));
+			//printf("rv = poll(fds, %d, %d)\n",nfds, attente);
    			rv = poll(fds, nfds, attente);
-
+			//printf("debut du poll()\n");
 			if (rv < 0)
     		{
+				//printf("fail\n");
     			perror("poll() failed");
     			break;
    			}
 			if (rv == 0)
     		{
+				//printf("timeout\n");
 				sstresh=flightSize/2;
-				window=1;
-				seg = numsegrecu+1;
-				if(fseek(f,(seg-1)*1400,SEEK_SET)){
+				senv = numsegrecu+1;
+				/*if(fseek(f,(seg-1)*1400,SEEK_SET)){
 					perror("fseek timeout failed\n");
+				}*/
+				for(l=senv;l<senv+window;l++){
+					//printf("renvoi du segment %d\n",l);
+					if(l>=nbseg){break;}
+					k=0;
+					for(j=(((l)%250)*1406);j<(((l)%250)*1406)+1406;j++){
+						tab[k]=renvoitab[j];
+						k++;
+					}
+					if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+						perror("sendto file error\n");
+					}
+					gettimeofday(&start[l%100], NULL);//obtenir temps systeme pour rtt
+					if (LOGS){
+						printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
+					}
+
+					if (LOGS){
+						printf("\n---------- TIMEOUT DETECTE ----------\n");
+						printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
+						printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
+					}
 				}
-				if (LOGS){
-					printf("\n---------- TIMEOUT DETECTE ----------\n");
-					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
-					printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
-				}
+				window=1;
+				segaenv=window;
 							
     		}
     		else if (rv > 0) {
+				//printf("rv >0\n");
    		    	 if (fds[0].revents & POLLIN) {
 					if (LOGS){
 						printf("\n---------- ARRIVEE D'UN ACK ----------\n");
@@ -319,25 +354,20 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					}
 					//calcul rtt
 
-						gettimeofday(&end[numsegrecu%100], NULL);
+						//gettimeofday(&end[numsegrecu%100], NULL);
 						if(numsegrecu==nbseg){
 							break;
 
 						}
 				
-						//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
-						t1 = start[numsegrecu%100].tv_sec+(start[numsegrecu%100].tv_usec/1000000.0);
-						t2 = end[numsegrecu%100].tv_sec+(end[numsegrecu%100].tv_usec/1000000.0);
-						rtt = (t2-t1);
-						rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
+						
 						
 						if (LOGS){
 						}
 
 						if(segaack<=numsegrecu){ // si on recoit un ACK correct
 							
-							//maj du flightSize
-							flightSize = updateFlightSize(seg, numsegrecu);
+							
 							//calcul nombre segments acquittés
 							nbAckSent = (numsegrecu-segaack)+1;
 							
@@ -349,7 +379,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							
 							
 							for (cpt=0;cpt < nbAckSent; cpt++){
-								
+								//printf("received2 %d, modulo : %d\n", numsegrecu, numsegrecu%100);
+								t1 = start[(numsegrecu+nbAckSent)%100].tv_sec+(start[(numsegrecu+nbAckSent)%100].tv_usec/1000000.0);
+								t2 = end[(numsegrecu+nbAckSent)%100].tv_sec+(end[(numsegrecu+nbAckSent)%100].tv_usec/1000000.0);
+								rtt = (t2-t1);
+								rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
 								//congestion avoidance : la window "augmente" de 1/window a chaque ACK
 								if(window > sstresh){
 									if (windowAcc < window){
@@ -374,9 +408,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								}
 								
 								segaack++;	
+								
 							}
 							duplicateACK = 0;
 							lastReceivedACK = numsegrecu;
+							segaenv=window;
 							
 						}
 						else if (lastReceivedACK == numsegrecu){ // si on recoit a nouveau l'ACK precedent, perte potentielle
@@ -390,20 +426,21 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}else{ //seg perdu
 								sstresh=flightSize/2;
 								window=1;
+								segaenv=window;
 								if((seg-numsegrecu)<30){
 									
 									if(LOGS){
-										printf("INFO : paquet %d perdu, mais stocké dans le tableau\n", numsegrecu);
+										printf("INFO : paquet %d perdu, mais stocké dans le tableau\n", numsegrecu+1);
 									}
 									k=0;
-									for(j=(((numsegrecu+1)%30)*1406);j<(((numsegrecu+1)%30)*1406)+1406;j++){
+									for(j=(((numsegrecu+1)%250)*1406);j<(((numsegrecu+1)%250)*1406)+1406;j++){
 										tab[k]=renvoitab[j];
 										k++;
 									}
 									if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 										perror("sendto file error\n");
 									}
-									gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
+									//gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
 									if (LOGS){
 										printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
 									}
@@ -412,10 +449,10 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 									if(LOGS){
 										printf("INFO : paquet %d perdu, et pas stocké dans le tableau\n", numsegrecu);
 									}
-									seg = numsegrecu+1;
+									/*seg = numsegrecu+1;
 									if(fseek(f,(seg-1)*1400,SEEK_SET)){
 										perror("fseek duplicate failed\n");
-									}
+									}*/
 								}
 								if(LOGS){
 								printf("INFO : paquet %d perdu, reprise a fenetre = 1\n", numsegrecu);
@@ -477,6 +514,14 @@ int getTaille(FILE* fp){
 //return the new flightSize
 int updateFlightSize(int seg, int numsegrecu){
 	return (seg - numsegrecu);
+}
+
+int getAttente(int rtt){
+	printf("rtt : %d\n",rtt);
+	if (rtt <= 0) {
+		return 1;
+	}
+	return rtt;
 }
 
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 1         //test scenario 1

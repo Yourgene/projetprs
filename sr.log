@@ -1,0 +1,494 @@
+INFO : etat des logs = 1
+INFO : serveur lance sur l' adresse 192.168.5.298
+INFO : SYN Received
+INFO : port utilisé par le client = 8081
+INFO : SYN-ACK sent 
+INFO : ACK Received
+INFO : debut envoi fichier test2.pdf
+INFO : taille du fichier = 1246886
+nombre de segments a envoyer : 891
+
+---------- ENVOI D'UNE SERIE SEGMENTS ---------- 
+DEBUG : segment = 1 - window = 1 - segack - 1
+DEBUG : nb bytes lus =1400
+INFO : segment n° 1 sent sur 891
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 1 
+
+---------- TIMEOUT DETECTE ----------
+ERREUR : segment perdu car poll timeout : rtt : 30 ms 
+INFO : nouveaux params : ssthresh = 0 - window = 1 - seg à envoyer = 
