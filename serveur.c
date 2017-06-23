@@ -304,7 +304,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
     		{
 				//printf("timeout\n");
 				sstresh=flightSize/2;
-				senv = (seg%250)-((numsegrecu%250)+1);
+				senv = (seg%250)-((numsegrecu+1)%250);
 				/*if(fseek(f,(seg-1)*1400,SEEK_SET)){
 					perror("fseek timeout failed\n");
 				}*/
