@@ -282,11 +282,13 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							if (LOGS){
 								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
 							}
-							if(seg==nbseg){break;}
+							
+							flightSize = updateFlightSize(seg, numsegrecu);
 							seg++;
 							segaenv--;
+							if(seg==nbseg){break;}
 							//maj du flightSize
-							flightSize = updateFlightSize(seg, numsegrecu);
+							
 						}
 						
 				} 
