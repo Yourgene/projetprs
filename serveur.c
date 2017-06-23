@@ -395,7 +395,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}
 							duplicateACK = 0;
 							lastReceivedACK = numsegrecu;
-							if(numsegrecu==seg-1){
+							if(numsegrecu>=seg-window){
 								segaenv=window;
 							}
 					}else if (lastReceivedACK == numsegrecu){ // si on recoit a nouveau l'ACK precedent, perte potentielle		
