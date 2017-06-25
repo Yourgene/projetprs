@@ -1,7 +1,7 @@
 CC= gcc
 CFLAGS = -Wall -g
 
-all: serveur clientudp
+all: serveur clientudp 
 
 clientudp: clientudp.o
 	$(CC) -o clientudp clientudp.o $(CFLAGS)
@@ -14,7 +14,7 @@ serveur: serveur.o
 	
 serveur.o: serveur.c
 	$(CC) -o serveur.o -c serveur.c  $(CFLAGS)
-
+	
 clean:
 	rm -f clientudp serveur *.o *~
 

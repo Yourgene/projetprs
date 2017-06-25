@@ -16,7 +16,11 @@
 #define TRUE 1
 #define FALSE 0
 #define TABSIZE 1406
+<<<<<<< HEAD
 #define TEMP 350000 //=1400*250
+=======
+#define FREADSIZE 250	//combien de segments stockés dans le buffer
+>>>>>>> test
 
 
 
@@ -193,9 +197,16 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbAckSent=0;
 		int lastReceivedACK=0;
 		int nbBytes=0;
+<<<<<<< HEAD
 		int j,k,l; //utilisés pour le tableau de renvoi
 		int segaenv=1;
 		int senv;
+=======
+		int isItEOF = 0;
+		int j,k; //utilisés pour le tableau de renvoi
+		int segaenv;
+		
+>>>>>>> test
 		int attente;
 		int freadBytes;
 		int segrenvoye=0;
@@ -208,6 +219,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
         	printf("Impossible d'ouvrir le fichier %s\n",nomf);
     	}
 		taillef = getTaille(f);
+		
 
 		//init pour poll()v2
 		int rv;
@@ -226,14 +238,53 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			nbseg = (taillef/1400);
 		}
 		i=0;
+		
+		
+//----------- INIT TABLEAU SEGMENTS -------------------------------
+		char contenuBuff[FREADSIZE][TABSIZE-6]; //taleau contenant les 200 (default) segments courants
+		int contenuBuffSize[FREADSIZE]; //taleau contenant la taille des 200 segments
+		int parties = taillef/(FREADSIZE * (TABSIZE-6)); // nombre de parties de 200 segments
+		if (parties%taillef != 0){
+			parties ++;
+		}
+		int partiesNonTraitees = parties; //nombre de parties restant a traiter
+		int segmentsRestants = nbseg;
+		int nbSegInThisPartie; //nombre de segments a envoyer dans la partie courante
+		if ((segmentsRestants - FREADSIZE > 0)){
+			segmentsRestants = segmentsRestants - FREADSIZE;
+			nbSegInThisPartie = FREADSIZE;
+		} else {
+			nbSegInThisPartie = segmentsRestants;
+		}
+		
+		int l;//kompteur
+		for (l=0; l<nbSegInThisPartie; l++){ //Seg 1 est stocké dans contenuBuff[0] et sa taille dans contenuBuffSize[0]
+			if ( (nbBytes = fread(contenuBuff[l],sizeof(char),TABSIZE-6,f))<0){	
+				perror ("Erreur copie octets\n");
+			}
+			contenuBuffSize[l] = nbBytes;
+		}
+		int bonSegment = 0; // va contenir l'index du bon segment a envoyer 
+		int ehOuiCestLaFin =0; // quand 1, alors on a recu le dernier ack
+		int finDeLaPartie = 0; //quand on arrive au bout d'une partie	
+		int tmp=0;
+		int finRetransmission = 0; //savoir quand on arrete la retransmission apres timeout
+		
+		
+		
 		//envoi des segments du fichier
-		//do{
+
+		
+		
+		
+		
 		if(LOGS){
 			printf("nombre de segments a envoyer : %d\n",nbseg);
 		}
 		for(i=0;i<6;i++){
 			tab[i]='\0';
 		}
+<<<<<<< HEAD
 		while(numsegrecu != nbseg){
 			//printf("debut de boucle\n");
 			if(seg<nbseg+1){//s'il y a encore des segments a envoyer
@@ -253,6 +304,67 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							nbBytes=freadBytes%1400;
 						}else{
 							nbBytes=1400;
+=======
+		
+		//On s'arrete quand on a recu le dernier ack
+		while(!ehOuiCestLaFin){
+			
+			if(seg<nbseg && partiesNonTraitees>0){//s'il y a encore des segments a envoyer
+						
+						if (LOGS){
+							printf("INFO : parties non traitees = %d \n", partiesNonTraitees);
+						}
+						//envoi en burst de segments
+						while( (seg < window+segaack) && (numsegrecu <= nbseg) &&  !finDeLaPartie ){
+							if (LOGS){
+								printf("\n---------- ENVOI D'UN  SEGMENT ---------- \n");
+								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
+							}
+							
+							//recuperation du bon index
+							if ((seg)%FREADSIZE == 0 && seg != 0){
+								if (LOGS){
+									printf("INFO : arrivee en fin de partie, seg =%d \n", seg);
+								}
+								bonSegment = seg-1;
+								finDeLaPartie = 1; //on est arrivé en bout de partie
+							} else if (seg == 0) {
+								if (LOGS){
+									printf("INFO : premier segment de la partie, seg =%d \n", seg);
+								}
+								bonSegment = 0;
+							} else
+							{
+								if (LOGS){
+									printf("INFO : segment classique, seg =%d \n", seg);
+								}
+								bonSegment = (seg%FREADSIZE)-1;
+							}
+							
+							for(i=0;i<6;i++){
+								tab[i]='\0';
+							}
+							
+							sprintf(tab, "%d", seg);
+							for(i=0;i<contenuBuffSize[bonSegment];i++){
+								tab [i+6]=contenuBuff[bonSegment][i];
+							}
+							
+							if (LOGS){
+								printf("DEBUG : nb bytes a envoyer =%d\n", contenuBuffSize[bonSegment]);
+							}
+							
+							if(sendto(descenv2, tab, contenuBuffSize[bonSegment]+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+								perror("sendto file error\n");
+							}
+							gettimeofday(&start[seg%100], NULL);//obtenir temps systeme pour rtt
+							if (LOGS){
+								printf("INFO : segment n° %d sent sur %d\n",seg, nbseg);
+							}
+							if(seg==nbseg){break;}
+							seg++;
+							segaenv--;
+>>>>>>> test
 						}
 					}else{
 						nbBytes=1400;
@@ -268,6 +380,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					if (LOGS){
 						printf("DEBUG : nb bytes lus =%d\n", nbBytes);
 						
+<<<<<<< HEAD
 					}
 					k=0;
 					for(j=(((seg-1)%250)*1406);j<(((seg-1)%250)*1406)+1406;j++){
@@ -289,6 +402,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			
 			//acquittement des segments reçus
 			//printf("debut getAttente()\n");
+=======
+			} 
+			
+			
+>>>>>>> test
 			attente = getAttente((int)(rttmoy*1000.0));
 			//sleep(attente);
 			//printf("rv = poll(fds, %d, %d)\n",nfds, attente);
@@ -296,12 +414,19 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			//printf("debut du poll()\n");
 			if (rv < 0)
     		{
+<<<<<<< HEAD
 				//printf("fail\n");
     			perror("poll() failed");
+=======
+    			perror("poll() failed, pitié que ca n'arrive jamais \n");
+>>>>>>> test
     			break;
    			}
-			if (rv == 0)
+   			
+   			
+			if (rv == 0)//timeout : on renvoie le burst précédent
     		{
+<<<<<<< HEAD
 				//printf("timeout\n");
 				sstresh=flightSize/2;
 				senv = (seg%250)-((numsegrecu+1)%250);
@@ -333,8 +458,64 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				window=1;
 				segaenv=window;
 				//sleep(attente);
+=======
+				
+				sstresh=flightSize/2;
+				window=3;
+				tmp = numsegrecu+1;
+				segaenv=window;
+				
+				if (LOGS){
+					printf("\n---------- TIMEOUT DETECTE ----------\n");
+					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
+					printf("INFO : envoi en burst de ce qui a ete perdu, tmp debut = %d \n", tmp);
+				}
+				
+				
+				finRetransmission = 0;
+				while ( (tmp<=seg) && !finRetransmission ){
+					
+					if (LOGS){
+						printf("DEBUG : tmp = %d - seg = %d \n", tmp, seg);
+					}
+				
+					if ((tmp)%FREADSIZE == 0 && tmp !=0){
+						if (LOGS){
+							printf("INFO : arrivee en fin de retaransmisison \n");
+						}
+						bonSegment = tmp-1;
+						finRetransmission = 1;
+					} else if (tmp == 0) {
+						bonSegment = 1;
+					} 
+					else {
+						bonSegment = (tmp%FREADSIZE)-1;
+					}
+					
+					for(i=0;i<6;i++){
+						tab[i]='\0';
+					}
+					
+					sprintf(tab, "%d", (numsegrecu+1));
+					for(i=0;i<contenuBuffSize[bonSegment];i++){
+						tab [i+6]=contenuBuff[bonSegment][i];
+					}
+					if(sendto(descenv2, tab, contenuBuffSize[bonSegment]+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+						perror("sendto file error\n");
+					}
+					tmp++;
+				}
+				
+							
+				
+				isItEOF = 0;
+>>>>>>> test
 							
     		}
+    		
+    		
+    		
+    		
     		else if (rv > 0) {
 				//printf("rv >0\n");
    		    	 if (fds[0].revents & POLLIN) {
@@ -352,6 +533,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					}
 					//calcul rtt
 
+<<<<<<< HEAD
 					gettimeofday(&end[numsegrecu%100], NULL);
 					flightSize = updateFlightSize(seg, numsegrecu);
 					if(numsegrecu==nbseg){break;}
@@ -374,6 +556,92 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								if (windowAcc < window){
 									if (LOGS){
 										printf("INFO : C.A, window augmente pas et reste a %d\n", window);
+=======
+						gettimeofday(&end[numsegrecu%100], NULL);
+						if(numsegrecu==nbseg){
+							break;
+
+						}
+				
+						
+						t1 = start[numsegrecu%100].tv_sec+(start[numsegrecu%100].tv_usec/1000000.0);
+						t2 = end[numsegrecu%100].tv_sec+(end[numsegrecu%100].tv_usec/1000000.0);
+						rtt = (t2-t1);
+						rttmoy = (rttmoy*(nbelemrttmoy-1) + rtt)/nbelemrttmoy; // running average sur nbelemrttmoy
+						
+
+						if(segaack<=numsegrecu){ // si on recoit un ACK correct
+							
+							//maj du flightSize
+							flightSize = updateFlightSize(seg, numsegrecu);
+							//calcul nombre segments acquittés
+							nbAckSent = (numsegrecu-segaack)+1;
+							
+							if (LOGS){
+								printf("INFO : reception ACK correct(cad >= a ACK attendu)\n");
+								printf("INFO : ssthresh = %d - Flight Size = %d (seg = %d - ack recu = %d) - nb segs a acquitter = %d\n", sstresh,seg,numsegrecu, flightSize, nbAckSent);
+							}
+		
+		
+		
+							if (numsegrecu%FREADSIZE == 0 && numsegrecu !=0){//si on recoit l'ack du dernier segment du tableau
+								
+								if (LOGS){
+									printf("INFO, reception dernier segment d'une partie\n");
+								}
+								partiesNonTraitees --;
+								
+								if (partiesNonTraitees == 0){
+									if (LOGS){
+										printf("INFO, reception du dernier ack de la transmission : %d\n", numsegrecu);
+									}
+									
+									ehOuiCestLaFin =1;
+								} else { // on crée le nouveau tableau de segments
+									if (LOGS){
+										printf("INFO : fin partie, mais il reste des parties encore : %d\n", numsegrecu);
+									}
+									finDeLaPartie = 0;
+									if ((segmentsRestants - FREADSIZE > 0)){
+										segmentsRestants = segmentsRestants - FREADSIZE;
+										nbSegInThisPartie = FREADSIZE;
+									} else {
+										nbSegInThisPartie = segmentsRestants;
+									}
+									if (LOGS){
+										printf("DEBUG : nbseg a envoyer ds la partie =  %d\n", nbSegInThisPartie);
+									}
+									
+									for (l=0; l<nbSegInThisPartie; l++){ //Seg 1 est stocké dans contenuBuff[0] et sa taille dans contenuBuffSize[0]
+										if ( (nbBytes = fread(contenuBuff[l],sizeof(char),TABSIZE-6,f))<0){	
+											perror ("Erreur copie octets\n");
+										}
+										contenuBuffSize[l] = nbBytes;
+									}
+								}
+								
+								
+								
+							}
+							
+							for (cpt=0;cpt < nbAckSent; cpt++){
+								
+								//congestion avoidance : la window "augmente" de 1/window a chaque ACK
+								if(window > sstresh){
+									if (windowAcc < window){
+										if (LOGS){
+											printf("INFO : C.A, window augmente pas et reste a %d\n", window);
+										}
+										windowAcc ++;
+									}
+									else {
+										if (LOGS){
+											printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
+										}
+										window = window+1;
+										windowAcc = 0;
+										segaenv=window;
+>>>>>>> test
 									}
 									windowAcc ++;
 								}
@@ -381,8 +649,13 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 									if (LOGS){
 										printf("INFO : C.A, window passe de %d a %d\n", window, window+1);
 									}
+<<<<<<< HEAD
 									window = window+1;
 									windowAcc = 0;
+=======
+									window++;
+									segaenv=window;
+>>>>>>> test
 								}
 								//slow start
 							}else{
@@ -395,6 +668,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							}
 							duplicateACK = 0;
 							lastReceivedACK = numsegrecu;
+<<<<<<< HEAD
 							if(numsegrecu>=seg-window){
 								segaenv=window;
 							}
@@ -444,6 +718,59 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								printf("INFO : segment perdu car meme ACK 3 fois \n");
 								printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
 							}
+=======
+							
+							
+							
+							
+						}
+						else if (lastReceivedACK == numsegrecu){ // si on recoit a nouveau l'ACK precedent, perte potentielle
+							
+							if(duplicateACK<3){ 
+								if (LOGS){
+									printf("INFO : reception de cet ACK pour la %d fois \n", duplicateACK);
+								}
+								duplicateACK++;
+								
+							}else{ //seg perdu : on le renvoie 3 fois !
+							
+								
+								sstresh=flightSize/2;
+								window=3;
+								if (LOGS){
+									printf("INFO : segment perdu car meme ACK 3 fois \n");
+									printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à renvoyer = %d \n", sstresh, window, numsegrecu+1);
+								}
+								
+								
+								//recuperation du bon index
+								if ((numsegrecu+1)%FREADSIZE == 0){
+									bonSegment = FREADSIZE;
+								} else {
+									bonSegment = ((numsegrecu+1)%FREADSIZE)-1;
+								}
+								if (LOGS){
+									printf("INFO : index seg a renvoyer = %d, seg = %d \n", bonSegment, numsegrecu+1);
+								}
+								
+								for(i=0;i<6;i++){
+									tab[i]='\0';
+								}
+								sprintf(tab, "%d", (numsegrecu+1));
+								
+								for(i=0;i<contenuBuffSize[bonSegment];i++){
+									tab [i+6]=contenuBuff[bonSegment][i];
+								}
+								//envoi 3 fois du seg
+								for (j=0; j<3;j++){
+									if(sendto(descenv2, tab, contenuBuffSize[bonSegment]+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+										perror("sendto file error\n");
+									}
+								}
+
+								duplicateACK=0;
+
+>>>>>>> test
 								
 							}
 						}
@@ -461,6 +788,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		if(sendto(descenv2, tab, sizeof(tab), 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 			perror("sendto FIN error\n");
 		}
+		printf("INFO : nb segs totaux = %d - dernier ack recu = %d - seg courant = %d\n",nbseg, numsegrecu, seg);
 		return 0;
 	}
 
@@ -509,5 +837,6 @@ int getAttente(int rtt){
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 1         //test scenario 1
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 2         //test scenario 2
 //python3 launch.py serveur 192.168.5.298 8080 0 sample4_l.jpg 3         //test scenario 3  a corriger 
-//./client1 192.168.5.298 8080 sample4_l.jpg   ou 192.168.0.50
+//./client1 192.168.5.298 8080 sample4_l.jpg   
+//./client1 192.168.0.50 8080 sample4_l.jpg   
 //./serveur 8080 1
