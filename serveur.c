@@ -16,7 +16,7 @@
 #define TRUE 1
 #define FALSE 0
 #define TABSIZE 1406
-#define FREADSIZE 250	//combien de segments stockés dans le buffer
+#define FREADSIZE 5000	//combien de segments stockés dans le buffer soit 7mo si freadsize = 5000
 
 
 
@@ -199,7 +199,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int nbBytes=0;
 		int isItEOF = 0;
 		int j,k; //utilisés pour le tableau de renvoi
-		int segaenv;
+		int segaenv=0;
 		
 		int attente;
 	
@@ -234,14 +234,19 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		
 		
 //----------- INIT TABLEAU SEGMENTS -------------------------------
-		char contenuBuff[FREADSIZE][TABSIZE-6]; //taleau contenant les 200 (default) segments courants
+		char contenuBuff[FREADSIZE][TABSIZE]; //taleau contenant les 200 (default) segments courants
 		int contenuBuffSize[FREADSIZE]; //taleau contenant la taille des 200 segments
 		int parties = taillef/(FREADSIZE * (TABSIZE-6)); // nombre de parties de 200 segments
 		if (parties%taillef != 0){
 			parties ++;
 		}
+		
+		if (parties == 0){
+			parties = 1;
+		}
 		int partiesNonTraitees = parties; //nombre de parties restant a traiter
 		int segmentsRestants = nbseg;
+		
 		int nbSegInThisPartie; //nombre de segments a envoyer dans la partie courante
 		if ((segmentsRestants - FREADSIZE > 0)){
 			segmentsRestants = segmentsRestants - FREADSIZE;
@@ -252,10 +257,12 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		
 		int l;//kompteur
 		for (l=0; l<nbSegInThisPartie; l++){ //Seg 1 est stocké dans contenuBuff[0] et sa taille dans contenuBuffSize[0]
+			
 			if ( (nbBytes = fread(contenuBuff[l],sizeof(char),TABSIZE-6,f))<0){	
 				perror ("Erreur copie octets\n");
 			}
 			contenuBuffSize[l] = nbBytes;
+			
 		}
 		int bonSegment = 0; // va contenir l'index du bon segment a envoyer 
 		int ehOuiCestLaFin =0; // quand 1, alors on a recu le dernier ack
@@ -286,6 +293,31 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 						if (LOGS){
 							printf("INFO : parties non traitees = %d \n", partiesNonTraitees);
 						}
+						
+						if (finDeLaPartie){//envoi par paquet de 3 le dernier seg d'une partie
+							for(i=0;i<6;i++){
+								tab[i]='\0';
+							}
+							bonSegment = FREADSIZE-1;							
+							sprintf(tab, "%d", seg);
+							
+							for (j=1;j<3;j++){
+								for(i=0;i<contenuBuffSize[bonSegment];i++){
+									tab [i+6]=contenuBuff[bonSegment][i];
+								}
+								
+								if (LOGS){
+									printf("DEBUG : nb bytes a envoyer =%d\n", contenuBuffSize[bonSegment]);
+								}
+								
+								if(sendto(descenv2, tab, contenuBuffSize[bonSegment]+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+									perror("sendto file error\n");
+								}
+							}
+							
+						}
+						
+						
 						//envoi en burst de segments
 						while( (seg < window+segaack) && (numsegrecu <= nbseg) &&  !finDeLaPartie ){
 							if (LOGS){
@@ -298,12 +330,12 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								if (LOGS){
 									printf("INFO : arrivee en fin de partie, seg =%d \n", seg);
 								}
-								bonSegment = seg-1;
+								bonSegment = FREADSIZE-1;
 								finDeLaPartie = 1; //on est arrivé en bout de partie
 							} else if (seg == 0) {
 								if (LOGS){
 									printf("INFO : premier segment de la partie, seg =%d \n", seg);
-								}
+								}	
 								bonSegment = 0;
 							} else
 							{
@@ -316,7 +348,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							for(i=0;i<6;i++){
 								tab[i]='\0';
 							}
-							
+														
 							sprintf(tab, "%d", seg);
 							for(i=0;i<contenuBuffSize[bonSegment];i++){
 								tab [i+6]=contenuBuff[bonSegment][i];
