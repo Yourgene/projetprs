@@ -16,7 +16,7 @@
 #define TRUE 1
 #define FALSE 0
 #define TABSIZE 1406
-#define FREADSIZE 200
+#define FREADSIZE 250	//combien de segments stockés dans le buffer
 
 
 
@@ -261,6 +261,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		int ehOuiCestLaFin =0; // quand 1, alors on a recu le dernier ack
 		int finDeLaPartie = 0; //quand on arrive au bout d'une partie	
 		int tmp=0;
+		int finRetransmission = 0; //savoir quand on arrete la retransmission apres timeout
 		
 		
 		
@@ -282,9 +283,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 			
 			if(seg<nbseg && partiesNonTraitees>0){//s'il y a encore des segments a envoyer
 						
-						
+						if (LOGS){
+							printf("INFO : parties non traitees = %d \n", partiesNonTraitees);
+						}
 						//envoi en burst de segments
-						while( (segaenv>0) && (numsegrecu <= nbseg) &&  !finDeLaPartie ){
+						while( (seg < window+segaack) && (numsegrecu <= nbseg) &&  !finDeLaPartie ){
 							if (LOGS){
 								printf("\n---------- ENVOI D'UN  SEGMENT ---------- \n");
 								printf("DEBUG : segment = %d - window = %d - segack - %d\n",seg, window, segaack);
@@ -292,12 +295,21 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 							
 							//recuperation du bon index
 							if ((seg)%FREADSIZE == 0 && seg != 0){
+								if (LOGS){
+									printf("INFO : arrivee en fin de partie, seg =%d \n", seg);
+								}
 								bonSegment = seg-1;
 								finDeLaPartie = 1; //on est arrivé en bout de partie
 							} else if (seg == 0) {
+								if (LOGS){
+									printf("INFO : premier segment de la partie, seg =%d \n", seg);
+								}
 								bonSegment = 0;
 							} else
 							{
+								if (LOGS){
+									printf("INFO : segment classique, seg =%d \n", seg);
+								}
 								bonSegment = (seg%FREADSIZE)-1;
 							}
 							
@@ -341,15 +353,32 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
    			
 			if (rv == 0)//timeout : on renvoie le burst précédent
     		{
+				
 				sstresh=flightSize/2;
 				window=3;
 				tmp = numsegrecu+1;
 				segaenv=window;
 				
-				while ( (tmp<=seg) && ((tmp%FREADSIZE != 0 && tmp != 0) || (tmp%FREADSIZE == 0 && tmp==0) ) ){
+				if (LOGS){
+					printf("\n---------- TIMEOUT DETECTE ----------\n");
+					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
+					printf("INFO : envoi en burst de ce qui a ete perdu, tmp debut = %d \n", tmp);
+				}
+				
+				
+				finRetransmission = 0;
+				while ( (tmp<=seg) && !finRetransmission ){
 					
+					if (LOGS){
+						printf("DEBUG : tmp = %d - seg = %d \n", tmp, seg);
+					}
+				
 					if ((tmp)%FREADSIZE == 0 && tmp !=0){
+						if (LOGS){
+							printf("INFO : arrivee en fin de retaransmisison \n");
+						}
 						bonSegment = tmp-1;
+						finRetransmission = 1;
 					} else if (tmp == 0) {
 						bonSegment = 1;
 					} 
@@ -368,14 +397,11 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 					if(sendto(descenv2, tab, contenuBuffSize[bonSegment]+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
 						perror("sendto file error\n");
 					}
+					tmp++;
 				}
 				
 							
-				if (LOGS){
-					printf("\n---------- TIMEOUT DETECTE ----------\n");
-					printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
-					printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
-				}
+				
 				isItEOF = 0;
 							
     		}
@@ -427,17 +453,31 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 		
 		
 							if (numsegrecu%FREADSIZE == 0 && numsegrecu !=0){//si on recoit l'ack du dernier segment du tableau
+								
+								if (LOGS){
+									printf("INFO, reception dernier segment d'une partie\n");
+								}
 								partiesNonTraitees --;
 								
 								if (partiesNonTraitees == 0){
+									if (LOGS){
+										printf("INFO, reception du dernier ack de la transmission : %d\n", numsegrecu);
+									}
+									
 									ehOuiCestLaFin =1;
 								} else { // on crée le nouveau tableau de segments
+									if (LOGS){
+										printf("INFO : fin partie, mais il reste des parties encore : %d\n", numsegrecu);
+									}
 									finDeLaPartie = 0;
 									if ((segmentsRestants - FREADSIZE > 0)){
 										segmentsRestants = segmentsRestants - FREADSIZE;
 										nbSegInThisPartie = FREADSIZE;
 									} else {
 										nbSegInThisPartie = segmentsRestants;
+									}
+									if (LOGS){
+										printf("DEBUG : nbseg a envoyer ds la partie =  %d\n", nbSegInThisPartie);
 									}
 									
 									for (l=0; l<nbSegInThisPartie; l++){ //Seg 1 est stocké dans contenuBuff[0] et sa taille dans contenuBuffSize[0]
@@ -501,13 +541,20 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								
 								sstresh=flightSize/2;
 								window=3;
+								if (LOGS){
+									printf("INFO : segment perdu car meme ACK 3 fois \n");
+									printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à renvoyer = %d \n", sstresh, window, numsegrecu+1);
+								}
 								
 								
 								//recuperation du bon index
 								if ((numsegrecu+1)%FREADSIZE == 0){
-									bonSegment = numsegrecu;
+									bonSegment = FREADSIZE;
 								} else {
 									bonSegment = ((numsegrecu+1)%FREADSIZE)-1;
+								}
+								if (LOGS){
+									printf("INFO : index seg a renvoyer = %d, seg = %d \n", bonSegment, numsegrecu+1);
 								}
 								
 								for(i=0;i<6;i++){
@@ -526,10 +573,7 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 								}
 
 								duplicateACK=0;
-								if (LOGS){
-									printf("INFO : segment perdu car meme ACK 3 fois \n");
-									printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à renvoyer = %d \n", sstresh, window, numsegrecu+1);
-								}
+
 								
 							}
 						}
