@@ -321,35 +321,39 @@ int envoifile(char* nomf, int descenv2, struct sockaddr_in adresseenv2){
 				//for(l=senv;l<seg%250;l++){
 					//printf("renvoi du segment %d\n",l);
 					//if(l>=nbseg){break;}
-					if((senv%250==nbseg%250)&&(cestledernier==1)){
-						k=0;
-						for(j=(((senv)%250)*1406);j<(((senv)%250)*1406)+nbByteslast+6;j++){
-							tab[k]=renvoitab[j];
-							k++;
+					do{
+						if((senv%250==nbseg%250)&&(cestledernier==1)){
+							k=0;
+							for(j=(((senv)%250)*1406);j<(((senv)%250)*1406)+nbByteslast+6;j++){
+								tab[k]=renvoitab[j];
+								k++;
+							}
+							if(sendto(descenv2, tab, nbByteslast+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+								perror("sendto file error\n");
+							}
+						}else{
+							k=0;
+							for(j=(((senv)%250)*1406);j<(((senv)%250)*1406)+1406;j++){
+								tab[k]=renvoitab[j];
+								k++;
+							}
+							if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
+								perror("sendto file error\n");
+							}
 						}
-						if(sendto(descenv2, tab, nbByteslast+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-							perror("sendto file error\n");
+						//gettimeofday(&start[l%100], NULL);//obtenir temps systeme pour rtt
+						if (LOGS){
+							printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
 						}
-					}else{
-						k=0;
-						for(j=(((senv)%250)*1406);j<(((senv)%250)*1406)+1406;j++){
-							tab[k]=renvoitab[j];
-							k++;
-						}
-						if(sendto(descenv2, tab, nbBytes+6, 0, (struct sockaddr *)&adresseenv2, taille)==-1){
-							perror("sendto file error\n");
-						}
-					}
-					//gettimeofday(&start[l%100], NULL);//obtenir temps systeme pour rtt
-					if (LOGS){
-						printf("INFO : segment n° %d sent sur %d\n",numsegrecu+1, nbseg);
-					}
 
-					if (LOGS){
-						printf("\n---------- TIMEOUT DETECTE ----------\n");
-						printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
-						printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
+						if (LOGS){
+							printf("\n---------- TIMEOUT DETECTE ----------\n");
+							printf("ERREUR : segment perdu car poll timeout : rtt : %d ms \n",attente);
+							printf("INFO : nouveaux params : ssthresh = %d - window = %d - seg à envoyer = %d \n", sstresh, window, seg);
+						}
+						senv++;
 					}
+					while(senv<=seg%250);
 				//}
 				window=1;
 				segaenv=window;
