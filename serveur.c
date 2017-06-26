@@ -57,6 +57,7 @@ int main (int argc, char *argv[]) {
 	char addrserv[15];//="192.168.5.298"; //192.168.0.50    ou    192.168.5.298
 	sprintf(addrserv,"%s",argv[3]);
 	printf("INFO : serveur lance sur l' adresse %s\n",addrserv);
+	while (1) {
 	//create socket
 	int descserv= socket(AF_INET, SOCK_DGRAM, 0);
 
@@ -80,7 +81,7 @@ int main (int argc, char *argv[]) {
 
 	fd_set rfds;
 
-	while (1) {
+	
 		
            socklen_t taille = sizeof(serveur);
 			int read = recvfrom(descserv, buffer, sizeof(buffer), 0,  (struct sockaddr *) &serveur, &taille);
@@ -234,11 +235,11 @@ int main (int argc, char *argv[]) {
                sendto(desccli, bufferSEND, sizeBuffer+6, 0, (struct sockaddr*)&client, alenPrive);
 				
 
-               numACK++;//On incrémente l'ACK a envoyer
-               //Si on arrive a la fin du fichier on s'arrète
+               numACK++;
+               
                if(feof(file)){
                   onContinue=0;
-                  printf("ACK FIN : %d \n\n", ENDack);
+                  printf("dernier ack : %d \n\n", ENDack);
                   ENDack = numACK-1;
                   flightSize=cwnd;
                   break;
@@ -271,31 +272,30 @@ int main (int argc, char *argv[]) {
                for(j = 0; j<6; j++) {
                    ACKrecu[j] = bufferRCV[j+3];
                }
-               //printf("Recu : %d\n", atoi(ACKrecu));
                ack = atoi(ACKrecu);
 				if(ack == ENDack){
 					onContinue=0;
 					resend=0;
 					LastACK = ack;
-					printf("J'ai FINI %d \n",ack);
+					printf("dernier ack reçu %d \n",ack);
 					break;
 				}
                 if(ack>LastACK) {
                    LastACK = ack;
-                   if(CongestionAvoidance==0){
-										cwnd+=7;
-									}else{
+                   if(CongestionAvoidance==1){//slow start
 										cwnd+=2.5;
+									}else{
+										cwnd+=7;
 									}
                                 }
-                            } else { //On envoi
+                            } else { //On envoie
 								if(ssthresh==0){
 									if(cwnd/2>=cwnd-5){
 										ssthresh=cwnd/2;
 									}else{
 										ssthresh=cwnd-5;
 									}
-									CongestionAvoidance=1;
+									CongestionAvoidance=1;//fin du slow start, debut de congestion avoidance
 								}
 								cwnd=ssthresh;
                                 break;
@@ -304,13 +304,14 @@ int main (int argc, char *argv[]) {
 
                     }
                     int w;
-                    for(w=0; w<50; w++){ //envoie 3 fois d'affilé pour être sur que le client reçoive
+                    for(w=0; w<50; w++){ //On envoie le segment fin 3 fois afin de s'assurer de la reception'
 						if(w>4){
 							sleep(0.1);
 						}
 						sendto(desccli, "FIN", sizeof("FIN"), 0, (struct sockaddr*)&client, alenPrive);
 					}
 				}else{
+					close(descserv);//permet de ne pas court circuiter la reception de ack dans le fils
 					sleep(1);//NE PAS SUPPRIMER
 				/* Si on est dans le père */
 
@@ -319,6 +320,7 @@ int main (int argc, char *argv[]) {
 			}else{
 				printf("ERROR : message SYN invalide : %s\n", buffer);
 			}
+			sleep(1);
 	}
 
 
